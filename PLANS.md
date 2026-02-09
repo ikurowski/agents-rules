@@ -6,7 +6,7 @@ This repository uses execution plans ("ExecPlans") for non-trivial tasks. An Exe
 
 - Store plans in `tasks/plans/`.
 - Use filename format `YYYY-MM-DDTHH-mm-ssZ-short-topic.md` (timestamp, UTC, Windows-safe separators).
-- Keep `tasks/todo.md` as a high-level tracker only (status, goal, optional owner, plan link, short outcome).
+- Keep `tasks/todo.md` as a high-level tracker only (status: `in_progress|completed|blocked`, goal, optional owner, plan link, short outcome).
 - Keep all implementation detail in the ExecPlan file.
 
 ## Non-Negotiable Requirements
@@ -46,7 +46,8 @@ Each ExecPlan must include these sections:
 - If an ExecPlan is the only content of a Markdown file, do not wrap it in triple backticks.
 - Keep command examples concise and include expected outputs when relevant.
 - Resolve ambiguity in the plan itself and record the reasoning in `Decision Log`.
-- When an interface example is needed, prefer TypeScript-style signatures unless repo context requires a different language.
+- In docs-only or policy-only tasks, set `Interfaces and Dependencies` to `N/A` with rationale; do not invent placeholder interfaces.
+- When an interface example is actually needed, prefer TypeScript-style signatures unless repo context requires a different language.
 
 ## Milestones and Prototyping
 

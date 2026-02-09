@@ -1,6 +1,7 @@
 # Lessons Learned
 
 Record significant user corrections and how they were fixed. Add entries only when the correction creates a reusable prevention rule.
+Operational threshold: treat a correction as significant only when it adds or changes a prevention rule likely reusable in future tasks; skip one-off style preferences.
 
 ## Entry Template
 

@@ -15,11 +15,11 @@ Resolve instruction conflicts in this order:
 3. Repository root `AGENTS.md` (this file).
 4. Supporting docs (`README.md`, `PLANS.md`, templates).
 
-If instructions conflict, follow the higher-priority source and log the assumption in `tasks/todo.md`.
+If instructions conflict, follow the higher-priority source and record the assumption and rationale in the active ExecPlan (`Decision Log`).
 
 ### Think Before Execution
 
-Before writing any code, review the relevant files/logs first, then explicitly state your assumptions and surface ambiguities. When there are multiple possible interpretations, list them; do not silently choose one. Push back when a simpler approach exists. When you are uncertain, ask questions instead of guessing.
+Before writing any code, review the relevant files/logs first, then explicitly state your assumptions and surface ambiguities in the active ExecPlan. When there are multiple possible interpretations, list them; do not silently choose one. Push back when a simpler approach exists. When uncertain, resolve from repository context first; ask the user only when a decision materially changes behavior and cannot be inferred safely. For trivial tasks that do not require an ExecPlan, capture assumptions in the final response under `Assumptions`; do not add them to `tasks/todo.md`.
 
 ### Simplicity in Implementation
 
@@ -39,15 +39,27 @@ Do not apply temporary fixes. Always investigate and address the root cause of a
 
 ### Continuous Learning
 
-After a significant correction from the user, record the mistake and its fix in `tasks/lessons.md`. A correction is significant when it reveals a reusable prevention rule, a repeated failure mode, or a policy mismatch. Review these lessons at the beginning of each session to avoid repeating past errors.
+After a significant correction from the user, record the mistake and its fix in `tasks/lessons.md`. A correction is significant when it adds or changes a reusable prevention rule that is likely to apply in future tasks (not a one-off wording preference). Review these lessons at the beginning of each session to avoid repeating past errors.
+
+### Proactive Rule Suggestions
+
+If the agent notices a recurring pattern where a new rule would likely improve clarity, reliability, or speed, it should proactively propose adding that rule. Treat "recurring pattern" as at least two occurrences within the last five completed tasks.
+
+Each proposal must include:
+
+1. Observation (what repeated issue/opportunity was seen).
+2. Draft rule (one clear sentence).
+3. Expected benefit.
+4. Trade-off or risk.
+5. Target location (`AGENTS.md`, `PLANS.md`, `README.md`, or `tasks/lessons.md`).
+
+The agent should propose the rule, not enforce it, unless the user approves.
 
 ## Workflow Orchestration
 
 ### Planning by Default for Non-Trivial Work
 
-For any non-trivial task (three or more steps, or anything affecting architecture), create a detailed ExecPlan that outlines assumptions, goals, and verification steps.
-
-For implementation-heavy work, also create an Exec Plan in `tasks/plans/<YYYY-MM-DDTHH-mm-ssZ>-<slug>.md` using `PLANS.md`.
+For any non-trivial task (three or more steps, or anything affecting architecture), create and maintain a detailed ExecPlan in `tasks/plans/<YYYY-MM-DDTHH-mm-ssZ>-<slug>.md` using `PLANS.md` (assumptions, goals, and verification steps included).
 
 Treat responsibilities separately: `tasks/todo.md` tracks high-level task metadata and status, while `tasks/plans/*` contains execution details, decisions, evidence, and validation steps.
 
@@ -63,7 +75,7 @@ For complex tasks, parallelise independent exploration and verification work str
 
 For non-trivial changes, pause and ask whether there is a more elegant solution. Challenge yourself to find a design that is simple and maintainable. If a fix feels hacky, refactor it into a cleaner solution.
 
-Use judgment: trivial fixes may not require reconsideration, but larger changes should strive for elegance without over-engineering.
+Use judgment: trivial fixes may not require reconsideration, but larger changes should strive for elegance without over-engineering or widening scope beyond the request.
 
 ### Autonomous Bug Fixing
 
@@ -110,15 +122,16 @@ Stop criteria:
 
 ## Task Management & Continuous Improvement
 
-- **Plan First**: For non-trivial work, create and maintain an ExecPlan in `tasks/plans/*` using the required `PLANS.md` sections.
+- **Single Source for Planning Rules**: Treat `Workflow Orchestration > Planning by Default for Non-Trivial Work` as the normative planning rule; avoid duplicating planning logic elsewhere.
 - **Keep TODO High-Level**: In `tasks/todo.md`, track only status, goal, optional owner, ExecPlan link, and short outcome.
+- **Active Task Semantics**: Keep `## Active Task` only when exactly one task is `in_progress`; move `completed` or `blocked` entries to `## Task History`.
+- **Status Vocabulary**: Use only `in_progress`, `completed`, or `blocked` for `tasks/todo.md` status values.
 - **Proceed Autonomously**: Publish the plan, then execute unless the user explicitly asks to pause for review.
 - **Track Progress in ExecPlan**: Mark execution progress in the active plan and keep evidence there.
-- **Keep Detail in Plans**: Do not duplicate low-level execution checklists in `tasks/todo.md`.
 - **Explain Changes**: At each step, provide a high-level summary of what was modified and why.
 - **Document Results**: After finishing, write a short outcome in `tasks/todo.md` and keep detailed validation evidence in the ExecPlan.
 - **Capture Lessons**: Append lessons only for corrections that produce reusable prevention rules and review them at the start of subsequent sessions.
 
 ## Disclaimer
 
-This document is intended for automated agents and tools. Human developers may use it as a reference, but the authoritative human documentation remains in the project's `README.md`. Agents should treat these rules as non-negotiable unless the user provides explicit overrides.
+This document is intended for automated agents and tools. `AGENTS.md` and `PLANS.md` are the authoritative execution-policy sources; `README.md` is an onboarding summary for humans. Agents should treat these rules as non-negotiable unless the user provides explicit overrides.
