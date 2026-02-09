@@ -1,45 +1,43 @@
-# Agent Rules & Logs Repository
+# Agent Rules Repository
 
-Repozytorium do prowadzenia zasad pracy agentow oraz historii dzialan.
+Repository for managing agent operating rules and work history.
 
-## Co jest w repo
+## What is in this repository
 
-- `AGENTS.md` - twarde zasady dla agentow.
-- `tasks/todo.md` - aktywny plan pracy i status zadan.
-- `tasks/lessons.md` - lekcje po korektach i bledach.
-- `logs/activity.md` - dziennik sesji i zmian.
+- `AGENTS.md` - hard rules for agents.
+- `tasks/todo.md` - active work plan and task status.
+- `tasks/lessons.md` - lessons captured after corrections and mistakes.
 
-## Szybki workflow
+## Quick Workflow
 
-1. Przed praca dopisz plan i kryteria sukcesu w `tasks/todo.md`.
-2. Po kazdym kroku aktualizuj status checklisty.
-3. Po zakonczeniu dopisz wynik testow/weryfikacji.
-4. Jezeli byla korekta lub blad, dopisz wpis do `tasks/lessons.md`.
-5. Dopisz wpis sesyjny do `logs/activity.md`.
+1. Before work, add the plan and success criteria to `tasks/todo.md`.
+2. After each step, update checklist status.
+3. After completion, add test/verification results.
+4. If there was a correction or mistake, add an entry to `tasks/lessons.md`.
 
-## Start (lokalnie)
+## Start (local)
 
 ```powershell
 git init
 git add .
-git commit -m "Initial commit: agent rules and logs"
+git commit -m "Initial commit: agent rules and task tracking"
 ```
 
-## Publikacja na GitHub
+## Publish to GitHub
 
-Opcja z GitHub CLI (`gh`):
+Option with GitHub CLI (`gh`):
 
 ```powershell
-gh repo create <NAZWA_REPO> --public --source=. --remote=origin --push
+gh repo create <REPO_NAME> --public --source=. --remote=origin --push
 ```
 
-Opcja bez `gh`:
+Option without `gh`:
 
-1. Utworz puste repo na GitHub.
-2. Podepnij remote i wypchnij:
+1. Create an empty repository on GitHub.
+2. Add remote and push:
 
 ```powershell
-git remote add origin https://github.com/<USER>/<NAZWA_REPO>.git
+git remote add origin https://github.com/<USER>/<REPO_NAME>.git
 git branch -M main
 git push -u origin main
 ```

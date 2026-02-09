@@ -1,14 +1,13 @@
 # Lessons Learned
 
-Zapisuj tutaj korekty od uzytkownika i jak zostaly naprawione.
+Record user corrections and how they were fixed.
 
 ## Entry Template
 
-- Data: YYYY-MM-DD
-- Kontekst: _co robilem_
-- Blad: _co poszlo zle_
-- Korekta: _co poprawiono_
-- Zasada na przyszlosc: _jak tego unikac_
+- Date: YYYY-MM-DD
+- Context: _what I was doing_
+- Mistake: _what went wrong_
+- Fix: _what was changed_
+- Prevention rule: _how to avoid this next time_
 
 ## Entries
-
