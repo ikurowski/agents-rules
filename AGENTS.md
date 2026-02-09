@@ -6,9 +6,20 @@ This document defines how autonomous agents should interact with this codebase. 
 
 These foundational rules govern how an AI agent should reason about tasks and write code. Follow them consistently, regardless of task size.
 
+### Instruction Hierarchy
+
+Resolve instruction conflicts in this order:
+
+1. Direct user request in the current session.
+2. Nested, task-local `AGENTS.md` (if present).
+3. Repository root `AGENTS.md` (this file).
+4. Supporting docs (`README.md`, `PLANS.md`, templates).
+
+If instructions conflict, follow the higher-priority source and log the assumption in `tasks/todo.md`.
+
 ### Think Before Execution
 
-Before writing any code, explicitly state your assumptions and surface ambiguities. When there are multiple possible interpretations, list them; do not silently choose one. Push back when a simpler approach exists. When you are uncertain, ask questions instead of guessing.
+Before writing any code, review the relevant files/logs first, then explicitly state your assumptions and surface ambiguities. When there are multiple possible interpretations, list them; do not silently choose one. Push back when a simpler approach exists. When you are uncertain, ask questions instead of guessing.
 
 ### Simplicity in Implementation
 
@@ -28,25 +39,25 @@ Do not apply temporary fixes. Always investigate and address the root cause of a
 
 ### Continuous Learning
 
-After any correction from the user, record the mistake and its fix in `tasks/lessons.md`. Review these lessons at the beginning of each session to avoid repeating past errors. Iterate on these patterns until the mistake rate drops.
+After a significant correction from the user, record the mistake and its fix in `tasks/lessons.md`. A correction is significant when it reveals a reusable prevention rule, a repeated failure mode, or a policy mismatch. Review these lessons at the beginning of each session to avoid repeating past errors.
 
 ## Workflow Orchestration
 
-### Plan Mode by Default
+### Planning by Default for Non-Trivial Work
 
-For any non-trivial task (three or more steps, or anything affecting architecture), start with a detailed plan. Outline assumptions, goals, and verification steps. Write this plan in plain text with checkable items and commit it to `tasks/todo.md`.
+For any non-trivial task (three or more steps, or anything affecting architecture), create a detailed ExecPlan that outlines assumptions, goals, and verification steps.
+
+For implementation-heavy work, also create an Exec Plan in `tasks/plans/<YYYY-MM-DDTHH-mm-ssZ>-<slug>.md` using `PLANS.md`.
+
+Treat responsibilities separately: `tasks/todo.md` tracks high-level task metadata and status, while `tasks/plans/*` contains execution details, decisions, evidence, and validation steps.
 
 If a task goes sideways, stop immediately, revisit the requirements, and re-plan. Do not continue blindly.
 
-Use plan mode not only for new features but also for verification: plan how to reproduce bugs and how to prove that fixes work.
+Use this planning workflow not only for new features but also for verification: plan how to reproduce bugs and how to prove that fixes work.
 
-### Subagent Strategy
+### Parallel Research Strategy
 
-Offload research, exploration, or parallel analysis to subagents. Keep the main agent's context focused on the core problem by spawning additional agents for heavy tasks.
-
-For complex problems, allocate more compute by spawning multiple subagents, each with a single, well-defined task. Do not overload one subagent with unrelated objectives.
-
-Gather results from subagents into the main plan before continuing.
+For complex tasks, parallelise independent exploration and verification work streams when possible, then merge results into one coherent plan before editing files.
 
 ### Demand Elegance
 
@@ -60,16 +71,53 @@ When given a bug report, just fix it. Use logs, error messages, and failing test
 
 Do not require context switching from the user; your goal is to reduce their cognitive load. Fix failing CI tests or runtime errors without being told exactly how.
 
-After fixing, demonstrate the solution with tests or other verification steps and document the cause and resolution in `tasks/todo.md`.
+After fixing, demonstrate the solution with tests or other verification steps and document full cause/resolution details in the active ExecPlan, plus a short outcome line in `tasks/todo.md`.
+
+## Commit Style
+
+Use Conventional Commits and keep commits atomic.
+
+- One concern per commit. Do not mix unrelated changes.
+- Message format: `<type>(<optional-scope>): <imperative summary>`
+- Preferred types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
+- Body is optional but recommended for non-trivial changes:
+  - Why the change was needed.
+  - What was changed.
+  - How it was verified.
+
+Examples:
+
+- `docs(agents): add reflective loop and commit style policy`
+- `docs(plans): adopt strict self-contained exec plan template`
+- `fix(ci): stabilize flaky integration test setup`
+
+## Reflective Loop
+
+Run this loop for non-trivial tasks:
+
+1. Plan: define assumptions, scope, and verifiable success criteria.
+2. Execute: apply minimal, surgical changes.
+3. Verify: run checks/tests and inspect outputs.
+4. Reflect: compare outcomes to success criteria and identify gaps.
+5. Update docs: sync `tasks/todo.md`, `tasks/lessons.md` (when corrected), and relevant policy docs.
+6. Iterate: re-plan only unresolved gaps and repeat.
+
+Stop criteria:
+
+- All success criteria are satisfied.
+- Verification evidence is captured.
+- No unresolved high-risk ambiguity remains.
 
 ## Task Management & Continuous Improvement
 
-- **Plan First**: Write a plan for the task in `tasks/todo.md` with checkable items and explicit success criteria.
-- **Verify Plan**: Present the plan for review before starting implementation. Adjust if the user provides feedback.
-- **Track Progress**: Mark items as complete in the to-do file as you go, keeping a clear log of what is done and what remains.
+- **Plan First**: For non-trivial work, create and maintain an ExecPlan in `tasks/plans/*` using the required `PLANS.md` sections.
+- **Keep TODO High-Level**: In `tasks/todo.md`, track only status, goal, optional owner, ExecPlan link, and short outcome.
+- **Proceed Autonomously**: Publish the plan, then execute unless the user explicitly asks to pause for review.
+- **Track Progress in ExecPlan**: Mark execution progress in the active plan and keep evidence there.
+- **Keep Detail in Plans**: Do not duplicate low-level execution checklists in `tasks/todo.md`.
 - **Explain Changes**: At each step, provide a high-level summary of what was modified and why.
-- **Document Results**: After finishing, update `tasks/todo.md` with a review summarising outcomes, tests run, and remaining issues.
-- **Capture Lessons**: Append patterns of mistakes and their corrections to `tasks/lessons.md` for future reference, and review them at the start of subsequent sessions.
+- **Document Results**: After finishing, write a short outcome in `tasks/todo.md` and keep detailed validation evidence in the ExecPlan.
+- **Capture Lessons**: Append lessons only for corrections that produce reusable prevention rules and review them at the start of subsequent sessions.
 
 ## Disclaimer
 
