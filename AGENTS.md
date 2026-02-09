@@ -12,10 +12,25 @@ Resolve instruction conflicts in this order:
 
 1. Direct user request in the current session.
 2. Nested, task-local `AGENTS.md` (if present).
-3. Repository root `AGENTS.md` (this file).
-4. Supporting docs (`README.md`, `PLANS.md`, templates).
+3. Repository root `AGENTS.md` (operational behavior policy).
+4. `PLANS.md` (ExecPlan structure and lifecycle policy).
+5. Supporting docs/templates (`README.md`, `tasks/plans/_template.md`, etc.).
 
-If instructions conflict, follow the higher-priority source and record the assumption and rationale in the active ExecPlan (`Decision Log`).
+If instructions conflict:
+
+- For ExecPlan structure/lifecycle rules, `PLANS.md` takes precedence over `AGENTS.md`.
+- For all other operational behavior, `AGENTS.md` takes precedence.
+
+Record the assumption and rationale in the active ExecPlan (`Decision Log`).
+
+### Session Start
+
+At the start of each new non-trivial task:
+
+1. Read `AGENTS.md` for operational behavior policy.
+2. Read `PLANS.md` for ExecPlan requirements.
+3. Check `tasks/todo.md` for current status and linked active plan.
+4. Read `tasks/lessons.md` for reusable prevention rules.
 
 ### Think Before Execution
 
@@ -89,6 +104,7 @@ After fixing, demonstrate the solution with tests or other verification steps an
 
 Use Conventional Commits and keep commits atomic.
 
+- Commit authorization: never run `git commit` unless the user explicitly asks for a commit in the current session.
 - One concern per commit. Do not mix unrelated changes.
 - Message format: `<type>(<optional-scope>): <imperative summary>`
 - Preferred types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
@@ -134,4 +150,4 @@ Stop criteria:
 
 ## Disclaimer
 
-This document is intended for automated agents and tools. `AGENTS.md` and `PLANS.md` are the authoritative execution-policy sources; `README.md` is an onboarding summary for humans. Agents should treat these rules as non-negotiable unless the user provides explicit overrides.
+This document is intended for automated agents and tools. `AGENTS.md` defines operational behavior policy, `PLANS.md` defines ExecPlan structure/lifecycle policy, and `README.md` is onboarding summary for humans. Agents should treat these rules as non-negotiable unless the user provides explicit overrides.

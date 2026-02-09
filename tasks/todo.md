@@ -36,6 +36,14 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 - ExecPlan: `tasks/plans/2026-02-09T03-10-00Z-timestamp-normalization-and-next-instance-prompt.md`
 - Outcome: Timestamps standardized across docs and naming conventions.
 
+### 2026-02-09T02:36:39Z
+
+- Status: completed
+- Goal: Apply policy fixes after audit feedback while preserving strict responsibility split (`README.md` onboarding-only).
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-09T02-36-39Z-operational-startup-separation-and-plan-template-cleanup.md`
+- Outcome: Completed. Startup checklist moved to `AGENTS.md` (`Session Start`), policy precedence clarified, and docs-only interface guidance tightened in `PLANS.md` + `_template.md` without adding operational content to `README.md`.
+
 ### 2026-02-09T02:25:22Z
 
 - Status: completed

@@ -57,13 +57,7 @@ Include concise transcripts, logs, or diff excerpts that prove the change works.
 
 ## Interfaces and Dependencies
 
-List required interfaces, modules, libraries, and integration points that must exist after implementation.
-For docs-only or policy-only work, write `N/A` with one-sentence rationale and do not add placeholder interfaces.
-
-Optional example TypeScript interface (use only when interface changes are in scope):
-
-    export interface ExampleService {
-      run(input: string): Promise<{ ok: boolean; message: string }>;
-    }
+For interface/dependency changes, list required interfaces, modules, libraries, and integration points that must exist after implementation.
+For docs-only or policy-only work, write `N/A` with one-sentence rationale and do not add placeholder interfaces or example signatures.
 
 Change note: <YYYY-MM-DDTHH:MM:SSZ> - <what changed in this plan and why>.

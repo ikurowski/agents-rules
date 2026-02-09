@@ -46,8 +46,8 @@ Each ExecPlan must include these sections:
 - If an ExecPlan is the only content of a Markdown file, do not wrap it in triple backticks.
 - Keep command examples concise and include expected outputs when relevant.
 - Resolve ambiguity in the plan itself and record the reasoning in `Decision Log`.
-- In docs-only or policy-only tasks, set `Interfaces and Dependencies` to `N/A` with rationale; do not invent placeholder interfaces.
-- When an interface example is actually needed, prefer TypeScript-style signatures unless repo context requires a different language.
+- In docs-only or policy-only tasks, set `Interfaces and Dependencies` to `N/A` with rationale; do not add placeholder interfaces or example signatures.
+- Use interface signatures only when the task actually changes interfaces/dependencies; when needed, prefer TypeScript-style signatures unless repo context requires a different language.
 
 ## Milestones and Prototyping
 
@@ -62,6 +62,11 @@ Each ExecPlan must include these sections:
 - Update `Progress` at every stop point, including partial completion notes.
 - Capture important evidence snippets in `Artifacts and Notes`.
 - On completion, add an `Outcomes & Retrospective` summary of results, gaps, and lessons.
+
+## Historical Plans
+
+- Historical ExecPlans are archival records and may contain legacy wording/examples.
+- When creating a new plan, follow current `PLANS.md` and `tasks/plans/_template.md` even if older plans differ.
 
 ## Template
 
