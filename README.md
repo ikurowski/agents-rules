@@ -17,6 +17,24 @@ Repository for managing agent operating rules and work history.
 - ExecPlan structure and required sections: `PLANS.md`
 - Active/high-level task tracking: `tasks/todo.md`
 
+## Reuse in another project
+
+Copy these files to the root of your target repository:
+
+- `AGENTS.md`
+- `PLANS.md`
+- `tasks/` (including `todo.md`, `lessons.md`, `plans/`)
+
+PowerShell quick start from the target repo root:
+
+```powershell
+Copy-Item C:\Users\igork\Desktop\agent\AGENTS.md .
+Copy-Item C:\Users\igork\Desktop\agent\PLANS.md .
+Copy-Item C:\Users\igork\Desktop\agent\tasks . -Recurse
+```
+
+After copying, commit these files in the target repo and the agent will follow these rules there.
+
 ## Start (local)
 
 ```powershell
