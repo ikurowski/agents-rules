@@ -5,6 +5,13 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-10T23:39:09Z
+
+- Status: completed
+- Goal: Create and validate a new `project-auditor-improver` skill based on repository history and existing standards.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T23-39-09Z-create-project-auditor-improver-skill.md`
+- Outcome: Completed. Added `skills/project-auditor-improver` with workflow-driven `SKILL.md`, aligned `agents/openai.yaml`, and split references for audit method, improvement execution, and validation gates; reused shared references for U5 scoring, source/evidence policy, and confirm-required behavior.
 ### 2026-02-10T23:39:40Z
 
 - Status: completed
@@ -199,3 +206,5 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 - Goal: Prepare repository for agent rules and work tracking.
 - ExecPlan: -
 - Outcome: Initial repository structure and tracking docs established.
+
+
