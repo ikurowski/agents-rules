@@ -35,6 +35,18 @@ Summarize what was achieved, what remains, and what should be done differently n
 
 Describe repository context for a novice reader. Name exact repo-relative paths and explain how the touched files/modules fit together.
 
+## Terminology and Decomposition
+
+For research/decision tasks, define and use canonical terms:
+
+- `Primary Question`
+- `Sub-question`
+- `Question-to-Evidence Matrix`
+- `Entry Criteria`
+- `Impediment`
+
+If the task is not research/decision-oriented, write `N/A` and one sentence why.
+
 ## Plan of Work
 
 Describe, in prose, the sequence of edits and additions. Name exact files and locations (function/module/section) and what will change.

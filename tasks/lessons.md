@@ -41,3 +41,10 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I prioritized task momentum over strict commit-gating by user intent._
 - Fix: _I reset `HEAD` to remove the unauthorized commit and kept changes uncommitted for user control._
 - Prevention rule: _Never commit unless the user explicitly requests a commit in the current session._
+
+- Timestamp: 2026-02-10T19:23:14Z
+- Context: _I renamed and narrowed the new deep-research skill into governance-first scope after a naming follow-up._
+- Mistake: _I over-specialized the skill identity and behavior beyond the user's intended broad "scientific researcher" use._
+- Root cause: _I optimized for one example use case (governance logs) and underweighted the user's primary capability request._
+- Fix: _I restored the skill to `deep-researcher`, rewrote workflow to "research first, then resolve doubts," and kept governance as optional use case only._
+- Prevention rule: _When a user gives one example use case, preserve a broad core capability unless they explicitly request specialization._

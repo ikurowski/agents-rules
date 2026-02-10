@@ -5,6 +5,118 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-10T23:39:40Z
+
+- Status: completed
+- Goal: Assess and implement reusable, atomic shared references across skills (starting with `deep-researcher` and `skill-creator`) to reduce duplication.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T23-39-40Z-shared-reference-modularization-across-skills.md`
+- Outcome: Completed. Added `skills/shared/references/*` atomic modules for U5 scoring, source/evidence policy, and confirm-required gate; linked both skills to shared modules and reduced duplicated policy text in local references.
+
+### 2026-02-10T23:17:34Z
+
+- Status: completed
+- Goal: Run deep research and deliver recommendation memo on whether skills + shared references improve LLM agent outcomes versus monolithic prompt-only architecture.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T23-17-34Z-research-agent-skills-shared-references-vs-monolith.md`
+- Outcome: Completed. Recommended conditional adoption: skills-first for heterogeneous tasks, then shared references for knowledge-heavy flows with eval-gated rollout; highlighted latency/cost trade-offs and overengineering boundary.
+
+### 2026-02-10T23:11:06Z
+
+- Status: completed
+- Goal: Adopt touch-based terminology normalization (option 2) and explicitly avoid point-3 architecture expansion.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T23-11-06Z-adopt-touch-based-terminology-normalization.md`
+- Outcome: Completed. Added explicit legacy-terminology migration policy to `skills/REFERENCE-STANDARD.md` for on-touch normalization in active docs, without adding sync/check mechanisms.
+
+### 2026-02-10T22:52:24Z
+
+- Status: completed
+- Goal: Remove remaining legacy terminology remnants, resolve terminology architecture drift in docs/history, and enforce canonical terminology in `tasks/plans/_template.md`.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T22-52-24Z-remove-legacy-shorthand-and-enforce-canonical-template.md`
+- Outcome: Completed. Removed remaining shorthand remnants from active docs and adjusted history wording, renamed legacy plan filename to canonical wording, and added mandatory canonical terminology/decomposition block to plan template.
+
+### 2026-02-10T20:26:37Z
+
+- Status: completed
+- Goal: Standardize project terminology to approved canonical terms (`Primary Question`, `Sub-question`, `Question-to-Evidence Matrix`, `Entry Criteria`, `Impediment`) across active docs.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T20-26-37Z-unify-question-threading-terminology.md`
+- Outcome: Completed. Added canonical glossary in `skills/REFERENCE-STANDARD.md`, updated `deep-researcher` docs to use canonical terms in workflow and matrix templates, and normalized recent tracker wording while preserving archival plans.
+
+### 2026-02-10T20:22:23Z
+
+- Status: completed
+- Goal: Deep-research industry-standard terminology equivalents for legacy terminology and propose canonical vocabulary.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T20-22-23Z-deep-research-industry-terms-for-canonical-questions.md`
+- Outcome: Completed. Produced source-backed terminology mapping across systems engineering, agile delivery, and research methods; recommended canonical external wording and marked standard vs informal synonyms.
+
+### 2026-02-10T20:12:56Z
+
+- Status: completed
+- Goal: Run deep research on effectiveness of the proposed deep-research workflow (primary questions, sub-questions, question-to-evidence matrix, and entry criteria) before template rollout.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T20-12-56Z-research-effectiveness-of-deep-researcher-threading-approach.md`
+- Outcome: Completed. Evaluated the approach against primary sources and empirical studies; recommendation is adopt with constraints (bounded thread intake, deterministic priority gate, and mandatory coverage closure).
+
+### 2026-02-10T19:51:43Z
+
+- Status: completed
+- Goal: Audit reference structures across all skills, decide whether `usecase-skill-lessons-logs.md` is needed, and propose a unified scoring system and reference standard.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T19-51-43Z-audit-skill-references-and-unify-scoring.md`
+- Outcome: Completed. Added cross-skill `skills/REFERENCE-STANDARD.md`, normalized scoring to U5 (`1-5` + derived `low|medium|high`) across deep-researcher and skill-creator references, retained `usecase-skill-lessons-logs.md` as needed optional module, and validated both skills.
+
+### 2026-02-10T19:41:18Z
+
+- Status: completed
+- Goal: Define intake question scope and iterative clarification loop in `deep-researcher` until research readiness is reached.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T19-41-18Z-define-intake-scope-and-question-loop-for-deep-researcher.md`
+- Outcome: Completed. Added intake scope groups, an iterative clarification loop with per-round cap, readiness gate criteria, and synchronized research-method guidance.
+
+### 2026-02-10T19:33:46Z
+
+- Status: completed
+- Goal: Add starter questions and explicit invocation flow to `deep-researcher` so `$deep-researcher` begins with intake questions before research.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T19-33-46Z-add-deep-researcher-start-questions-and-usage-flow.md`
+- Outcome: Completed. Added a starter-question intake contract and explicit `$deep-researcher` usage flow, aligned default prompt metadata, and validated skill structure.
+
+### 2026-02-10T19:21:53Z
+
+- Status: completed
+- Goal: Restore `deep-researcher` as a general scientific research skill (research first, then resolve doubts), not governance-only.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T19-21-53Z-restore-deep-researcher-general-scope.md`
+- Outcome: Completed. Restored folder/name to `skills/deep-researcher`, changed workflow to research-first then doubt-resolution, and validated structure.
+
+### 2026-02-10T19:12:39Z
+
+- Status: completed
+- Goal: Rename deep research skill and run a governance recommendation for `skills/skill-creator` logs/lessons.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T19-12-39Z-rename-skill-and-run-governance-assessment.md`
+- Outcome: Completed at that time. Renamed skill to `skills/skill-governance-researcher` and recommended Option C governance for `skills/skill-creator` using centralized lessons/decision logs (later superseded by restoration to `skills/deep-researcher`).
+
+### 2026-02-10T18:51:57Z
+
+- Status: completed
+- Goal: Create a deep-research skill for evidence-backed decisions, including whether to add lessons/log artifacts to individual skills.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T18-51-57Z-create-deep-researcher-skill.md`
+- Outcome: Completed. Added `skills/deep-researcher` with workflow-driven research guidance, governance-log decision framework, and validated structure (later renamed to `skills/skill-governance-researcher`).
+
+### 2026-02-10T18:06:52Z
+
+- Status: completed
+- Goal: Create a complete `skill-creator` meta-skill with research-backed best practices and step-by-step guidance workflow.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-10T18-06-52Z-create-skill-creator-meta-skill.md`
+- Outcome: Completed. Added `skills/skill-creator` with final `SKILL.md`, `agents/openai.yaml`, split topic references, and validated structure with scenario and file checks.
+
 ### 2026-02-09T04:25:00Z
 
 - Status: completed
