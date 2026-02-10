@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Researcher"
+  short_description: "Do deep research, then resolve doubts"
+  default_prompt: "Use $deep-researcher to run iterative intake questions until research-ready, then perform deep evidence-backed research and resolve remaining doubts with confidence levels."
