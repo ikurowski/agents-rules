@@ -23,16 +23,16 @@ Rule: if a policy applies to 2+ skills without domain-specific changes, keep it 
 When a skill uses shared policy, use this exact wording pattern:
 
 1. `Apply <relative-path-to-shared-reference> for:`
-2. list imported rule capabilities as bullets.
+2. list imported section names as bullets using exact heading text and case from the referenced file.
 3. add `Local Extension (skill-specific):` only for delta behavior not covered by shared policy.
 
 Example:
 
 - `Apply ../shared/references/source-evidence-policy.md for:`
-  - source priority,
-  - citation block format,
-  - date fallback wording,
-  - conflict tie-breakers.
+  - `Source Priority`,
+  - `Citation Block Format`,
+  - `Date Handling`,
+  - `Conflict Resolution and Tie-Breakers`.
 - `Local Extension (skill-specific):`
   - if a claim remains unverifiable, state it explicitly and lower confidence.
 
@@ -41,15 +41,15 @@ Rules:
 1. Do not restate thresholds, tie-breakers, or base procedures already defined in shared references.
 2. Keep local extension delta-only; never copy full shared sections.
 3. If the same local extension appears in 2+ skills, promote it to `skills/shared/references/` and replace local copies with `Apply ...`.
-4. In any skill documentation section that imports a module, each entry must use `Apply <relative-path> for:` and list scope in bullets.
+4. In any skill documentation section that imports a module, each entry must use `Apply <relative-path> for:` and list exact source section names in bullets.
 
 ## Canonical Terminology
 
 Apply `shared/references/canonical-terminology.md` for:
 
-- canonical term definitions,
-- question decomposition operating rules,
-- decomposition-state output template.
+- `Canonical Definitions`,
+- `Minimum Operating Rules`,
+- `Output Template`.
 
 ## Required Reference Structure
 
@@ -71,8 +71,8 @@ If a section is not relevant, write `N/A` and one sentence why.
 
 Apply `shared/references/u5-scoring-bands.md` for:
 
-- canonical scale definition,
-- canonical label thresholds.
+- `Scale Definition`,
+- `Derived Label Thresholds`.
 
 Rules:
 

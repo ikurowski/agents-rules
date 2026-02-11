@@ -50,9 +50,18 @@ Use this template per finding:
 
 ## Scoring Rules
 
-Use U5 scoring and derived labels from `../../shared/references/u5-scoring-bands.md`.
+Apply `../../shared/references/u5-scoring-bands.md` for:
+
+- `Scale Definition`,
+- `Derived Label Thresholds`,
+- `Reporting Format`.
+
 Report numeric scores before labels.
 
 ## Escalation Handling
 
-If a recommended action has `risk_label == high`, use `../../shared/references/confirm-required-gate.md` before execution.
+If a recommended action has `risk_label == high`, apply `../../shared/references/confirm-required-gate.md` for:
+
+- `Confirmation Threshold`,
+- `Required Response Behavior`,
+- `Safe Fallback`.

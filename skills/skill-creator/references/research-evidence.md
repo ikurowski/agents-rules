@@ -12,10 +12,10 @@ When to load: Use when preparing step findings, citations, or conflict resolutio
 
 Apply `../../shared/references/source-evidence-policy.md` for:
 
-- source priority,
-- citation block fields (`Link`, `Date`, `Why`),
-- date fallback wording,
-- conflict tie-breakers.
+- `Source Priority`,
+- `Citation Block Format`,
+- `Date Handling`,
+- `Conflict Resolution and Tie-Breakers`.
 
 ## Skill-Creator Emphasis
 

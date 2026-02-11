@@ -26,7 +26,10 @@ Run at least these checks:
    - steps are prioritized and minimal,
    - each step has an explicit verification command or observable check.
 3. Risk gate check:
-   - high-risk actions follow `../../shared/references/confirm-required-gate.md` exactly.
+   - Apply `../../shared/references/confirm-required-gate.md` for:
+     - `Confirmation Threshold`,
+     - `Required Response Behavior`,
+     - `Safe Fallback`.
 4. Verification evidence check:
    - final report contains pass/fail evidence for implemented items.
 

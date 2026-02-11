@@ -5,6 +5,14 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-11T02:11:21Z
+
+- Status: completed
+- Goal: Enforce exact source-section naming for `Apply ... for:` imports, restore deep-researcher campaign closure flow, and remove unnecessary `canonical-terminology` imports from active skills.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T02-11-21Z-enforce-apply-section-name-matching-and-campaign-closure.md`
+- Outcome: Completed. Updated import-style standard to exact section-name matching, normalized `Apply ... for:` bullets in active skills/references, removed `canonical-terminology` imports from `deep-researcher` and `project-auditor-improver`, and added campaign closure gates for initial topics plus emergent threads in deep-researcher.
+
 ### 2026-02-11T01:40:39Z
 
 - Status: completed

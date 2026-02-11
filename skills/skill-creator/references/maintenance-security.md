@@ -30,7 +30,12 @@ Run mandatory re-validation when any of the following occurs:
 
 ## Shared Confirm-Required Risk Gate
 
-Apply `../../shared/references/confirm-required-gate.md` for risk scoring bands, confirmation threshold, and fallback behavior.
+Apply `../../shared/references/confirm-required-gate.md` for:
+
+- `Risk Scoring Scale`,
+- `Confirmation Threshold`,
+- `Required Response Behavior`,
+- `Safe Fallback`.
 
 ## Skill-Specific High-Impact Examples
 

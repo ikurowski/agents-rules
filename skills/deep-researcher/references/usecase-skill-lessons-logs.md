@@ -29,7 +29,10 @@ Option D: Full governance pack (lessons + decision log + change log)
 
 ## Decision Criteria
 
-Use `../../shared/references/u5-scoring-bands.md` for U5 scale and label mapping.
+Apply `../../shared/references/u5-scoring-bands.md` for:
+
+- `Scale Definition`,
+- `Derived Label Thresholds`.
 
 1. Operational risk of mistakes
 2. Frequency of policy/process changes
@@ -42,7 +45,7 @@ Use `../../shared/references/u5-scoring-bands.md` for U5 scale and label mapping
 Compute:
 
 - `governance_need_score = average(criteria 1-5)` (range `1.0-5.0`)
-- `governance_need_label` from the shared U5 bands in `../../shared/references/u5-scoring-bands.md`
+- `governance_need_label` from applied U5 bands above
 
 Then map to option:
 

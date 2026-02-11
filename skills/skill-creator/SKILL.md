@@ -37,10 +37,10 @@ If any required block is missing, treat the step as invalid and self-correct in 
 
 Apply `../shared/references/source-evidence-policy.md` for:
 
-- source priority,
-- citation block (`Link`, `Date`, `Why`),
-- date fallback wording,
-- conflict tie-breakers.
+- `Source Priority`,
+- `Citation Block Format`,
+- `Date Handling`,
+- `Conflict Resolution and Tie-Breakers`.
 
 Local Extension (skill-specific):
 
@@ -61,9 +61,13 @@ Use `Confirm-Required` for high-impact actions.
 Before proposing risky actions:
 
 - Apply `../shared/references/u5-scoring-bands.md` for:
-  - risk score-to-label mapping.
+  - `Scale Definition`,
+  - `Derived Label Thresholds`,
+  - `Reporting Format`.
 - Apply `../shared/references/confirm-required-gate.md` for:
-  - high-risk confirmation and fallback behavior.
+  - `Confirmation Threshold`,
+  - `Required Response Behavior`,
+  - `Safe Fallback`.
 
 ## Validation Policy
 
@@ -102,21 +106,36 @@ Keep this file focused on execution behavior.
 Load reference files only when needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
-  - cross-skill reference structure and U5 scoring policy.
+  - `Shared Rule Consumption Pattern`,
+  - `Unified Scoring Convention (U5)`.
 - Apply `../shared/references/source-evidence-policy.md` for:
-  - source priority and conflict tie-breakers.
+  - `Source Priority`,
+  - `Citation Block Format`,
+  - `Date Handling`,
+  - `Conflict Resolution and Tie-Breakers`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
-  - consistent score thresholds and labels.
+  - `Scale Definition`,
+  - `Derived Label Thresholds`,
+  - `Reporting Format`.
 - Apply `../shared/references/confirm-required-gate.md` for:
-  - high-risk confirmation behavior.
+  - `Confirmation Threshold`,
+  - `Required Response Behavior`,
+  - `Safe Fallback`.
 - Apply `../shared/references/principle-effectiveness-review.md` for:
-  - end-of-run principle effectiveness review and corrective action output.
+  - `Scoring Rules`,
+  - `Corrective Action Design`,
+  - `Output Template`,
+  - `Escalation Handling`.
 - Apply `references/research-evidence.md` for:
-  - sourcing and citation rules.
+  - `Shared Source/Evidence Policy`,
+  - `Seed Source List`.
 - Apply `references/quality-gates.md` for:
-  - scenario suite and acceptance checklist.
+  - `Scenario Suite Scope`,
+  - `Required Checks`,
+  - `Pass Criteria`.
 - Apply `references/maintenance-security.md` for:
-  - maintenance triggers and risk gates.
+  - `Re-Validation Triggers`,
+  - `Shared Confirm-Required Risk Gate`.
 
 ## Deliverables for This Skill
 

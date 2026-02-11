@@ -32,7 +32,10 @@ Use this mini-template:
 
 ## Confidence Rules (U5)
 
-Use `../../shared/references/u5-scoring-bands.md` for numeric-to-label thresholds and reporting format.
+Apply `../../shared/references/u5-scoring-bands.md` for:
+
+- `Derived Label Thresholds`,
+- `Reporting Format`.
 
 Default scoring guidance:
 

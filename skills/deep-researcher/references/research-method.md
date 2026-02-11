@@ -7,10 +7,11 @@ When to load: Use when structuring the research protocol, evidence table, and fi
 1. Protocol setup
 2. Intake readiness checklist and loop
 3. Question decomposition and scope control
-4. Source collection checklist
-5. Evidence table template
-6. Decision brief template
-7. Seed primary sources
+4. Campaign thread register and closure gate
+5. Source collection checklist
+6. Evidence table template
+7. Decision brief template
+8. Seed primary sources
 
 ## Protocol Setup
 
@@ -65,9 +66,35 @@ Minimum operating rules:
 3. Record each admitted sub-question in the `Question-to-Evidence Matrix`.
 4. Mark unresolved blockers as `Impediment` with owner and next action.
 
+## Campaign Thread Register and Closure Gate
+
+Create two registers:
+
+1. `Initial Topic Register`: start topics from the user request and intake answers.
+2. `Emergent Thread Queue`: newly discovered threads admitted during research.
+
+For each row, track:
+
+- `thread_id`,
+- `thread_type` (`initial|emergent`),
+- `status` (`open|in_progress|resolved|deferred`),
+- `admission_reason` (required for emergent threads),
+- `evidence_anchor` (source/table row ID).
+
+Closure gate:
+
+1. Final recommendation is blocked while any initial topic remains `open` or `in_progress`.
+2. Deferred threads must include reason, impact on confidence, and next validation step.
+3. Final brief must include a compact closure summary table.
+
 ## Source Collection Checklist
 
-Apply `../../shared/references/source-evidence-policy.md` for source priority, citation format, and conflict tie-breakers.
+Apply `../../shared/references/source-evidence-policy.md` for:
+
+- `Source Priority`,
+- `Citation Block Format`,
+- `Date Handling`,
+- `Conflict Resolution and Tie-Breakers`.
 
 For each key claim:
 
@@ -76,8 +103,6 @@ For each key claim:
 3. Record relevance rationale.
 4. Record limitations.
 5. Add confidence note.
-
-If the publication date is not visible, follow the exact date fallback string from `../../shared/references/source-evidence-policy.md`.
 
 ## Evidence Table Template
 
@@ -95,7 +120,9 @@ Evidence Score guidance:
 - `2`: secondary/mixed source with material gaps
 - `1`: weak or unverifiable evidence
 
-Derived label (for quick reading): use `../../shared/references/u5-scoring-bands.md`.
+Apply `../../shared/references/u5-scoring-bands.md` for:
+
+- `Derived Label Thresholds`.
 
 ## Decision Brief Template
 

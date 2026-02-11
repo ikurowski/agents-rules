@@ -29,7 +29,10 @@ Run at least these scenario types:
 3. Evidence check:
    - each material recommendation has `Link`, `Date`, and `Why`.
 4. Security check:
-   - action with `risk_label == high` follows `../../shared/references/confirm-required-gate.md` exactly.
+   - for action with `risk_label == high`, apply `../../shared/references/confirm-required-gate.md` for:
+     - `Confirmation Threshold`,
+     - `Required Response Behavior`,
+     - `Safe Fallback`.
 
 ## Pass Criteria
 

@@ -12,7 +12,11 @@ When to load: Use when scoring source quality and mapping scores to confidence.
 
 ## Shared U5 Scoring Reference
 
-Use `../../shared/references/u5-scoring-bands.md` for canonical scale, threshold bands, and score reporting format.
+Apply `../../shared/references/u5-scoring-bands.md` for:
+
+- `Scale Definition`,
+- `Derived Label Thresholds`,
+- `Reporting Format`.
 
 ## Scoring Dimensions
 

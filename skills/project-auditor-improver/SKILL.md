@@ -11,13 +11,6 @@ Run a focused repository audit and turn findings into verifiable improvements.
 
 Deliver an actionable audit report and a prioritized improvement plan that can be executed with minimal, safe changes.
 
-## Canonical Terminology
-
-Apply `../shared/references/canonical-terminology.md` for:
-
-- canonical term definitions,
-- decomposition operating rules and impediment handling.
-
 ## Workflow Contract
 
 Run this order unless the user explicitly narrows scope:
@@ -112,38 +105,61 @@ Default: reuse shared policy modules instead of redefining them locally.
 Exception: add a skill-local override only when shared guidance is insufficient for this skill's scope, and document why.
 
 - Apply `../shared/references/confirm-required-gate.md` for:
-  - risk confirmation and fallback behavior.
-- Apply `../shared/references/canonical-terminology.md` for:
-  - canonical decomposition terminology and operating rules.
+  - `Confirmation Threshold`,
+  - `Required Response Behavior`,
+  - `Safe Fallback`.
 - Apply `../shared/references/source-evidence-policy.md` for:
-  - source priority, citation fields, and conflict tie-breakers.
+  - `Source Priority`,
+  - `Citation Block Format`,
+  - `Date Handling`,
+  - `Conflict Resolution and Tie-Breakers`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
-  - U5 score-to-label mapping.
+  - `Scale Definition`,
+  - `Derived Label Thresholds`,
+  - `Reporting Format`.
 - Apply `../shared/references/principle-effectiveness-review.md` for:
-  - end-of-run principle effectiveness review and corrective action output.
+  - `Scoring Rules`,
+  - `Corrective Action Design`,
+  - `Output Template`,
+  - `Escalation Handling`.
 
 ## Progressive Disclosure
 
 Load only what is needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
-  - cross-skill reference structure and U5 reporting conventions.
-- Apply `../shared/references/canonical-terminology.md` for:
-  - canonical decomposition terminology and operating rules.
+  - `Shared Rule Consumption Pattern`,
+  - `Unified Scoring Convention (U5)`.
 - Apply `../shared/references/confirm-required-gate.md` for:
-  - risk confirmation and fallback behavior.
+  - `Confirmation Threshold`,
+  - `Required Response Behavior`,
+  - `Safe Fallback`.
 - Apply `../shared/references/source-evidence-policy.md` for:
-  - source priority, citation fields, and conflict tie-breakers.
+  - `Source Priority`,
+  - `Citation Block Format`,
+  - `Date Handling`,
+  - `Conflict Resolution and Tie-Breakers`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
-  - score-label mapping.
+  - `Scale Definition`,
+  - `Derived Label Thresholds`,
+  - `Reporting Format`.
 - Apply `../shared/references/principle-effectiveness-review.md` for:
-  - end-of-run principle effectiveness review and corrective action output.
+  - `Scoring Rules`,
+  - `Corrective Action Design`,
+  - `Output Template`,
+  - `Escalation Handling`.
 - Apply `references/audit-method.md` for:
-  - detailed audit flow and finding template.
+  - `Audit Pass Order`,
+  - `Finding Record Template`,
+  - `Scoring Rules`.
 - Apply `references/improvement-execution.md` for:
-  - execution sequencing and rollback guidance.
+  - `Prioritization Model`,
+  - `Execution Loop`,
+  - `Rollback and Recovery`.
 - Apply `references/validation-gates.md` for:
-  - acceptance checks and scenario coverage.
+  - `Scenario Suite Scope`,
+  - `Required Acceptance Checks`,
+  - `Pass/Fail Rules`.
 
 ## Deliverables for This Skill
 

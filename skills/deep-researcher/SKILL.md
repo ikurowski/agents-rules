@@ -11,13 +11,6 @@ Run structured, auditable research that ends in a clear recommendation.
 
 Deliver a decision-ready research brief, not a loose summary.
 
-## Canonical Terminology
-
-Apply `../shared/references/canonical-terminology.md` for:
-
-- canonical definitions for decomposition terms,
-- minimum operating rules for question decomposition and blockers.
-
 ## Invocation and Workflow Contract
 
 When the user invokes `$deep-researcher` (or clearly asks for deep research), run this order:
@@ -86,6 +79,32 @@ Start phase 1 only when all required fields are present:
 If any required field is missing, stay in the clarification loop.
 If optional fields are missing (owner/deadline, existing options, phase-2 doubts), continue with assumptions and mark increased uncertainty.
 
+## Campaign Closure Protocol
+
+Treat each deep-research task as a campaign with two queues:
+
+1. `Initial Topic Register`: topics explicitly present in the user's initial request and clarified intake answers.
+2. `Emergent Thread Queue`: new threads discovered during research.
+
+For both queues, track status as one of:
+
+- `open`,
+- `in_progress`,
+- `resolved`,
+- `deferred`.
+
+Admission rules:
+
+1. Add to `Initial Topic Register` if explicitly requested by the user in initial scope.
+2. Add to `Emergent Thread Queue` only when it materially affects recommendation quality or execution risk.
+3. For each admitted emergent thread, record why it was admitted.
+
+Final closure gate:
+
+1. Do not issue a final recommendation until all `Initial Topic Register` items are `resolved` or `deferred` with explicit reason.
+2. For deferred items, state impact on confidence and required next check.
+3. Include a short coverage summary in final output: topic/thread, status, and evidence anchor.
+
 ## Usage Flow (`$deep-researcher`)
 
 Use this interaction flow:
@@ -148,10 +167,10 @@ For skill-governance topics, also include:
 
 Apply `../shared/references/source-evidence-policy.md` for:
 
-- source priority,
-- citation format,
-- date fallback wording,
-- conflict tie-breakers.
+- `Source Priority`,
+- `Citation Block Format`,
+- `Date Handling`,
+- `Conflict Resolution and Tie-Breakers`.
 
 Local Extension (step-specific):
 
@@ -197,9 +216,10 @@ Require a review cadence for non-trivial decisions.
 
 Before final response, apply `../shared/references/principle-effectiveness-review.md` for:
 
-- end-stage evaluation of principle implementation effectiveness,
-- corrective actions when effectiveness is not `high`.
-- output template and escalation handling from the shared module.
+- `Scoring Rules`,
+- `Corrective Action Design`,
+- `Output Template`,
+- `Escalation Handling`.
 
 ## Optional Use Case: Skill Lessons and Logs
 
@@ -228,20 +248,35 @@ Then recommend the minimum process level that satisfies risk and learning needs.
 Load only what is needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
-  - cross-skill reference structure and U5 scoring policy.
-- Apply `../shared/references/canonical-terminology.md` for:
-  - canonical decomposition terminology and operating rules.
+  - `Shared Rule Consumption Pattern`,
+  - `Unified Scoring Convention (U5)`.
 - Apply `../shared/references/source-evidence-policy.md` for:
-  - source priority, citation blocks, and conflict tie-breakers.
+  - `Source Priority`,
+  - `Citation Block Format`,
+  - `Date Handling`,
+  - `Conflict Resolution and Tie-Breakers`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
-  - score-to-label mapping (`low|medium|high`).
+  - `Scale Definition`,
+  - `Derived Label Thresholds`,
+  - `Reporting Format`.
 - Apply `../shared/references/principle-effectiveness-review.md` for:
-  - end-of-run principle effectiveness review and corrective action output.
+  - `Scoring Rules`,
+  - `Corrective Action Design`,
+  - `Output Template`,
+  - `Escalation Handling`.
 - Apply `references/research-method.md` for:
-  - protocol and evidence table structure.
+  - `Protocol Setup`,
+  - `Campaign Thread Register and Closure Gate`,
+  - `Evidence Table Template`.
 - Apply `references/evidence-quality-rubric.md` for:
-  - scoring and confidence mapping.
+  - `Scoring Dimensions`,
+  - `Confidence Mapping`,
+  - `Conflict Handling`.
 - Apply `references/doubt-resolution.md` for:
-  - rigorous post-research doubt resolution.
+  - `Doubt Intake`,
+  - `Answer Structure`,
+  - `Escalation Rules`.
 - Apply `references/usecase-skill-lessons-logs.md` for:
-  - optional lessons/log decision templates.
+  - `Decision Criteria`,
+  - `Recommendation Rules (U5)`,
+  - `Templates`.

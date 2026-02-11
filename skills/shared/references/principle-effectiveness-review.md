@@ -23,8 +23,9 @@ Capture:
 
 Apply `./u5-scoring-bands.md` for:
 
-- score scale (`1-5`),
-- derived label (`low|medium|high`).
+- `Scale Definition`,
+- `Derived Label Thresholds`,
+- `Reporting Format`.
 
 Score each dimension on `1-5`:
 
