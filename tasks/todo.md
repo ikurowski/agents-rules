@@ -5,6 +5,22 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-11T01:16:16Z
+
+- Status: completed
+- Goal: Apply a light DRY refactor to end-of-run principle-effectiveness sections by removing duplicated output-field lists from skill docs.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-16-16Z-light-dry-refactor-principle-review-sections.md`
+- Outcome: Completed. Kept canonical output fields in shared reference and replaced duplicated per-skill lists with concise delegation to shared template/escalation handling.
+
+### 2026-02-11T01:11:16Z
+
+- Status: completed
+- Goal: Add a shared reference to all active skills so each performs end-of-run principle-effectiveness evaluation and proposes corrective actions when needed.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-11-16Z-add-principle-effectiveness-reference-to-active-skills.md`
+- Outcome: Completed. Added shared module `principle-effectiveness-review`, integrated it into end-stage workflow + Progressive Disclosure of all active skills, and normalized `Apply <path> for:` formatting where required.
+
 ### 2026-02-11T01:02:04Z
 
 - Status: completed
