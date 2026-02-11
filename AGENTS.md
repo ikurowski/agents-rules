@@ -44,6 +44,14 @@ Implement the minimum code that solves the problem and nothing speculative. Do n
 
 Touch only the code you must. When editing existing files, do not improve adjacent code, comments, or formatting unless explicitly asked. Match the existing style, even if you would do it differently. Remove only the imports or variables that your changes made unused; do not remove unrelated dead code.
 
+### Single Source of Truth
+
+Reduce duplication and policy drift by enforcing one authoritative source per rule:
+
+1. If a rule is reused across multiple locations, define one canonical source and reference it instead of restating it.
+2. In consuming docs or code, keep only context-specific deltas; do not copy baseline thresholds, tie-breakers, or base procedures.
+3. When canonical guidance changes, verify downstream references remain consistent.
+
 ### Goal-Driven Execution & Verification
 
 Define explicit success criteria and transform imperative tasks into verifiable goals. For example, instead of "fix the bug," write a failing test that reproduces the bug and then make it pass. Outline multi-step tasks as a plan with checks after each step. Continue looping until each check is satisfied. Strong success criteria let the agent work independently; weak criteria require constant clarification.

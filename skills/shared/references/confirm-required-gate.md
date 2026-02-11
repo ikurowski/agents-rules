@@ -11,25 +11,24 @@ When to load: Use before proposing or executing high-impact actions.
 
 ## Risk Scoring Scale
 
-Score risk on `1-5` and derive label:
+Use the canonical U5 scale and label thresholds from `./u5-scoring-bands.md`:
 
-- `1.0-2.4` -> `low`
-- `2.5-3.7` -> `medium`
-- `3.8-5.0` -> `high`
+- `risk_score`: numeric score on `1-5`
+- `risk_label`: derived `low|medium|high`
 
 ## Confirmation Threshold
 
-If `risk_score >= 3.8`, explicit user confirmation is required before action.
+If `risk_label == high`, explicit user confirmation is required before action.
 
 ## Required Response Behavior
 
-For `risk_score >= 3.8`:
+For `risk_label == high`:
 
 1. Explain potential impact.
 2. Ask for explicit confirmation.
 3. Do not execute until confirmation is provided.
 
-For `risk_score < 3.8`:
+For `risk_label != high`:
 
 - proceed with normal execution while still communicating risks.
 

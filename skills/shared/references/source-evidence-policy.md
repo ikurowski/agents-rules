@@ -8,7 +8,8 @@ When to load: Use when collecting sources, citing evidence, or resolving conflic
 2. Citation block format
 3. Date handling
 4. Conflict resolution and tie-breakers
-5. Escalation rule
+5. Local extension protocol
+6. Escalation rule
 
 ## Source Priority
 
@@ -47,6 +48,19 @@ Tie-breakers (in order):
 1. Product-specific source over generic guidance.
 2. Newer source over older source.
 3. Operationally testable recommendation over vague recommendation.
+
+## Local Extension Protocol
+
+When a skill needs extra evidence constraints, use:
+
+- `Apply <path-to-this-file> for:` plus imported capabilities,
+- `Local Extension (skill-specific):` only for domain deltas.
+
+Constraints:
+
+1. Do not copy or restate Source Priority, Date Handling, or Tie-Breakers blocks in skill-local docs.
+2. Keep local extension to additional checks/outputs only.
+3. If the same extension is repeated across 2+ skills, promote it into this shared file.
 
 ## Escalation Rule
 

@@ -16,6 +16,31 @@ Use shared reference modules for policies that repeat across multiple skills:
 
 Rule: if a policy applies to 2+ skills without domain-specific changes, keep it in `skills/shared/references/` and reference it from skill-local docs instead of duplicating the full text.
 
+## Shared Rule Consumption Pattern
+
+When a skill uses shared policy, use this exact wording pattern:
+
+1. `Apply <relative-path-to-shared-reference> for:`
+2. list imported rule capabilities as bullets.
+3. add `Local Extension (skill-specific):` only for delta behavior not covered by shared policy.
+
+Example:
+
+- `Apply ../shared/references/source-evidence-policy.md for:`
+  - source priority,
+  - citation block format,
+  - date fallback wording,
+  - conflict tie-breakers.
+- `Local Extension (skill-specific):`
+  - if a claim remains unverifiable, state it explicitly and lower confidence.
+
+Rules:
+
+1. Do not restate thresholds, tie-breakers, or base procedures already defined in shared references.
+2. Keep local extension delta-only; never copy full shared sections.
+3. If the same local extension appears in 2+ skills, promote it to `skills/shared/references/` and replace local copies with `Apply ...`.
+4. In any skill documentation section that imports a module, each entry must use `Apply <relative-path> for:` and list scope in bullets.
+
 ## Canonical Terminology
 
 Use these terms in active skill documentation:
@@ -44,19 +69,10 @@ If a section is not relevant, write `N/A` and one sentence why.
 
 ## Unified Scoring Convention (U5)
 
-Use one primary scale everywhere:
+Apply `shared/references/u5-scoring-bands.md` for:
 
-- `1` = very low
-- `2` = low
-- `3` = medium
-- `4` = high
-- `5` = very high
-
-Secondary labels are derived from score bands:
-
-- `low`: `1.0-2.4`
-- `medium`: `2.5-3.7`
-- `high`: `3.8-5.0`
+- canonical scale definition,
+- canonical label thresholds.
 
 Rules:
 
