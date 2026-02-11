@@ -60,8 +60,10 @@ Use `Confirm-Required` for high-impact actions.
 
 Before proposing risky actions:
 
-- Apply `../shared/references/u5-scoring-bands.md` for risk score-to-label mapping.
-- Apply `../shared/references/confirm-required-gate.md` for high-risk confirmation and fallback behavior.
+- Apply `../shared/references/u5-scoring-bands.md` for:
+  - risk score-to-label mapping.
+- Apply `../shared/references/confirm-required-gate.md` for:
+  - high-risk confirmation and fallback behavior.
 
 ## Validation Policy
 
@@ -87,6 +89,13 @@ Use strict maintenance:
   - relevant changelog updates,
   - failed evals.
 
+## End-of-Run Principle Effectiveness Review
+
+Before final completion output, apply `../shared/references/principle-effectiveness-review.md` for:
+
+- end-stage evaluation of principle implementation effectiveness,
+- corrective actions when effectiveness is not `high`.
+
 ## Progressive Disclosure
 
 Keep this file focused on execution behavior.
@@ -100,6 +109,8 @@ Load reference files only when needed:
   - consistent score thresholds and labels.
 - Apply `../shared/references/confirm-required-gate.md` for:
   - high-risk confirmation behavior.
+- Apply `../shared/references/principle-effectiveness-review.md` for:
+  - end-of-run principle effectiveness review and corrective action output.
 - Apply `references/research-evidence.md` for:
   - sourcing and citation rules.
 - Apply `references/quality-gates.md` for:
@@ -115,4 +126,5 @@ When the user asks for completion, provide:
 2. Final ready-to-use skill content.
 3. Quality and validation checklist.
 4. Short rationale for design decisions with sources.
+5. Principle-effectiveness review with corrective actions when needed.
 

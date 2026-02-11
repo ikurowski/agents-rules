@@ -13,6 +13,7 @@ Use shared reference modules for policies that repeat across multiple skills:
 - `skills/shared/references/u5-scoring-bands.md`
 - `skills/shared/references/source-evidence-policy.md`
 - `skills/shared/references/confirm-required-gate.md`
+- `skills/shared/references/principle-effectiveness-review.md`
 
 Rule: if a policy applies to 2+ skills without domain-specific changes, keep it in `skills/shared/references/` and reference it from skill-local docs instead of duplicating the full text.
 

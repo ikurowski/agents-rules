@@ -149,7 +149,12 @@ For skill-governance topics, also include:
 
 ## Step 3: Collect and Rank Evidence
 
-Apply `../shared/references/source-evidence-policy.md` for source priority, citation format, date fallback wording, and conflict tie-breakers.
+Apply `../shared/references/source-evidence-policy.md` for:
+
+- source priority,
+- citation format,
+- date fallback wording,
+- conflict tie-breakers.
 
 Local Extension (step-specific):
 
@@ -191,6 +196,14 @@ Define how to verify the recommendation after rollout:
 
 Require a review cadence for non-trivial decisions.
 
+## End-of-Run Principle Effectiveness Review
+
+Before final response, apply `../shared/references/principle-effectiveness-review.md` for:
+
+- end-stage evaluation of principle implementation effectiveness,
+- corrective actions when effectiveness is not `high`.
+- output template and escalation handling from the shared module.
+
 ## Optional Use Case: Skill Lessons and Logs
 
 When the question is "should we add lessons/log artifacts to this skill?", use:
@@ -223,6 +236,8 @@ Load only what is needed:
   - source priority, citation blocks, and conflict tie-breakers.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - score-to-label mapping (`low|medium|high`).
+- Apply `../shared/references/principle-effectiveness-review.md` for:
+  - end-of-run principle effectiveness review and corrective action output.
 - Apply `references/research-method.md` for:
   - protocol and evidence table structure.
 - Apply `references/evidence-quality-rubric.md` for:

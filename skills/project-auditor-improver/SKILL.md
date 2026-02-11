@@ -21,6 +21,7 @@ Run this order unless the user explicitly narrows scope:
 4. Improvement plan.
 5. Execution and verification.
 6. Final report with residual risks.
+7. End-of-run principle effectiveness review.
 
 If scope is unclear, ask targeted questions before step 2.
 
@@ -90,6 +91,14 @@ Return:
 
 Keep summaries concise and decision-oriented.
 
+## Step 7: End-of-Run Principle Effectiveness Review
+
+Before closing the task, apply `../shared/references/principle-effectiveness-review.md` for:
+
+- end-stage evaluation of principle implementation effectiveness,
+- corrective actions when effectiveness is not `high`.
+- output template and escalation handling from the shared module.
+
 ## Shared Policy Modules
 
 Default: reuse shared policy modules instead of redefining them locally.
@@ -101,6 +110,8 @@ Exception: add a skill-local override only when shared guidance is insufficient 
   - source priority, citation fields, and conflict tie-breakers.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - U5 score-to-label mapping.
+- Apply `../shared/references/principle-effectiveness-review.md` for:
+  - end-of-run principle effectiveness review and corrective action output.
 
 ## Progressive Disclosure
 
@@ -114,6 +125,8 @@ Load only what is needed:
   - source priority, citation fields, and conflict tie-breakers.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - score-label mapping.
+- Apply `../shared/references/principle-effectiveness-review.md` for:
+  - end-of-run principle effectiveness review and corrective action output.
 - Apply `references/audit-method.md` for:
   - detailed audit flow and finding template.
 - Apply `references/improvement-execution.md` for:
@@ -129,3 +142,4 @@ When the user asks for completion, provide:
 2. Improvement plan (minimal and prioritized).
 3. Validation checklist and outcomes.
 4. Residual risk log with recommended next steps.
+5. Principle-effectiveness review with corrective actions when needed.
