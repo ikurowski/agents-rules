@@ -149,17 +149,11 @@ For skill-governance topics, also include:
 
 ## Step 3: Collect and Rank Evidence
 
-Use source priority:
+Apply `../shared/references/source-evidence-policy.md` for source priority, citation format, date fallback wording, and conflict tie-breakers.
 
-1. Primary sources from current year where available.
-2. Older but authoritative standards/frameworks.
-3. Secondary sources only as gap fillers.
+Local Extension (step-specific):
 
-For each key claim, include:
-
-- source link,
-- publication date (or `date not published; verified on YYYY-MM-DD`),
-- one-line relevance note.
+- for each key claim, include source link and one-line relevance note.
 
 If sources conflict, compare them and explain why one is more applicable.
 
@@ -223,10 +217,17 @@ Then recommend the minimum process level that satisfies risk and learning needs.
 
 Load only what is needed:
 
-- `../REFERENCE-STANDARD.md` for cross-skill reference structure and U5 scoring.
-- `../shared/references/source-evidence-policy.md` for source priority, citation blocks, and conflict tie-breakers.
-- `../shared/references/u5-scoring-bands.md` for score-to-label mapping (`low|medium|high`).
-- `references/research-method.md` for protocol and evidence table structure.
-- `references/evidence-quality-rubric.md` for scoring and confidence mapping.
-- `references/doubt-resolution.md` for answering post-research doubts rigorously.
-- `references/usecase-skill-lessons-logs.md` for optional lessons/log decision templates.
+- Apply `../REFERENCE-STANDARD.md` for:
+  - cross-skill reference structure and U5 scoring policy.
+- Apply `../shared/references/source-evidence-policy.md` for:
+  - source priority, citation blocks, and conflict tie-breakers.
+- Apply `../shared/references/u5-scoring-bands.md` for:
+  - score-to-label mapping (`low|medium|high`).
+- Apply `references/research-method.md` for:
+  - protocol and evidence table structure.
+- Apply `references/evidence-quality-rubric.md` for:
+  - scoring and confidence mapping.
+- Apply `references/doubt-resolution.md` for:
+  - rigorous post-research doubt resolution.
+- Apply `references/usecase-skill-lessons-logs.md` for:
+  - optional lessons/log decision templates.

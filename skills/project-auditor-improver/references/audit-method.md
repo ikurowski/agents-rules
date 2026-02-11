@@ -55,4 +55,4 @@ Report numeric scores before labels.
 
 ## Escalation Handling
 
-If a recommended action has `risk_score >= 3.8`, use `../../shared/references/confirm-required-gate.md` before execution.
+If a recommended action has `risk_label == high`, use `../../shared/references/confirm-required-gate.md` before execution.

@@ -29,7 +29,7 @@ Run at least these scenario types:
 3. Evidence check:
    - each material recommendation has `Link`, `Date`, and `Why`.
 4. Security check:
-   - action with `risk_score >= 3.8` requires explicit confirmation.
+   - action with `risk_label == high` follows `../../shared/references/confirm-required-gate.md` exactly.
 
 ## Pass Criteria
 

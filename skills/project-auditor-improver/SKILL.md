@@ -95,19 +95,28 @@ Keep summaries concise and decision-oriented.
 Default: reuse shared policy modules instead of redefining them locally.
 Exception: add a skill-local override only when shared guidance is insufficient for this skill's scope, and document why.
 
-- Risk confirmation and fallback behavior: `../shared/references/confirm-required-gate.md`
-- Source priority, citation fields, and conflict tie-breakers: `../shared/references/source-evidence-policy.md`
-- U5 score-to-label mapping: `../shared/references/u5-scoring-bands.md`
+- Apply `../shared/references/confirm-required-gate.md` for risk confirmation and fallback behavior.
+- Apply `../shared/references/source-evidence-policy.md` for source priority, citation fields, and conflict tie-breakers.
+- Apply `../shared/references/u5-scoring-bands.md` for U5 score-to-label mapping.
 
 ## Progressive Disclosure
 
 Load only what is needed:
 
-- `../REFERENCE-STANDARD.md` for cross-skill reference structure and U5 reporting conventions.
-- Shared policy modules above for risk, evidence, and score-label mapping.
-- `references/audit-method.md` for detailed audit flow and finding template.
-- `references/improvement-execution.md` for execution sequencing and rollback guidance.
-- `references/validation-gates.md` for acceptance checks and scenario coverage.
+- Apply `../REFERENCE-STANDARD.md` for:
+  - cross-skill reference structure and U5 reporting conventions.
+- Apply `../shared/references/confirm-required-gate.md` for:
+  - risk confirmation and fallback behavior.
+- Apply `../shared/references/source-evidence-policy.md` for:
+  - source priority, citation fields, and conflict tie-breakers.
+- Apply `../shared/references/u5-scoring-bands.md` for:
+  - score-label mapping.
+- Apply `references/audit-method.md` for:
+  - detailed audit flow and finding template.
+- Apply `references/improvement-execution.md` for:
+  - execution sequencing and rollback guidance.
+- Apply `references/validation-gates.md` for:
+  - acceptance checks and scenario coverage.
 
 ## Deliverables for This Skill
 

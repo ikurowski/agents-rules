@@ -30,7 +30,7 @@ Run mandatory re-validation when any of the following occurs:
 
 ## Shared Confirm-Required Risk Gate
 
-Use `../../shared/references/confirm-required-gate.md` for risk scoring bands, confirmation threshold, and fallback behavior.
+Apply `../../shared/references/confirm-required-gate.md` for risk scoring bands, confirmation threshold, and fallback behavior.
 
 ## Skill-Specific High-Impact Examples
 
@@ -40,4 +40,6 @@ High-impact examples:
 - broad repository rewrites,
 - privileged integrations or external writes.
 
-Fallback handling is inherited from `../../shared/references/confirm-required-gate.md`.
+Local Extension (skill-specific):
+
+- high-impact examples above define when to invoke the shared gate in this skill context.

@@ -35,22 +35,16 @@ If any required block is missing, treat the step as invalid and self-correct in 
 
 ## Evidence Policy
 
-Use the `Standard` evidence strictness:
+Apply `../shared/references/source-evidence-policy.md` for:
 
-- For every material recommendation, include:
-  - source link,
-  - publication date,
-  - short relevance rationale.
-- If publication date is unavailable, write:
-  - `date not published; verified on YYYY-MM-DD`.
-- If sources conflict, include a brief comparison and justify the chosen direction.
-- If something cannot be verified, state that explicitly.
+- source priority,
+- citation block (`Link`, `Date`, `Why`),
+- date fallback wording,
+- conflict tie-breakers.
 
-Prioritize sources in this order:
+Local Extension (skill-specific):
 
-1. Current-year primary sources.
-2. Older primary sources only when still necessary.
-3. Avoid secondary commentary unless no primary source exists.
+- if something cannot be verified, state that explicitly.
 
 ## Language Policy
 
@@ -64,16 +58,10 @@ Use adaptive language:
 
 Use `Confirm-Required` for high-impact actions.
 
-Before proposing risky actions, score risk on `1-5` and derive label (`low|medium|high`):
+Before proposing risky actions:
 
-- `1.0-2.4` -> `low`
-- `2.5-3.7` -> `medium`
-- `3.8-5.0` -> `high`
-
-For risk score `>= 3.8`:
-
-- require explicit user confirmation before execution,
-- provide a safe fallback if no confirmation is given.
+- Apply `../shared/references/u5-scoring-bands.md` for risk score-to-label mapping.
+- Apply `../shared/references/confirm-required-gate.md` for high-risk confirmation and fallback behavior.
 
 ## Validation Policy
 
@@ -104,13 +92,20 @@ Use strict maintenance:
 Keep this file focused on execution behavior.
 Load reference files only when needed:
 
-- `../REFERENCE-STANDARD.md` for cross-skill reference structure and U5 scoring.
-- `../shared/references/source-evidence-policy.md` for source priority and conflict tie-breakers.
-- `../shared/references/u5-scoring-bands.md` for consistent score thresholds and labels.
-- `../shared/references/confirm-required-gate.md` for high-risk confirmation behavior.
-- `references/research-evidence.md` for sourcing and citation rules.
-- `references/quality-gates.md` for scenario suite and acceptance checklist.
-- `references/maintenance-security.md` for maintenance triggers and risk gates.
+- Apply `../REFERENCE-STANDARD.md` for:
+  - cross-skill reference structure and U5 scoring policy.
+- Apply `../shared/references/source-evidence-policy.md` for:
+  - source priority and conflict tie-breakers.
+- Apply `../shared/references/u5-scoring-bands.md` for:
+  - consistent score thresholds and labels.
+- Apply `../shared/references/confirm-required-gate.md` for:
+  - high-risk confirmation behavior.
+- Apply `references/research-evidence.md` for:
+  - sourcing and citation rules.
+- Apply `references/quality-gates.md` for:
+  - scenario suite and acceptance checklist.
+- Apply `references/maintenance-security.md` for:
+  - maintenance triggers and risk gates.
 
 ## Deliverables for This Skill
 

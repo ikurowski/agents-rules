@@ -10,7 +10,7 @@ When to load: Use when preparing step findings, citations, or conflict resolutio
 
 ## Shared Source/Evidence Policy
 
-Use `../../shared/references/source-evidence-policy.md` for:
+Apply `../../shared/references/source-evidence-policy.md` for:
 
 - source priority,
 - citation block fields (`Link`, `Date`, `Why`),
