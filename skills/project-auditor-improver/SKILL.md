@@ -11,6 +11,13 @@ Run a focused repository audit and turn findings into verifiable improvements.
 
 Deliver an actionable audit report and a prioritized improvement plan that can be executed with minimal, safe changes.
 
+## Canonical Terminology
+
+Apply `../shared/references/canonical-terminology.md` for:
+
+- canonical term definitions,
+- decomposition operating rules and impediment handling.
+
 ## Workflow Contract
 
 Run this order unless the user explicitly narrows scope:
@@ -29,7 +36,7 @@ If scope is unclear, ask targeted questions before step 2.
 
 Capture:
 
-- Primary Question (what to audit/improve),
+- `Primary Question` (what to audit/improve),
 - in-scope and out-of-scope areas,
 - constraints (time, risk tolerance, change budget),
 - expected output format.
@@ -106,6 +113,8 @@ Exception: add a skill-local override only when shared guidance is insufficient 
 
 - Apply `../shared/references/confirm-required-gate.md` for:
   - risk confirmation and fallback behavior.
+- Apply `../shared/references/canonical-terminology.md` for:
+  - canonical decomposition terminology and operating rules.
 - Apply `../shared/references/source-evidence-policy.md` for:
   - source priority, citation fields, and conflict tie-breakers.
 - Apply `../shared/references/u5-scoring-bands.md` for:
@@ -119,6 +128,8 @@ Load only what is needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
   - cross-skill reference structure and U5 reporting conventions.
+- Apply `../shared/references/canonical-terminology.md` for:
+  - canonical decomposition terminology and operating rules.
 - Apply `../shared/references/confirm-required-gate.md` for:
   - risk confirmation and fallback behavior.
 - Apply `../shared/references/source-evidence-policy.md` for:

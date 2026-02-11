@@ -62,3 +62,10 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I optimized for immediate fix locality instead of preserving one precise, global consumption rule style._
 - Fix: _I replaced the exception with one general module-consumption rule and rewrote the U5 canonical pointer to `Apply ... for:` with scoped bullets._
 - Prevention rule: _When defining a standard rule, prefer one globally applicable formulation and keep directive syntax consistent with the chosen canonical pattern._
+
+- Timestamp: 2026-02-11T01:34:30Z
+- Context: _The user asked to use `project-auditor-improver` for an audit of `Primary Question` usage, and I initially edited the skill file itself._
+- Mistake: _I treated a "use this skill for X" request as a skill-authoring task instead of executing the skill workflow against the requested audit target._
+- Root cause: _I over-indexed on the file path mention and underweighted the explicit intent verb ("use the skill for audit")._
+- Fix: _I reverted the unintended edits and ran a proper repository audit with findings, scoring, and improvement plan._
+- Prevention rule: _When the user asks to use a named skill for a task, execute that skill's workflow first; only edit the skill definition if the user explicitly asks to change the skill._

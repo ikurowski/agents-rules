@@ -13,13 +13,10 @@ Deliver a decision-ready research brief, not a loose summary.
 
 ## Canonical Terminology
 
-Use the project-standard names for question decomposition and scope control:
+Apply `../shared/references/canonical-terminology.md` for:
 
-- `Primary Question`: the top-level decision/research question.
-- `Sub-question`: a decomposed follow-up question required to resolve the primary question.
-- `Question-to-Evidence Matrix`: mapping from questions to collected evidence.
-- `Entry Criteria`: explicit rule for admitting a new sub-question into current scope.
-- `Impediment`: blocker that prevents progress and requires explicit mitigation.
+- canonical definitions for decomposition terms,
+- minimum operating rules for question decomposition and blockers.
 
 ## Invocation and Workflow Contract
 
@@ -232,6 +229,8 @@ Load only what is needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
   - cross-skill reference structure and U5 scoring policy.
+- Apply `../shared/references/canonical-terminology.md` for:
+  - canonical decomposition terminology and operating rules.
 - Apply `../shared/references/source-evidence-policy.md` for:
   - source priority, citation blocks, and conflict tie-breakers.
 - Apply `../shared/references/u5-scoring-bands.md` for:

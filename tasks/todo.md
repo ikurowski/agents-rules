@@ -5,6 +5,30 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-11T01:40:39Z
+
+- Status: completed
+- Goal: Add a shared canonical-terminology module and integrate it into standards/skills to reduce duplicated term definitions.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-40-39Z-add-shared-canonical-terminology-module.md`
+- Outcome: Completed. Added shared module `skills/shared/references/canonical-terminology.md`, rewired `skills/REFERENCE-STANDARD.md` to consume it as canonical source, and integrated imports in `deep-researcher` and `project-auditor-improver` skills.
+
+### 2026-02-11T01:30:42Z
+
+- Status: completed
+- Goal: Audit all reference docs and normalize shared-reference imports to canonical `Apply <relative-path> for:` format.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-30-42Z-normalize-shared-import-style-in-references.md`
+- Outcome: Completed. Updated 8 reference files to canonical import syntax, including the flagged `research-method.md` line, and verified no remaining non-canonical shared-reference import lines.
+
+### 2026-02-11T01:26:56Z
+
+- Status: completed
+- Goal: Audit repository usage quality of canonical `Primary Question` terminology using `project-auditor-improver` workflow and produce ranked findings + improvement plan.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-26-56Z-audit-primary-question-usage.md`
+- Outcome: Completed. Found one medium-high priority gap in `project-auditor-improver` canonical-term operationalization and two lower-priority alignment issues; produced a minimal low-risk improvement sequence with concrete validation checks.
+
 ### 2026-02-11T01:16:16Z
 
 - Status: completed

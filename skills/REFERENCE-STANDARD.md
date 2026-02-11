@@ -10,6 +10,7 @@ Keep references consistent across skills so they are easier to load, compare, an
 
 Use shared reference modules for policies that repeat across multiple skills:
 
+- `skills/shared/references/canonical-terminology.md`
 - `skills/shared/references/u5-scoring-bands.md`
 - `skills/shared/references/source-evidence-policy.md`
 - `skills/shared/references/confirm-required-gate.md`
@@ -44,13 +45,11 @@ Rules:
 
 ## Canonical Terminology
 
-Use these terms in active skill documentation:
+Apply `shared/references/canonical-terminology.md` for:
 
-- `Primary Question`: main decision or research question.
-- `Sub-question`: decomposed follow-up question needed to answer the primary question.
-- `Question-to-Evidence Matrix`: mapping from each question/sub-question to supporting evidence.
-- `Entry Criteria`: explicit rule that determines whether a new sub-question enters current scope.
-- `Impediment`: blocker that prevents progress and requires explicit handling.
+- canonical term definitions,
+- question decomposition operating rules,
+- decomposition-state output template.
 
 ## Required Reference Structure
 
