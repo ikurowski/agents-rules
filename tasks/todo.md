@@ -5,6 +5,46 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-11T01:02:04Z
+
+- Status: completed
+- Goal: Split pending documentation changes into atomic commits and align `skills/project-auditor-improver/SKILL.md` with active `Apply ... for:` rule style.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T01-02-04Z-split-commits-and-align-project-auditor-skill.md`
+- Outcome: Completed. Created three atomic commits for policy/skill updates, then added a focused `project-auditor-improver` commit to normalize shared-module blocks to `Apply <path> for:` with scoped bullets.
+
+### 2026-02-11T00:49:14Z
+
+- Status: completed
+- Goal: Generalize anti-duplication policy in `AGENTS.md` and enforce `Apply <path> for:` in active skill `Progressive Disclosure` sections.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T00-49-14Z-generalize-anti-duplication-and-enforce-apply-format.md`
+- Outcome: Completed. Replaced skill-specific anti-duplication rule with a generic single-source-of-truth policy, added explicit Progressive Disclosure formatting enforcement in `skills/REFERENCE-STANDARD.md`, and normalized Progressive Disclosure entries in active skill files to `Apply <path> for:` format.
+
+### 2026-02-11T00:26:16Z
+
+- Status: completed
+- Goal: Add a reusable `Apply ...` + local-extension mechanism for shared rules and align active skill steps to it.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T00-26-16Z-add-apply-and-extension-mechanism-for-shared-rules.md`
+- Outcome: Completed. Added a canonical `Apply ... for` + `Local Extension` protocol in `skills/REFERENCE-STANDARD.md`, added extension constraints to `source-evidence-policy`, and aligned active skill docs to consume shared rules without duplicating base policy text.
+
+### 2026-02-11T00:13:31Z
+
+- Status: completed
+- Goal: Analyze project skills for remaining duplication patterns similar to shared-policy drift and remove harmful duplicates.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T00-13-31Z-audit-similar-duplications-across-project-skills.md`
+- Outcome: Completed. Removed drift-prone duplication in four skill docs by replacing copied thresholds/source-order rules with canonical shared references; standardized high-risk gate checks to `risk_label == high`.
+
+### 2026-02-11T00:01:20Z
+
+- Status: completed
+- Goal: Audit local skills against `agentskills/agentskills` `skills-ref` reference validator and report conformance gaps.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T00-01-20Z-audit-local-skills-against-agentskills-skills-ref.md`
+- Outcome: Completed. Cloned `agentskills/agentskills`, installed `skills-ref` in isolated `.tmp` venv, and validated local standalone skills (`deep-researcher`, `skill-creator`, `project-auditor-improver`) as compliant; confirmed `skills/shared` is intentionally non-skill (no `SKILL.md`).
+
 ### 2026-02-10T23:39:09Z
 
 - Status: completed

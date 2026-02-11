@@ -48,3 +48,17 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I optimized for one example use case (governance logs) and underweighted the user's primary capability request._
 - Fix: _I restored the skill to `deep-researcher`, rewrote workflow to "research first, then resolve doubts," and kept governance as optional use case only._
 - Prevention rule: _When a user gives one example use case, preserve a broad core capability unless they explicitly request specialization._
+
+- Timestamp: 2026-02-11T00:52:02Z
+- Context: _I proposed a top-level anti-duplication rule using skill-specific wording in `AGENTS.md`._
+- Mistake: _I encoded a repository-wide principle too narrowly to one domain (`skills/*`)._
+- Root cause: _I reused immediate local context from skill docs instead of preserving policy abstraction level in root governance rules._
+- Fix: _I replaced the section with a generic single-source-of-truth rule and moved skill-specific enforcement details to skill standards._
+- Prevention rule: _When editing root governance policy (`AGENTS.md`), keep rules domain-agnostic unless the user explicitly asks for domain-specific scoping._
+
+- Timestamp: 2026-02-11T00:57:57Z
+- Context: _I added section-specific enforcement wording in `skills/REFERENCE-STANDARD.md` and mixed directive style in a canonical pointer._
+- Mistake: _I introduced an unnecessary section exception (`Progressive Disclosure`) and used `Use ...` where the active pattern should be `Apply ... for:`._
+- Root cause: _I optimized for immediate fix locality instead of preserving one precise, global consumption rule style._
+- Fix: _I replaced the exception with one general module-consumption rule and rewrote the U5 canonical pointer to `Apply ... for:` with scoped bullets._
+- Prevention rule: _When defining a standard rule, prefer one globally applicable formulation and keep directive syntax consistent with the chosen canonical pattern._
