@@ -95,9 +95,12 @@ Keep summaries concise and decision-oriented.
 Default: reuse shared policy modules instead of redefining them locally.
 Exception: add a skill-local override only when shared guidance is insufficient for this skill's scope, and document why.
 
-- Apply `../shared/references/confirm-required-gate.md` for risk confirmation and fallback behavior.
-- Apply `../shared/references/source-evidence-policy.md` for source priority, citation fields, and conflict tie-breakers.
-- Apply `../shared/references/u5-scoring-bands.md` for U5 score-to-label mapping.
+- Apply `../shared/references/confirm-required-gate.md` for:
+  - risk confirmation and fallback behavior.
+- Apply `../shared/references/source-evidence-policy.md` for:
+  - source priority, citation fields, and conflict tie-breakers.
+- Apply `../shared/references/u5-scoring-bands.md` for:
+  - U5 score-to-label mapping.
 
 ## Progressive Disclosure
 
