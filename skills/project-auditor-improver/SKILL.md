@@ -15,15 +15,26 @@ Deliver an actionable audit report and a prioritized improvement plan that can b
 
 Run this order unless the user explicitly narrows scope:
 
-1. Intake and scope lock.
-2. Baseline audit.
-3. Findings triage.
-4. Improvement plan.
-5. Execution and verification.
-6. Final report with residual risks.
-7. End-of-run principle effectiveness review.
+1. Campaign initialization.
+2. Intake and scope lock.
+3. Baseline audit.
+4. Findings triage.
+5. Improvement plan.
+6. Execution and verification.
+7. Final report with residual risks.
+8. End-of-run principle effectiveness review.
 
 If scope is unclear, ask targeted questions before step 2.
+
+## Campaign Initialization (Invoke-Time)
+
+At invocation, initialize:
+
+1. one `Primary Question` for the audit objective,
+2. `Sub-question` register for audit sub-questions/findings threads,
+3. `Question-to-Evidence Matrix` scaffold for evidence closure.
+
+For narrow audits with one thread, use only `Sub-question-1`.
 
 ## Step 1: Intake and Scope Lock
 
@@ -113,6 +124,14 @@ Exception: add a skill-local override only when shared guidance is insufficient 
   - `Citation Block Format`,
   - `Date Handling`,
   - `Conflict Resolution and Tie-Breakers`.
+- Apply `../shared/references/research-campaign-model.md` for:
+  - `Canonical Terms`,
+  - `Primary Question Frame`,
+  - `Sub-question Register`,
+  - `Question-to-Evidence Matrix`,
+  - `Entry Criteria for Emergent Sub-questions`,
+  - `Depth Cap`,
+  - `Completion Definition`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - `Scale Definition`,
   - `Derived Label Thresholds`,
@@ -139,6 +158,14 @@ Load only what is needed:
   - `Citation Block Format`,
   - `Date Handling`,
   - `Conflict Resolution and Tie-Breakers`.
+- Apply `../shared/references/research-campaign-model.md` for:
+  - `Canonical Terms`,
+  - `Primary Question Frame`,
+  - `Sub-question Register`,
+  - `Question-to-Evidence Matrix`,
+  - `Entry Criteria for Emergent Sub-questions`,
+  - `Depth Cap`,
+  - `Completion Definition`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - `Scale Definition`,
   - `Derived Label Thresholds`,

@@ -68,24 +68,21 @@ Minimum operating rules:
 
 ## Campaign Thread Register and Closure Gate
 
-Create two registers:
+Apply `../../shared/references/research-campaign-model.md` for:
 
-1. `Initial Topic Register`: start topics from the user request and intake answers.
-2. `Emergent Thread Queue`: newly discovered threads admitted during research.
+- `Canonical Terms`,
+- `Primary Question Frame`,
+- `Sub-question Register`,
+- `Question-to-Evidence Matrix`,
+- `Entry Criteria for Emergent Sub-questions`,
+- `Depth Cap`,
+- `Completion Definition`.
 
-For each row, track:
+Operational notes:
 
-- `thread_id`,
-- `thread_type` (`initial|emergent`),
-- `status` (`open|in_progress|resolved|deferred`),
-- `admission_reason` (required for emergent threads),
-- `evidence_anchor` (source/table row ID).
-
-Closure gate:
-
-1. Final recommendation is blocked while any initial topic remains `open` or `in_progress`.
-2. Deferred threads must include reason, impact on confidence, and next validation step.
-3. Final brief must include a compact closure summary table.
+1. Use `Sub-question-*` IDs in all campaign tables.
+2. Keep one `Primary Question` per campaign.
+3. Mark blockers as `Impediment` and reflect them in closure status.
 
 ## Source Collection Checklist
 

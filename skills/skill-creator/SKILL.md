@@ -11,13 +11,24 @@ Build or update skills through a strict, decision-by-decision workflow.
 
 Follow this exact loop until the skill is complete:
 
-1. Research and synthesize the current best practices for the active step.
-2. Ask exactly one decision question.
-3. Wait for the user answer.
-4. Update the working specification after each answer.
-5. Move to the next step.
+1. Campaign initialization.
+2. Research and synthesize the current best practices for the active step.
+3. Ask exactly one decision question.
+4. Wait for the user answer.
+5. Update the working specification after each answer.
+6. Move to the next step.
 
 Never batch multiple questions in one step.
+
+## Campaign Initialization (Invoke-Time)
+
+At invocation, initialize:
+
+1. one `Primary Question` for the skill-design objective,
+2. `Sub-question` register for step-wise decision threads,
+3. `Question-to-Evidence Matrix` scaffold to map each decision thread to evidence.
+
+If only one decision thread exists, keep `Sub-question-1` only.
 
 ## Required Step Output
 
@@ -113,6 +124,14 @@ Load reference files only when needed:
   - `Citation Block Format`,
   - `Date Handling`,
   - `Conflict Resolution and Tie-Breakers`.
+- Apply `../shared/references/research-campaign-model.md` for:
+  - `Canonical Terms`,
+  - `Primary Question Frame`,
+  - `Sub-question Register`,
+  - `Question-to-Evidence Matrix`,
+  - `Entry Criteria for Emergent Sub-questions`,
+  - `Depth Cap`,
+  - `Completion Definition`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - `Scale Definition`,
   - `Derived Label Thresholds`,

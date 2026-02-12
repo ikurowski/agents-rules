@@ -5,6 +5,46 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-12T15:47:32Z
+
+- Status: completed
+- Goal: Close terminology/campaign consistency audit gaps (mandatory model-loading semantics, auditable shorthand-removal plan evidence, and anti-dangling-reference commit guidance).
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T15-47-32Z-close-terminology-campaign-consistency-audit.md`
+- Outcome: Completed. Aligned mandatory campaign-model loading semantics, improved shorthand-removal plan audit evidence with deterministic scans, added explicit staging rule in `AGENTS.md`, and verified naming/shorthand/path integrity plus skill validators.
+
+### 2026-02-12T15:28:02Z
+
+- Status: completed
+- Goal: Remove canonical-term shorthand (`Primary Question`, `Sub-question`, `Question-to-Evidence Matrix`, `Entry Criteria`, `Impediment`) from the whole project and keep only full canonical terms.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T15-28-02Z-remove-canonical-term-shorthand-project-wide.md`
+- Outcome: Completed. Replaced canonical-term shorthand usages across project markdown docs and kept full canonical names only.
+
+### 2026-02-11T02:46:02Z
+
+- Status: completed
+- Goal: Make `research-campaign-model` mandatory at invoke time across active skills and remove conditional phrasing from standards.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T02-46-02Z-mandate-campaign-model-on-skill-invocation.md`
+- Outcome: Completed. Replaced conditional campaign wording in `skills/REFERENCE-STANDARD.md` with mandatory invoke-time rule and added explicit campaign initialization in `deep-researcher`, `project-auditor-improver`, and `skill-creator`.
+
+### 2026-02-11T02:36:16Z
+
+- Status: completed
+- Goal: Canonicalize Deep-Researcher campaign model in one shared source and replace ambiguous shorthand for initial/emergent sub-questions with canonical terms.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T02-36-16Z-canonicalize-campaign-model-and-shorthand.md`
+- Outcome: Completed. Extracted campaign decomposition to shared module `skills/shared/references/research-campaign-model.md`, rewired `_template.md` and `deep-researcher` docs to consume it, and replaced ambiguous shorthand with canonical terms (`Primary Question`, `Sub-question`, `Question-to-Evidence Matrix`, `Entry Criteria`, `Impediment`).
+
+### 2026-02-11T02:29:36Z
+
+- Status: completed
+- Goal: Promote Deep-Researcher Campaign model into ExecPlan standard with explicit `Primary Question`, sub-question tracking, and `Coverage Matrix` closure rules.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-11T02-29-36Z-promote-deep-researcher-campaign-model-to-execplan.md`
+- Outcome: Completed. Embedded the Deep-Researcher Campaign model directly in `tasks/plans/_template.md` with `Seed Questions`, `Derived Threads`, unified campaign register, `Coverage Matrix`, entry criteria (`Blocking=yes` or `Priority>=3.8`), `Primary Question -> Sub-question` depth cap, and explicit completion definition; aligned `deep-researcher` skill docs to the same rules.
+
 ### 2026-02-11T02:11:21Z
 
 - Status: completed
@@ -194,7 +234,7 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 - Goal: Rename deep research skill and run a governance recommendation for `skills/skill-creator` logs/lessons.
 - Owner: agent
 - ExecPlan: `tasks/plans/2026-02-10T19-12-39Z-rename-skill-and-run-governance-assessment.md`
-- Outcome: Completed at that time. Renamed skill to `skills/skill-governance-researcher` and recommended Option C governance for `skills/skill-creator` using centralized lessons/decision logs (later superseded by restoration to `skills/deep-researcher`).
+- Outcome: Completed at that time. Renamed skill to skills/skill-governance-researcher and recommended Option C governance for `skills/skill-creator` using centralized lessons/decision logs (later superseded by restoration to `skills/deep-researcher`).
 
 ### 2026-02-10T18:51:57Z
 
@@ -202,7 +242,7 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 - Goal: Create a deep-research skill for evidence-backed decisions, including whether to add lessons/log artifacts to individual skills.
 - Owner: agent
 - ExecPlan: `tasks/plans/2026-02-10T18-51-57Z-create-deep-researcher-skill.md`
-- Outcome: Completed. Added `skills/deep-researcher` with workflow-driven research guidance, governance-log decision framework, and validated structure (later renamed to `skills/skill-governance-researcher`).
+- Outcome: Completed. Added `skills/deep-researcher` with workflow-driven research guidance, governance-log decision framework, and validated structure (later renamed to skills/skill-governance-researcher).
 
 ### 2026-02-10T18:06:52Z
 

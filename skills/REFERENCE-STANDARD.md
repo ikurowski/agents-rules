@@ -11,6 +11,7 @@ Keep references consistent across skills so they are easier to load, compare, an
 Use shared reference modules for policies that repeat across multiple skills:
 
 - `skills/shared/references/canonical-terminology.md`
+- `skills/shared/references/research-campaign-model.md`
 - `skills/shared/references/u5-scoring-bands.md`
 - `skills/shared/references/source-evidence-policy.md`
 - `skills/shared/references/confirm-required-gate.md`
@@ -50,6 +51,22 @@ Apply `shared/references/canonical-terminology.md` for:
 - `Canonical Definitions`,
 - `Minimum Operating Rules`,
 - `Output Template`.
+
+On skill invocation, apply `shared/references/research-campaign-model.md` for campaign decomposition and closure tracking in every research/decision task:
+
+- `Canonical Terms`,
+- `Primary Question Frame`,
+- `Sub-question Register`,
+- `Question-to-Evidence Matrix`,
+- `Entry Criteria for Emergent Sub-questions`,
+- `Depth Cap`,
+- `Completion Definition`.
+
+Mandatory invocation rule:
+
+1. Active skills must initialize `Primary Question`, `Sub-question` register, and `Question-to-Evidence Matrix` at invocation time.
+2. For tasks that are effectively single-question, use one `Sub-question-1` and close it in the same run.
+3. This rule is semantically identical to `When to load` in `shared/references/research-campaign-model.md` and does not allow conditional loading for research/decision tasks.
 
 ## Required Reference Structure
 

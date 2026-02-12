@@ -69,3 +69,24 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I over-indexed on the file path mention and underweighted the explicit intent verb ("use the skill for audit")._
 - Fix: _I reverted the unintended edits and ran a proper repository audit with findings, scoring, and improvement plan._
 - Prevention rule: _When the user asks to use a named skill for a task, execute that skill's workflow first; only edit the skill definition if the user explicitly asks to change the skill._
+
+- Timestamp: 2026-02-11T02:31:41Z
+- Context: _I had implemented campaign-like behavior in deep-research docs but not fully elevated the exact initial/emergent sub-question and `Coverage Matrix` model into the ExecPlan template._
+- Mistake: _I stopped at partial alignment and missed full structural enforcement in the planning standard._
+- Root cause: _I focused on local skill wording before codifying the model at the repository-level execution template where closure behavior is enforced._
+- Fix: _I added the full Deep-Researcher Campaign structure to `tasks/plans/_template.md` and synchronized `deep-researcher` docs with explicit entry gate, depth cap, and completion criteria._
+- Prevention rule: _When the user asks to "promote a model" into project workflow, implement it first in the canonical template/policy layer, then align skill-local docs._
+
+- Timestamp: 2026-02-11T02:38:21Z
+- Context: _Campaign decomposition used local shorthand for initial/emergent sub-questions that conflicted with canonical-term expectations and caused ambiguity._
+- Mistake: _I introduced shorthand that was not derived from canonical terminology, reducing clarity across docs._
+- Root cause: _I optimized for quick thread labeling and underweighted consistency with canonical vocabulary._
+- Fix: _I extracted the model into shared `research-campaign-model` and standardized shorthand to canonical-derived forms (`Primary Question`, `Sub-question`, `Question-to-Evidence Matrix`, `Entry Criteria`, `Impediment`)._
+- Prevention rule: _When introducing abbreviations in standards/workflows, derive them directly from canonical terms and centralize their definition in one shared source before reuse._
+
+- Timestamp: 2026-02-12T15:29:48Z
+- Context: _User asked to remove canonical-term shorthand project-wide after previous iterations introduced acronym-like tokens._
+- Mistake: _I retained shorthand aliases in multiple docs, creating inconsistency with the user's preferred plain canonical naming._
+- Root cause: _I optimized for compact notation despite explicit user preference for full canonical terms._
+- Fix: _I removed shorthand tokens from markdown docs across the project and kept full canonical names only._
+- Prevention rule: _When a user rejects terminology shorthand, enforce the full-term form globally and verify with repository-wide token scan._

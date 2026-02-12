@@ -47,6 +47,22 @@ For research/decision tasks, define and use canonical terms:
 
 If the task is not research/decision-oriented, write `N/A` and one sentence why.
 
+For research/decision tasks, apply `skills/shared/references/research-campaign-model.md` for:
+
+- `Canonical Terms`,
+- `Primary Question Frame`,
+- `Sub-question Register`,
+- `Question-to-Evidence Matrix`,
+- `Entry Criteria for Emergent Sub-questions`,
+- `Depth Cap`,
+- `Completion Definition`.
+
+Then include in the plan at minimum:
+
+1. one populated `Primary Question` line,
+2. one populated `Sub-question Register` table with `Sub-question-*` IDs,
+3. one populated `Question-to-Evidence Matrix` with no missing `Sub-question-*` rows.
+
 ## Plan of Work
 
 Describe, in prose, the sequence of edits and additions. Name exact files and locations (function/module/section) and what will change.

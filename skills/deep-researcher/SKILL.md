@@ -15,11 +15,22 @@ Deliver a decision-ready research brief, not a loose summary.
 
 When the user invokes `$deep-researcher` (or clearly asks for deep research), run this order:
 
-1. Starter-intake step.
-2. Research phase.
-3. Doubt-resolution phase.
+1. Initialize campaign model.
+2. Starter-intake step.
+3. Research phase.
+4. Doubt-resolution phase.
 
 Never jump directly to final recommendations before completing starter intake and phase 1.
+
+## Campaign Initialization (Invoke-Time)
+
+At invocation, initialize:
+
+1. one `Primary Question`,
+2. `Sub-question` register (start with `Sub-question-1`),
+3. `Question-to-Evidence Matrix` scaffold.
+
+If the task is single-question, keep only `Sub-question-1` and close it in the same run.
 
 ## Starter-Intake Step
 
@@ -81,29 +92,21 @@ If optional fields are missing (owner/deadline, existing options, phase-2 doubts
 
 ## Campaign Closure Protocol
 
-Treat each deep-research task as a campaign with two queues:
+Apply `../shared/references/research-campaign-model.md` for:
 
-1. `Initial Topic Register`: topics explicitly present in the user's initial request and clarified intake answers.
-2. `Emergent Thread Queue`: new threads discovered during research.
+- `Canonical Terms`,
+- `Primary Question Frame`,
+- `Sub-question Register`,
+- `Question-to-Evidence Matrix`,
+- `Entry Criteria for Emergent Sub-questions`,
+- `Depth Cap`,
+- `Completion Definition`.
 
-For both queues, track status as one of:
+Execution notes:
 
-- `open`,
-- `in_progress`,
-- `resolved`,
-- `deferred`.
-
-Admission rules:
-
-1. Add to `Initial Topic Register` if explicitly requested by the user in initial scope.
-2. Add to `Emergent Thread Queue` only when it materially affects recommendation quality or execution risk.
-3. For each admitted emergent thread, record why it was admitted.
-
-Final closure gate:
-
-1. Do not issue a final recommendation until all `Initial Topic Register` items are `resolved` or `deferred` with explicit reason.
-2. For deferred items, state impact on confidence and required next check.
-3. Include a short coverage summary in final output: topic/thread, status, and evidence anchor.
+1. Keep one `Primary Question` and track all decomposition items as `Sub-question-*`.
+2. Use `Question-to-Evidence Matrix` for closure reporting in final output.
+3. Escalate unresolved blockers using `Impediment` notation.
 
 ## Usage Flow (`$deep-researcher`)
 
@@ -138,7 +141,7 @@ After phase 1, answer user doubts directly:
 
 Capture:
 
-- primary decision question,
+- `Primary Question`,
 - scope boundaries,
 - decision owner and constraints (time, cost, risk tolerance),
 - what success and failure look like.
@@ -255,6 +258,13 @@ Load only what is needed:
   - `Citation Block Format`,
   - `Date Handling`,
   - `Conflict Resolution and Tie-Breakers`.
+- Apply `../shared/references/research-campaign-model.md` for:
+  - `Canonical Terms`,
+  - `Sub-question Register`,
+  - `Question-to-Evidence Matrix`,
+  - `Entry Criteria for Emergent Sub-questions`,
+  - `Depth Cap`,
+  - `Completion Definition`.
 - Apply `../shared/references/u5-scoring-bands.md` for:
   - `Scale Definition`,
   - `Derived Label Thresholds`,
