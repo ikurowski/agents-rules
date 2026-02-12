@@ -11,3 +11,10 @@ Thumbs.db
 # Local secrets
 .env
 .env.*
+
+# Node / build artifacts
+node_modules/
+dist/
+artifacts/
+generated/
+.eslintcache

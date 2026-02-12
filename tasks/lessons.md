@@ -90,3 +90,17 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I optimized for compact notation despite explicit user preference for full canonical terms._
 - Fix: _I removed shorthand tokens from markdown docs across the project and kept full canonical names only._
 - Prevention rule: _When a user rejects terminology shorthand, enforce the full-term form globally and verify with repository-wide token scan._
+
+- Timestamp: 2026-02-12T22:05:40Z
+- Context: _I expanded the contract pipeline with checksum-specific custom logic and additional command surface._
+- Mistake: _I introduced custom mechanisms with low practical value for the repo's core goal, increasing cognitive/maintenance overhead._
+- Root cause: _I optimized for strict integrity signaling instead of first validating the user's simplicity threshold._
+- Fix: _I removed checksum-specific gate/modules/script, kept the pipeline focused on core schema/semantic/compatibility/parity checks, and standardized Zod command naming to one canonical path._
+- Prevention rule: _Default to the simplest architecture that satisfies explicit user goals; add custom gates/helpers only when their operational value is clearly higher than maintenance cost._
+
+- Timestamp: 2026-02-12T22:48:40Z
+- Context: _User asked to clean the workspace further and emphasized avoiding multiple sources of truth across AGENTS and skills._
+- Mistake: _I initially left too much temporary runtime implementation in the tree after rollback/rebuild cycles._
+- Root cause: _I optimized for preserving a runnable harness instead of prioritizing clean handoff for a fresh session._
+- Fix: _I removed additional temporary runtime artifacts, kept only baseline tooling, and produced a dedicated large prompt that enforces explicit single-SoT mapping to AGENTS/PLANS/skills shared references._
+- Prevention rule: _When user requests a fresh-session handoff, prefer a clean baseline and a precise execution prompt over retaining transitional runtime artifacts._

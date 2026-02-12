@@ -5,6 +5,78 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-12T22:45:28Z
+
+- Status: completed
+- Goal: Remove additional temporary implementation artifacts and prepare a large single-SoT prompt for a fresh session.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T22-45-28Z-cleanup-more-and-prepare-single-sot-session-prompt.md`
+- Outcome: Completed. Removed additional temporary runtime files, normalized package scripts for baseline quality stack, preserved `tsconfig.json` and `.prettierrc.json`, and delivered a large ready-to-paste prompt enforcing single source of truth in `tasks/prompts/new-session-single-sot-rebuild.md`.
+
+### 2026-02-12T22:29:16Z
+
+- Status: completed
+- Goal: Roll back contracts pipeline and rebuild minimal agent flow harness from scratch with canonical CLI and Mermaid flow diagrams.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T22-29-16Z-rollback-contracts-and-rebuild-agent-flow.md`
+- Outcome: Completed. Removed contracts schemas/instances/runtime and rebuilt a minimal harness-style agent flow (`intake -> plan -> execute -> verify -> report`) with canonical CLI (`run`), updated quality CI, added Mermaid diagrams, and verified `format/lint/typecheck/test/agent:flow:smoke/ci` all pass.
+
+### 2026-02-12T22:03:27Z
+
+- Status: completed
+- Goal: Simplify contracts pipeline by removing checksum overhead and unify Zod command naming to one clear convention.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T22-03-27Z-simplify-contract-pipeline-and-command-naming.md`
+- Outcome: Completed. Removed checksum-specific gate/modules/script to reduce custom overhead, standardized CLI to one Zod command (`zod:adapters`) with one handler naming pattern, aligned CI/docs/scripts, and verified `format/lint/typecheck/test/contracts:ci` all pass.
+
+### 2026-02-12T22:58:10Z
+
+- Status: completed
+- Goal: Run `project-auditor-improver` repository audit, rank findings by impact/risk, and implement a minimal verified improvement.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T21-55-35Z-audit-repository-quality-and-apply-minimal-improvements.md`
+- Outcome: Completed. Ranked findings with U5 scoring, added missing unit-test CI gate (`npm run test`), aligned architecture pipeline documentation, and verified `test` plus `contracts:ci` pass.
+
+### 2026-02-12T21:40:25Z
+
+- Status: completed
+- Goal: Clarify contract architecture, replace placeholder checksums, normalize naming conventions, and expand JSDoc coverage in `src/`.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T21-40-25Z-clarify-contract-architecture-and-modernize-naming-jsdoc.md`
+- Outcome: Completed. Replaced placeholder checksums with deterministic SHA-256 values, added checksum semantic gate and sync command, normalized naming to `create/generate/run` (with `zod:build` backward alias), expanded JSDoc coverage across public APIs, updated architecture docs with folder map + agent flow, and verified `format/lint/typecheck/test/contracts:ci` all pass.
+
+### 2026-02-12T19:26:18Z
+
+- Status: completed
+- Goal: Refactor source quality/tooling with strict ESLint + Prettier integration, modern TypeScript standards, and modular architecture.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T19-26-18Z-refactor-tooling-and-architecture-quality-pipeline.md`
+- Outcome: Completed. Added strict lint/format stack, modularized `src/` into architecture-driven layers, introduced stable `runContractsCli` interface, added regression tests, and verified lint/typecheck/test/contracts CI all pass.
+
+### 2026-02-12T18:55:57Z
+
+- Status: completed
+- Goal: Remove markdown projection from the contract pipeline and keep architecture focused on AI conversation contract quality.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T18-55-57Z-remove-markdown-projection-and-focus-contract-pipeline.md`
+- Outcome: Completed. Removed projection scripts/workflow/code/files, updated architecture docs and ignore rules, and verified passing `npx tsc --noEmit` and `npm run contracts:ci`.
+
+### 2026-02-12T18:33:47Z
+
+- Status: completed
+- Goal: Implement hybrid architecture (`JSON Schema SoT + Zod adapter + one-way markdown projection`) with CI gates, contract validation, and generated projections.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T18-33-47Z-implement-hybrid-contract-pipeline.md`
+- Outcome: Completed. Added Node/TypeScript contract toolchain, canonical schemas/instances, AJV + semantic + compatibility gates, build-time Zod adapter/parity checks, markdown projection with drift verification, CI workflow, and architecture documentation with passing `contracts:ci`.
+
+### 2026-02-12T17:18:17Z
+
+- Status: completed
+- Goal: Run deep research and issue a verdict on operational source of truth for terminology enforcement (`MD-only` vs `TS-objects` vs `Hybrid`) using primary sources.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-12T17-18-17Z-research-operational-source-terminology-enforcement.md`
+- Outcome: Completed. Produced source-backed comparison across six criteria, delivered clear verdict (`Hybrid`), defined migration `Entry Criteria`, listed key `Impediment` risks with mitigations, and provided 30/60/90 rollout metrics.
+
 ### 2026-02-12T15:47:32Z
 
 - Status: completed
