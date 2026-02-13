@@ -1,4 +1,0 @@
-interface:
-  display_name: "Skill Creator"
-  short_description: "Design or update skills with quality gates"
-  default_prompt: "Use $skill-creator to design a new skill step by step with evidence-backed decisions."
