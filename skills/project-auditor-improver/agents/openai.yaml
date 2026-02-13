@@ -1,4 +1,0 @@
-interface:
-  display_name: "Project Auditor Improver"
-  short_description: "Audit repo quality and deliver prioritized upgrades"
-  default_prompt: "Use $project-auditor-improver to audit this project, rank findings by impact/risk, and produce a minimal verified improvement plan."
