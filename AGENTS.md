@@ -44,6 +44,10 @@ Implement the minimum code that solves the problem and nothing speculative. Do n
 
 Touch only the code you must. When editing existing files, do not improve adjacent code, comments, or formatting unless explicitly asked. Match the existing style, even if you would do it differently. Remove only the imports or variables that your changes made unused; do not remove unrelated dead code.
 
+### API Contract Rules
+
+`docs/jsdoc-contract.md` is the single source of truth for JSDoc contracts on exported APIs. Do not duplicate those rules in `AGENTS.md`.
+
 ### Single Source of Truth
 
 Reduce duplication and policy drift by enforcing one authoritative source per rule:
@@ -63,20 +67,6 @@ Do not apply temporary fixes. Always investigate and address the root cause of a
 ### Continuous Learning
 
 After a significant correction from the user, record the mistake and its fix in `tasks/lessons.md`. A correction is significant when it adds or changes a reusable prevention rule that is likely to apply in future tasks (not a one-off wording preference). Review these lessons at the beginning of each session to avoid repeating past errors.
-
-### Proactive Rule Suggestions
-
-If the agent notices a recurring pattern where a new rule would likely improve clarity, reliability, or speed, it should proactively propose adding that rule. Treat "recurring pattern" as at least two occurrences within the last five completed tasks.
-
-Each proposal must include:
-
-1. Observation (what repeated issue/opportunity was seen).
-2. Draft rule (one clear sentence).
-3. Expected benefit.
-4. Trade-off or risk.
-5. Target location (`AGENTS.md`, `PLANS.md`, `README.md`, or `tasks/lessons.md`).
-
-The agent should propose the rule, not enforce it, unless the user approves.
 
 ## Workflow Orchestration
 
