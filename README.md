@@ -27,5 +27,7 @@ Repository for managing agent operating rules and work history.
 ## Quality Gates
 
 - Full gate pipeline: `npm run ci`
+- JSDoc contract check (exported executable APIs): `npm run jsdoc:check`
+- Skills declarative-only boundary check: `npm run skills:declarative:check`
 - Skills + workflow validation only: `npm run skills:validate`
 - Contract boundary check only: `npm run contracts:check`

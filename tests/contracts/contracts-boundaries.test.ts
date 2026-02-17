@@ -4,6 +4,7 @@ import {
   AgentWorkflowInputSchema,
   AgentWorkflowReportSchema,
   ProblemDetailsSchema,
+  ResearchCampaignSummarySchema,
   WorkflowSpecSchema,
 } from '../../src/contracts/index.js';
 import {readDefaultSourceOfTruthPaths} from '../../src/runtime/io/source-of-truth-paths.js';
@@ -56,5 +57,20 @@ describe('contracts boundaries', () => {
     });
 
     expect(parsed.steps).toHaveLength(1);
+  });
+
+  test('parses research campaign summary schema', () => {
+    const parsed = ResearchCampaignSummarySchema.parse({
+      primary_question: 'Should we adopt this cleanup plan?',
+      sub_questions: ['What is the rollback risk?', 'What is the CI impact?'],
+      entry_criteria: 'Include when risk impact is material.',
+      impediments: [],
+      question_to_evidence_matrix: {
+        kind: 'summary',
+        value: 'All sub-questions mapped to command evidence.',
+      },
+    });
+
+    expect(parsed.sub_questions).toHaveLength(2);
   });
 });

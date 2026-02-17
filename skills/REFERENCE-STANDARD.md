@@ -10,7 +10,6 @@ Keep references consistent across skills so they are easier to load, compare, an
 
 Use shared reference modules for policies that repeat across multiple skills:
 
-- `skills/shared/references/canonical-terminology.md`
 - `skills/shared/references/research-campaign-model.md`
 - `skills/shared/references/five-point-scoring-bands.md`
 - `skills/shared/references/source-evidence-policy.md`
@@ -44,15 +43,9 @@ Rules:
 3. If the same local extension appears in 2+ skills, promote it to `skills/shared/references/` and replace local copies with `Apply ...`.
 4. In any skill documentation section that imports a module, each entry must use `Apply <relative-path> for:` and list exact source section names in bullets.
 
-## Canonical Terminology
+## Campaign Terminology and Decomposition
 
-Apply `shared/references/canonical-terminology.md` for:
-
-- `Canonical Definitions`,
-- `Minimum Operating Rules`,
-- `Output Template`.
-
-On skill invocation, apply `shared/references/research-campaign-model.md` for campaign decomposition and closure tracking in every research/decision task:
+On skill invocation, apply `shared/references/research-campaign-model.md` for canonical terminology, campaign decomposition, and closure tracking in every research/decision task:
 
 - `Canonical Terms`,
 - `Primary Question Frame`,
@@ -67,6 +60,11 @@ Mandatory invocation rule:
 1. Active skills must initialize `Primary Question`, `Sub-question` register, and `Question-to-Evidence Matrix` at invocation time.
 2. For tasks that are effectively single-question, use one `Sub-question-1` and close it in the same run.
 3. This rule is semantically identical to `When to load` in `shared/references/research-campaign-model.md` and does not allow conditional loading for research/decision tasks.
+
+Typed summary contract:
+
+- For machine-readable campaign summary output, use `src/contracts/skills/research-campaign-summary.schema.ts`.
+- Do not restate field names in policy docs; use the schema as the single source of truth.
 
 ## Required Reference Structure
 
@@ -93,6 +91,7 @@ Rules:
 1. `skills/*` is declarative-only. Do not add `.ts` or `.js` runtime scripts in skill directories.
 2. Workflow spec files are validated by repository gates and treated as source-of-truth inputs.
 3. Executable parsing/validation logic lives in `src/skills-engine`, not in `skills/*`.
+4. Declarative-only boundary is automatically enforced by `npm run skills:declarative:check`.
 
 ## Unified Five-Point Scoring Convention
 

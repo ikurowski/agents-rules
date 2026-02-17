@@ -41,3 +41,12 @@ export type {SkillDocument} from './skills/skill-document.schema.js';
 
 export {WorkflowSpecSchema, WorkflowSpecStepSchema} from './skills/workflow-spec.schema.js';
 export type {WorkflowSpec, WorkflowSpecStep} from './skills/workflow-spec.schema.js';
+
+export {
+  ResearchCampaignMatrixReferenceSchema,
+  ResearchCampaignSummarySchema,
+} from './skills/research-campaign-summary.schema.js';
+export type {
+  ResearchCampaignMatrixReference,
+  ResearchCampaignSummary,
+} from './skills/research-campaign-summary.schema.js';

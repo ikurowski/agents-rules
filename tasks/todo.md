@@ -5,6 +5,14 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-17T23:49:51Z
+
+- Status: completed
+- Goal: Execute approved cleanup stages 1+2+3 with anti-drift enforcement and typed campaign summary contract.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-17T23-49-51Z-cleanup-stage-1-2-3-and-typed-campaign-contract.md`
+- Outcome: Completed. Removed low-value artifacts (`agents/openai.yaml`, stale scorecard, optional deep-research use-case reference, redundant skill workflow YAML files), consolidated campaign terminology into one shared model, added typed campaign summary contract schema, introduced new gates (`jsdoc:check`, `skills:declarative:check`), added remote CI workflow (`.github/workflows/ci.yml`), and verified full pipeline with `npm run ci`.
+
 ### 2026-02-17T17:49:53Z
 
 - Status: completed

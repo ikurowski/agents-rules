@@ -1,4 +1,0 @@
-interface:
-  display_name: "JSDoc Reviewer"
-  short_description: "Audit and fix exported API JSDoc contracts"
-  default_prompt: "Use $jsdoc-reviewer to audit exported API comments against docs/standards/jsdoc-api-contracts.md and patch missing contract fields when requested."

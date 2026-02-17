@@ -11,6 +11,7 @@ When to load: Load at invocation time for every research/decision task. For non-
 5. Entry criteria for emergent sub-questions
 6. Depth cap
 7. Completion definition
+8. Typed summary contract
 
 ## Canonical Terms
 
@@ -97,4 +98,12 @@ Mark task `completed` only when:
 1. every `Sub-question-*` is `resolved` or explicitly `deferred` with rationale,
 2. every `Sub-question-*` has a decision (`answered`, `include-now`, `next-task`, or `drop`),
 3. `Question-to-Evidence Matrix` has no unresolved gaps.
+
+## Typed Summary Contract
+
+For machine-readable summary output, validate against the repository schema and treat it as the only canonical field definition.
+
+Repository schema source of truth:
+
+- `src/contracts/skills/research-campaign-summary.schema.ts`
 

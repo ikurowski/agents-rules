@@ -74,3 +74,4 @@ JSDoc MUST NOT include:
 1. Keep normative rules in this file only (SSOT).
 2. `AGENTS.md` and other docs should point here, not duplicate full rules.
 3. Operational execution flow (audit/fix workflow) lives in `skills/jsdoc-reviewer`.
+4. Automated enforcement for exported executable APIs runs via `npm run jsdoc:check`.

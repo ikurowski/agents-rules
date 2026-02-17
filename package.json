@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
     "agent:workflow:run": "tsx src/cli/run-agent-workflow-cli.ts",
-    "agent:workflow:smoke": "tsx src/cli/run-agent-workflow-cli.ts --prompt \"smoke run\"",
+    "jsdoc:check": "tsx src/cli/check-jsdoc-contracts-cli.ts",
+    "skills:declarative:check": "tsx src/cli/check-skills-declarative-cli.ts",
     "contracts:check": "tsx src/cli/check-contracts-cli.ts",
     "skills:validate": "tsx src/cli/validate-skills-cli.ts",
     "docs:map:check": "tsx src/cli/check-docs-map-cli.ts",
@@ -22,7 +23,7 @@
     "evals:run": "tsx src/cli/run-evals-cli.ts",
     "idempotency:check": "tsx src/cli/check-idempotency-cli.ts",
     "security:agent": "tsx src/cli/check-security-agent-cli.ts",
-    "ci": "npm run typecheck && npm run lint && npm run test && npm run contracts:check && npm run skills:validate && npm run docs:map:check && npm run harness:protocol:check && npm run evals:run && npm run idempotency:check && npm run security:agent"
+    "ci": "npm run typecheck && npm run lint && npm run test && npm run jsdoc:check && npm run skills:declarative:check && npm run contracts:check && npm run skills:validate && npm run docs:map:check && npm run harness:protocol:check && npm run evals:run && npm run idempotency:check && npm run security:agent"
   },
   "dependencies": {
     "yaml": "^2.8.1",

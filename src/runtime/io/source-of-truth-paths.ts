@@ -10,7 +10,6 @@ export const DEFAULT_SOURCE_OF_TRUTH_PATHS: SourceOfTruthPaths = {
   lessonsPath: 'tasks/lessons.md',
   skillStandardPath: 'skills/REFERENCE-STANDARD.md',
   sharedReferencePaths: [
-    'skills/shared/references/canonical-terminology.md',
     'skills/shared/references/research-campaign-model.md',
     'skills/shared/references/five-point-scoring-bands.md',
     'skills/shared/references/source-evidence-policy.md',
