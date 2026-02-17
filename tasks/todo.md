@@ -5,6 +5,22 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-17T17:49:53Z
+
+- Status: completed
+- Goal: Implement approved Rev2 harness architecture (Balanced-Lite, single runtime) with Zod contracts, harness layer, skills validators, docs map, eval scaffolding, and CI gates.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-17T17-49-53Z-implement-rev2-harness-architecture.md`
+- Outcome: Completed. Introduced Rev2 structure (`contracts/harness/runtime/skills-engine`), added declarative `skills/*/workflow/*.yaml`, expanded docs SoR map/standards, and verified full pipeline (`typecheck/lint/test/contracts:check/skills:validate/docs:map:check/harness:protocol:check/evals:run/idempotency:check/security:agent/ci`).
+
+### 2026-02-17T16:13:44Z
+
+- Status: completed
+- Goal: Run `workflow-evaluator` skill end-to-end and produce a reproducible workflow ease scorecard artifact.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-17T16-13-44Z-run-workflow-evaluator-skill.md`
+- Outcome: Completed. Executed happy/retry/governance scenarios plus `typecheck/lint/test`, produced `evals/reports/agent-workflow-ease-scorecard.md`, and rated workflow ease `4.9/5 (high)`.
+
 ### 2026-02-14T10:45:36Z
 
 - Status: completed

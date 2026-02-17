@@ -1,0 +1,25 @@
+{
+  "scenarios": [
+    {
+      "id": "happy-path",
+      "prompt": "eval happy path",
+      "expectedStatus": "completed",
+      "expectRetry": false,
+      "expectEscalation": false
+    },
+    {
+      "id": "retry-path",
+      "prompt": "eval retry [simulate-execute-transient-failure]",
+      "expectedStatus": "completed",
+      "expectRetry": true,
+      "expectEscalation": false
+    },
+    {
+      "id": "governance-failure",
+      "prompt": "eval governance [simulate-governance-threshold-low]",
+      "expectedStatus": "failed",
+      "expectRetry": false,
+      "expectEscalation": true
+    }
+  ]
+}

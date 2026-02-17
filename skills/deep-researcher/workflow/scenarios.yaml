@@ -1,0 +1,10 @@
+name: deep-researcher-scenarios
+version: "1.0.0"
+goal: Define smoke scenarios for deep-research skill behavior.
+steps:
+  - id: single-question
+    description: Validate one-sub-question flow closure.
+    gate: closure-complete
+  - id: emergent-thread
+    description: Validate emergent sub-question entry criteria handling.
+    gate: entry-criteria-enforced

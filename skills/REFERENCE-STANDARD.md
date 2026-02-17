@@ -84,6 +84,16 @@ Each `references/*.md` file should include:
 
 If a section is not relevant, write `N/A` and one sentence why.
 
+## Skill Workflow Specs
+
+Each executable skill directory may include declarative workflow specs under `workflow/*.yaml`.
+
+Rules:
+
+1. `skills/*` is declarative-only. Do not add `.ts` or `.js` runtime scripts in skill directories.
+2. Workflow spec files are validated by repository gates and treated as source-of-truth inputs.
+3. Executable parsing/validation logic lives in `src/skills-engine`, not in `skills/*`.
+
 ## Unified Five-Point Scoring Convention
 
 Apply `shared/references/five-point-scoring-bands.md` for:

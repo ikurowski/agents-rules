@@ -1,15 +1,32 @@
 import {pathToFileURL} from 'node:url';
 
-import {generateAgentWorkflowReport} from '../agent-workflow/generate-agent-workflow-report.js';
-import {readProblemDetailsFromUnknown, runAgentWorkflow} from '../agent-workflow/run-agent-workflow.js';
-import {readDefaultSourceOfTruthPaths} from '../agent-workflow/source-of-truth-paths.js';
+import {ZodError} from 'zod';
 
-import type {AgentWorkflowInput, SourceOfTruthPaths} from '../agent-workflow/types.js';
+import {AgentWorkflowInputSchema} from '../contracts/index.js';
+import {runHarnessLoop} from '../harness/loop/run-agent-loop.js';
+import {readDefaultSourceOfTruthPaths} from '../runtime/io/source-of-truth-paths.js';
+import {readProblemDetailsFromUnknown} from '../runtime/orchestrator/run-agent-workflow.js';
+import {generateAgentWorkflowReport} from '../runtime/reporting/generate-agent-workflow-report.js';
+
+import type {AgentWorkflowInput, ProblemDetails, SourceOfTruthPaths} from '../contracts/index.js';
+
+class AgentWorkflowCliInputError extends Error {}
+
+const readCliInputProblemDetails = (detail: string): ProblemDetails => {
+  return {
+    type: 'https://agent-workflow/errors/input-invalid',
+    status: 400,
+    title: 'Invalid workflow input',
+    detail,
+    code: 'input_invalid_cli',
+    instance: new Date().toISOString(),
+  };
+};
 
 const readOptionValue = (argv: string[], optionIndex: number, optionName: string): string => {
   const optionValue = argv[optionIndex + 1];
   if (optionValue === undefined || optionValue.startsWith('--')) {
-    throw new Error(`Missing value for ${optionName}.`);
+    throw new AgentWorkflowCliInputError(`Missing value for ${optionName}.`);
   }
 
   return optionValue;
@@ -31,18 +48,6 @@ const readSourceOfTruthOptionKey = (
 
 /**
  * Parses CLI arguments into workflow input contract with optional path overrides.
- *
- * Preconditions:
- * - `argv` is the argument list without node/script entries.
- *
- * Postconditions:
- * - Returns AgentWorkflowInput with resolved defaults and user overrides.
- *
- * Side effects:
- * - None.
- *
- * Error semantics:
- * - Throws on missing `--prompt`, unknown options, or missing option values.
  */
 export const parseAgentWorkflowCliInput = (argv: string[]): AgentWorkflowInput => {
   let prompt: string | undefined;
@@ -75,27 +80,18 @@ export const parseAgentWorkflowCliInput = (argv: string[]): AgentWorkflowInput =
       continue;
     }
 
-    throw new Error(`Unknown option: ${argument}`);
+    throw new AgentWorkflowCliInputError(`Unknown option: ${argument}`);
   }
 
   if (prompt === undefined) {
-    throw new Error('Missing required --prompt option.');
+    throw new AgentWorkflowCliInputError('Missing required --prompt option.');
   }
 
-  return {prompt, sourceOfTruthPaths};
+  return AgentWorkflowInputSchema.parse({prompt, sourceOfTruthPaths});
 };
 
 /**
  * Reads CLI input by delegating to parser with deterministic defaults.
- *
- * Preconditions:
- * - `argv` contains raw CLI tokens.
- *
- * Postconditions:
- * - Returns parsed workflow input contract.
- *
- * Side effects:
- * - None.
  */
 export const readAgentWorkflowCliInput = (argv: string[]): AgentWorkflowInput => {
   return parseAgentWorkflowCliInput(argv);
@@ -103,28 +99,21 @@ export const readAgentWorkflowCliInput = (argv: string[]): AgentWorkflowInput =>
 
 /**
  * Runs workflow CLI orchestration and returns process exit code.
- *
- * Preconditions:
- * - `argv` is valid CLI token array.
- *
- * Postconditions:
- * - Prints machine-readable report JSON and returns `0` on completion, `1` on failure.
- *
- * Side effects:
- * - Reads source-of-truth files through workflow execution and writes output to stdout/stderr.
- *
- * Error semantics:
- * - Emits machine-readable ProblemDetails JSON to stderr for unexpected errors.
  */
 export const runAgentWorkflowCli = async (argv: string[]): Promise<number> => {
   try {
     const workflowInput = readAgentWorkflowCliInput(argv);
-    const workflowReport = await runAgentWorkflow(workflowInput);
-    const reportOutput = generateAgentWorkflowReport(workflowReport);
+    const harnessResult = await runHarnessLoop(workflowInput);
+    const reportOutput = generateAgentWorkflowReport(harnessResult.response.payload);
     console.log(reportOutput);
-    return workflowReport.status === 'completed' ? 0 : 1;
+    return harnessResult.response.payload.status === 'completed' ? 0 : 1;
   } catch (error: unknown) {
-    const problemDetails = readProblemDetailsFromUnknown(error);
+    const problemDetails =
+      error instanceof AgentWorkflowCliInputError
+        ? readCliInputProblemDetails(error.message)
+        : error instanceof ZodError
+          ? readCliInputProblemDetails(error.issues.map((issue) => issue.message).join('; '))
+          : readProblemDetailsFromUnknown(error);
     console.error(JSON.stringify(problemDetails, null, 2));
     return 1;
   }

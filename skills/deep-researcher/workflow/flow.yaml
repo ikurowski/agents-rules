@@ -1,0 +1,16 @@
+name: deep-researcher-flow
+version: "1.0.0"
+goal: Ensure deep-research workflow follows intake, research, and doubt-resolution phases.
+steps:
+  - id: initialize-campaign
+    description: Initialize Primary Question and Sub-question register.
+    gate: campaign-initialized
+  - id: intake-loop
+    description: Run missing-context intake until readiness gate passes.
+    gate: research-ready
+  - id: research-phase
+    description: Collect and compare evidence before recommendation.
+    gate: evidence-collected
+  - id: doubt-resolution
+    description: Resolve follow-up doubts with confidence labels.
+    gate: doubts-resolved

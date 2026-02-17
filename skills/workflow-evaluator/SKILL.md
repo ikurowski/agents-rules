@@ -111,7 +111,7 @@ Write one report artifact containing:
 5. `overall_ease_score` and `overall_ease_label`,
 6. short recommendations (max 5).
 
-Use user-provided output path when given; otherwise default to `governance/eval/agent-workflow-ease-scorecard.md`.
+Use user-provided output path when given; otherwise default to `evals/reports/agent-workflow-ease-scorecard.md`.
 
 ## Step 7: End-of-Run Principle Effectiveness Review
 
@@ -193,7 +193,7 @@ Load only what is needed:
   - `Scorecard Assembly`.
 - Apply `references/validation-gates.md` for:
   - `Required Commands`,
-  - `Pass/Fail Rules`,
+  - `Quality Gate Acceptance`,
   - `Escalation Conditions`.
 
 ## Deliverables for This Skill

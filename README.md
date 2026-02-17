@@ -6,6 +6,13 @@ Repository for managing agent operating rules and work history.
 
 - `AGENTS.md` - hard rules for agents.
 - `PLANS.md` - strict self-contained ExecPlan standard for non-trivial tasks.
+- `docs/` - architecture and standards source-of-reference map.
+- `src/contracts/` - Zod contracts for runtime and skills boundaries.
+- `src/harness/` - harness loop/protocol/context/observability layer.
+- `src/runtime/` - deterministic workflow runtime orchestration.
+- `src/skills-engine/` - declarative skill parser/validators.
+- `skills/*` - declarative skill definitions and references (no runtime scripts).
+- `evals/` - evaluation scenarios and reports.
 - `tasks/todo.md` - high-level task tracker (status/goal/plan link/outcome).
 - `tasks/plans/*` - executable plans for complex tasks.
 - `tasks/lessons.md` - lessons captured for significant corrections with reusable prevention rules.
@@ -17,47 +24,8 @@ Repository for managing agent operating rules and work history.
 - ExecPlan structure and required sections: `PLANS.md`
 - Active/high-level task tracking: `tasks/todo.md`
 
-## Reuse in another project
+## Quality Gates
 
-Copy these files to the root of your target repository:
-
-- `AGENTS.md`
-- `PLANS.md`
-- `tasks/` (including `todo.md`, `lessons.md`, `plans/`)
-
-PowerShell quick start from the target repo root:
-
-```powershell
-Copy-Item C:\Users\igork\Desktop\agent\AGENTS.md .
-Copy-Item C:\Users\igork\Desktop\agent\PLANS.md .
-Copy-Item C:\Users\igork\Desktop\agent\tasks . -Recurse
-```
-
-After copying, commit these files in the target repo and the agent will follow these rules there.
-
-## Start (local)
-
-```powershell
-git init
-git add .
-git commit -m "Initial commit: agent rules and task tracking"
-```
-
-## Publish to GitHub
-
-Option with GitHub CLI (`gh`):
-
-```powershell
-gh repo create <REPO_NAME> --public --source=. --remote=origin --push
-```
-
-Option without `gh`:
-
-1. Create an empty repository on GitHub.
-2. Add remote and push:
-
-```powershell
-git remote add origin https://github.com/<USER>/<REPO_NAME>.git
-git branch -M main
-git push -u origin main
-```
+- Full gate pipeline: `npm run ci`
+- Skills + workflow validation only: `npm run skills:validate`
+- Contract boundary check only: `npm run contracts:check`

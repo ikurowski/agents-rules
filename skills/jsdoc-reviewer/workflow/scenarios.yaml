@@ -1,0 +1,13 @@
+name: jsdoc-reviewer-scenarios
+version: "1.0.0"
+goal: Define deterministic review scenarios for JSDoc contract checks.
+steps:
+  - id: review-only
+    description: Produce findings without code changes.
+    gate: review-only-complete
+  - id: review-and-fix
+    description: Produce findings and apply JSDoc fixes in scope.
+    gate: review-and-fix-complete
+  - id: safety-check
+    description: Verify no forbidden implementation details were introduced.
+    gate: safety-check-complete

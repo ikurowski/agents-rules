@@ -15,9 +15,19 @@
     "test": "vitest run --passWithNoTests",
     "agent:workflow:run": "tsx src/cli/run-agent-workflow-cli.ts",
     "agent:workflow:smoke": "tsx src/cli/run-agent-workflow-cli.ts --prompt \"smoke run\"",
-    "ci": "npm run typecheck && npm run lint && npm run test"
+    "contracts:check": "tsx src/cli/check-contracts-cli.ts",
+    "skills:validate": "tsx src/cli/validate-skills-cli.ts",
+    "docs:map:check": "tsx src/cli/check-docs-map-cli.ts",
+    "harness:protocol:check": "tsx src/cli/check-harness-protocol-cli.ts",
+    "evals:run": "tsx src/cli/run-evals-cli.ts",
+    "idempotency:check": "tsx src/cli/check-idempotency-cli.ts",
+    "security:agent": "tsx src/cli/check-security-agent-cli.ts",
+    "ci": "npm run typecheck && npm run lint && npm run test && npm run contracts:check && npm run skills:validate && npm run docs:map:check && npm run harness:protocol:check && npm run evals:run && npm run idempotency:check && npm run security:agent"
   },
-  "dependencies": {},
+  "dependencies": {
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/node": "^22.13.10",
