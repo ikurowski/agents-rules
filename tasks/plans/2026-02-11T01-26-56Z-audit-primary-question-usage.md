@@ -1,4 +1,4 @@
-# Audit usage of `Primary Question` across active project docs and skills
+﻿# Audit usage of `Primary Question` across active project docs and skills
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -7,7 +7,7 @@ If a required section is not applicable, keep the section and write `N/A` with a
 
 ## Purpose / Big Picture
 
-The user asked for an audit (using `project-auditor-improver` workflow) of how `Primary Question` is used in the repository. The observable outcome is a ranked findings report with evidence paths, U5 scoring, and a minimal improvement plan focused on traceable, low-risk documentation changes.
+The user asked for an audit (using `project-auditor-improver` workflow) of how `Primary Question` is used in the repository. The observable outcome is a ranked findings report with evidence paths, five-point scoring, and a minimal improvement plan focused on traceable, low-risk documentation changes.
 
 ## Progress
 
@@ -61,7 +61,7 @@ Active skill implementations checked:
 
 1. Run pass 1 (policy/process consistency): verify canonical terminology source and expected terms.
 2. Run pass 2 (documentation accuracy): compare active skill docs against canonical requirements.
-3. Build findings register with U5 scores and root causes.
+3. Build findings register with five-point scores and root causes.
 4. Build minimal improvement plan ordered by impact/risk.
 5. Record validation commands for future execution.
 
@@ -108,3 +108,4 @@ Key evidence excerpts:
 N/A - audit/report-only documentation task with no interface or dependency change.
 
 Change note: 2026-02-11T01:26:56Z - Created and completed audit ExecPlan for `Primary Question` usage using project-auditor workflow.
+

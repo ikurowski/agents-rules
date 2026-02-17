@@ -13,6 +13,8 @@
     "format:check": "prettier --check \"src/**/*.{ts,d.ts}\" \"*.{json,mjs,yml,yaml}\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
+    "agent:workflow:run": "tsx src/cli/run-agent-workflow-cli.ts",
+    "agent:workflow:smoke": "tsx src/cli/run-agent-workflow-cli.ts --prompt \"smoke run\"",
     "ci": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {},

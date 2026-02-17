@@ -1,4 +1,4 @@
-# Create project-auditor-improver skill from repository history
+﻿# Create project-auditor-improver skill from repository history
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -7,7 +7,7 @@ If a required section is not applicable, keep the section and write `N/A` with a
 
 ## Purpose / Big Picture
 
-Create a new reusable skill that audits a repository and proposes or applies pragmatic improvements. The user-visible outcome is a ready-to-use skill package at `skills/project-auditor-improver/` that follows local conventions from prior work (ExecPlan-first behavior, tracker discipline, U5 scoring, source/evidence policy, and confirm-required risk gate).
+Create a new reusable skill that audits a repository and proposes or applies pragmatic improvements. The user-visible outcome is a ready-to-use skill package at `skills/project-auditor-improver/` that follows local conventions from prior work (ExecPlan-first behavior, tracker discipline, five-point scoring, source/evidence policy, and confirm-required risk gate).
 
 ## Progress
 
@@ -39,7 +39,7 @@ Completed. Added a new skill package at `skills/project-auditor-improver/` with:
 - `agents/openai.yaml` metadata aligned with invocation intent.
 - Split references for audit method, improvement execution, and validation gates.
 
-The implementation reused existing shared policy modules for U5 scoring, source/evidence handling, and confirm-required risk gating, matching recent repository standardization decisions.
+The implementation reused existing shared policy modules for five-point scoring, source/evidence handling, and confirm-required risk gating, matching recent repository standardization decisions.
 
 ## Context and Orientation
 
@@ -57,7 +57,7 @@ The repository stores skill packages in `skills/<name>/` with at least `SKILL.md
 
 ## Plan of Work
 
-Create `skills/project-auditor-improver/` with a focused `SKILL.md`, matching metadata in `agents/openai.yaml`, and split references for audit method, improvement execution, and validation gates. Reuse shared references for source/evidence policy, U5 scoring bands, and confirm-required gate to stay consistent with current architecture. Then validate file presence/content using shell checks and update `tasks/todo.md` plus this plan's progress/outcomes.
+Create `skills/project-auditor-improver/` with a focused `SKILL.md`, matching metadata in `agents/openai.yaml`, and split references for audit method, improvement execution, and validation gates. Reuse shared references for source/evidence policy, five-point scoring bands, and confirm-required gate to stay consistent with current architecture. Then validate file presence/content using shell checks and update `tasks/todo.md` plus this plan's progress/outcomes.
 
 ## Concrete Steps
 
@@ -82,7 +82,7 @@ Expected result: task audit trail is complete and consistent.
 Acceptance checks:
 - `SKILL.md` includes frontmatter (`name`, `description`) and explicit workflow contract.
 - Skill references use progressive disclosure and point to shared modules.
-- Risk handling includes U5 risk score and confirmation requirement for high-risk actions.
+- Risk handling includes five-point score risk score and confirmation requirement for high-risk actions.
 - Package contains `agents/openai.yaml` aligned with purpose.
 - `tasks/todo.md` reflects completed outcome with ExecPlan link.
 
@@ -113,3 +113,4 @@ N/A - this is docs/skill-definition work only; no runtime interfaces or external
 
 Change note: 2026-02-10T23:39:09Z - Created initial ExecPlan for project-auditor-improver skill creation based on full local project history.
 Change note: 2026-02-10T23:39:09Z - Updated progress/outcomes and captured verification evidence after skill package creation and tracker finalization.
+

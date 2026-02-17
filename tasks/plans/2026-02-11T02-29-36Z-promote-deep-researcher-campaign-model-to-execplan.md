@@ -1,4 +1,4 @@
-# Promote Deep-Researcher Campaign model into ExecPlan standard
+﻿# Promote Deep-Researcher Campaign model into ExecPlan standard
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -18,7 +18,7 @@ User wants the Deep-Researcher Campaign model enforced at the execution-plan lev
 
 ## Surprises & Discoveries
 
-Current repository already has campaign-like wording in deep-research docs, but it does not fully encode the requested formal model (sub-question IDs, explicit matrix schema, `Priority(U5) >= 3.8` gate, and no nested sub-question expansion).
+Current repository already has campaign-like wording in deep-research docs, but it does not fully encode the requested formal model (sub-question IDs, explicit matrix schema, `Priority(five-point score) >= 3.8` gate, and no nested sub-question expansion).
 
 ## Decision Log
 
@@ -49,7 +49,7 @@ Relevant files:
 - `Sub-question` (`Sub-question-*`, with `Type = initial`): user-originating starting question in campaign scope.
 - `Sub-question` (`Sub-question-*`, with `Type = emergent`): emergent thread discovered during research and linked to `Primary Question`.
 - `Coverage Matrix`: closure map for all tracked `Sub-question-*`.
-- `Entry Criteria`: gate for adding new emergent `Sub-question-*` (`Blocking = yes` or `Priority(U5) >= 3.8`).
+- `Entry Criteria`: gate for adding new emergent `Sub-question-*` (`Blocking = yes` or `Priority(five-point score) >= 3.8`).
 - `Impediment`: blocker that prevents closure and requires explicit disposition.
 
 ## Plan of Work
@@ -76,7 +76,7 @@ Expected result: every new deep-research plan can follow deterministic closure w
 Expected result: runtime skill behavior and plan standard are consistent.
 
 3. Validate:
-- `rg -n "Seed Questions|Derived Threads|Coverage Matrix|Priority \\(U5\\)|Sub-question-\\*|Primary Question" tasks/plans/_template.md skills/deep-researcher/SKILL.md skills/deep-researcher/references/research-method.md`
+- `rg -n "Seed Questions|Derived Threads|Coverage Matrix|Priority \\(five-point score\\)|Sub-question-\\*|Primary Question" tasks/plans/_template.md skills/deep-researcher/SKILL.md skills/deep-researcher/references/research-method.md`
 - `python C:\\Users\\igork\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py skills/deep-researcher`
 
 ## Validation and Acceptance
@@ -84,7 +84,7 @@ Expected result: runtime skill behavior and plan standard are consistent.
 Acceptance criteria:
 
 1. `tasks/plans/_template.md` includes explicit Deep-Researcher Campaign sections and the required register table.
-2. Template includes formal gates: `Blocking=yes OR Priority(U5)>=3.8`, `Primary Question -> Sub-question` max depth, and closure definition.
+2. Template includes formal gates: `Blocking=yes OR Priority(five-point score)>=3.8`, `Primary Question -> Sub-question` max depth, and closure definition.
 3. `deep-researcher` docs use `Primary Question` and matrix-based closure language aligned with the template.
 4. `tasks/todo.md` reflects this task as completed with short outcome.
 
@@ -96,7 +96,7 @@ Docs-only change. Reapplying patches is safe. If wording drifts, restore from la
 
 Validation artifacts:
 
-- `rg -n "Primary Question|Seed Questions|Derived Threads|Coverage Matrix|Priority \\(U5\\) >= 3.8|Primary Question -> Sub-question|Sub-question -> Sub-question|include-now|next-task|drop" tasks/plans/_template.md skills/deep-researcher/SKILL.md skills/deep-researcher/references/research-method.md`
+- `rg -n "Primary Question|Seed Questions|Derived Threads|Coverage Matrix|Priority \\(five-point score\\) >= 3.8|Primary Question -> Sub-question|Sub-question -> Sub-question|include-now|next-task|drop" tasks/plans/_template.md skills/deep-researcher/SKILL.md skills/deep-researcher/references/research-method.md`
   - confirmed presence of all requested campaign mechanics.
 - `python C:\\Users\\igork\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py skills/deep-researcher`
   - result: `Skill is valid!`
@@ -107,3 +107,4 @@ N/A - documentation/process standard updates only.
 
 Change note: 2026-02-11T02:29:36Z - Created plan to promote Deep-Researcher Campaign model into ExecPlan standard.
 Change note: 2026-02-11T02:33:20Z - Completed template + deep-research campaign alignment and validation.
+

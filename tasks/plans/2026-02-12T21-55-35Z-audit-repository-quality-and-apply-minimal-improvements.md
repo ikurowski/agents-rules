@@ -1,4 +1,4 @@
-# Audit Repository Quality And Apply Minimal Improvements
+﻿# Audit Repository Quality And Apply Minimal Improvements
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` are updated as work proceeds.
 
@@ -9,7 +9,7 @@ Run the `project-auditor-improver` workflow against this repository to produce a
 ## Progress
 
 - [x] (2026-02-12T21:55:35Z) Created ExecPlan and linked task tracker entry.
-- [x] (2026-02-12T22:57:00Z) Baseline audit completed with evidence and U5 scoring.
+- [x] (2026-02-12T22:57:00Z) Baseline audit completed with evidence and five-point scoring.
 - [x] (2026-02-12T22:57:20Z) Minimal improvement edits implemented for selected finding.
 - [x] (2026-02-12T22:57:50Z) Validation checks executed and outcomes captured.
 - [x] (2026-02-12T22:58:10Z) Final report, residual risks, and principle-effectiveness review completed.
@@ -58,7 +58,7 @@ Primary Question: What are the highest-value, lowest-risk quality improvements n
 
 Sub-question Register:
 
-| ID | Type | Parent | Status | Priority (U5) | Blocking | Decision |
+| ID | Type | Parent | Status | Priority (five-point score) | Blocking | Decision |
 |---|---|---|---|---|---|---|
 | Sub-question-1 | initial | Primary Question | resolved | 4.4 | yes | answered |
 | Sub-question-2 | emergent | Primary Question | resolved | 3.9 | no | include-now |
@@ -74,7 +74,7 @@ Question-to-Evidence Matrix:
 
 ## Plan of Work
 
-Perform workflow passes in the order required by `audit-method.md`: governance/process, structure/dependencies, test/verification health, and docs accuracy. Convert observations into scored findings using U5 bands and root-cause records. Select a minimal, high-impact low/medium-risk fix, apply surgical edits only, and run targeted validation commands. Close with ranked findings, implemented changes, residual risks, and principle-effectiveness scoring.
+Perform workflow passes in the order required by `audit-method.md`: governance/process, structure/dependencies, test/verification health, and docs accuracy. Convert observations into scored findings using five-point score bands and root-cause records. Select a minimal, high-impact low/medium-risk fix, apply surgical edits only, and run targeted validation commands. Close with ranked findings, implemented changes, residual risks, and principle-effectiveness scoring.
 
 ## Concrete Steps
 
@@ -107,7 +107,7 @@ Commands are re-runnable and non-destructive. If a change introduces regression,
 
 ## Artifacts and Notes
 
-Findings register (U5):
+Findings register (five-point score):
 
 - `id`: F-001
   `title`: CI workflow omitted unit-test gate
@@ -151,3 +151,4 @@ N/A - this audit run is expected to target internal quality/process adjustments 
 
 Change note: 2026-02-12T21:55:35Z - Initial plan created for `project-auditor-improver` audit invocation.
 Change note: 2026-02-12T22:58:10Z - Completed audit findings, implemented F-001, captured validation evidence, and finalized retrospective.
+

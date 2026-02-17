@@ -1,4 +1,4 @@
-# Deep research: skills + shared references vs monolithic agent architecture
+﻿# Deep research: skills + shared references vs monolithic agent architecture
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -53,7 +53,7 @@ This repository contains process definitions for agent workflows and skill desig
 - `PLANS.md`: ExecPlan structure/lifecycle.
 - `skills/deep-researcher/SKILL.md`: required research workflow and intake gate.
 - `skills/shared/references/source-evidence-policy.md`: source ranking and citation rules.
-- `skills/shared/references/u5-scoring-bands.md`: confidence label mapping.
+- `skills/shared/references/five-point-scoring-bands.md`: confidence label mapping.
 - `skills/deep-researcher/references/evidence-quality-rubric.md`: evidence scoring dimensions.
 - `skills/deep-researcher/references/doubt-resolution.md`: post-research doubt answering protocol.
 
@@ -80,7 +80,7 @@ The user-facing deliverable is produced in chat, while this plan stores assumpti
 Execute in four stages:
 
 1. Collect primary sources and benchmark reports relevant to LLM agent architecture modularization, tool/function-calling outcomes, context management, RAG/shared-memory patterns, and operational maintenance/scaling.
-2. Build a `Question-to-Evidence Matrix` scoring source quality (authority, recency, applicability, verifiability, risk sensitivity) using U5 bands.
+2. Build a `Question-to-Evidence Matrix` scoring source quality (authority, recency, applicability, verifiability, risk sensitivity) using five-point score bands.
 3. Compare three architecture options: monolithic prompt, skills decomposition, and skills + shared references. Evaluate benefits, failure modes, cost/latency implications, dependency risks, and rollback paths.
 4. Deliver a recommendation memo with TL;DR verdict, scenario guidance (when useful vs overengineering), confidence score/label, unresolved uncertainties, and validation/monitoring metrics.
 
@@ -130,3 +130,4 @@ N/A - this task is research/memo generation and does not change runtime code int
 
 Change note: 2026-02-10T23:17:34Z - Created plan for deep research memo on modular skills/shared references versus monolithic LLM agent architecture.
 Change note: 2026-02-10T23:21:15Z - Marked execution complete, documented discoveries, triangulation rationale, and evidence artifacts.
+

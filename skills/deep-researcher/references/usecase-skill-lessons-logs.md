@@ -1,4 +1,4 @@
-# Use Case: Skill Lessons and Logs
+﻿# Use Case: Skill Lessons and Logs
 
 When to load: Use when researching whether a specific skill should include lessons, decision logs, or change logs.
 
@@ -6,7 +6,7 @@ When to load: Use when researching whether a specific skill should include lesso
 
 1. Option set
 2. Decision criteria
-3. Recommendation rules (U5)
+3. Recommendation rules (five-point score)
 4. Templates
 
 ## Option Set
@@ -29,7 +29,7 @@ Option D: Full governance pack (lessons + decision log + change log)
 
 ## Decision Criteria
 
-Apply `../../shared/references/u5-scoring-bands.md` for:
+Apply `../../shared/references/five-point-scoring-bands.md` for:
 
 - `Scale Definition`,
 - `Derived Label Thresholds`.
@@ -40,12 +40,12 @@ Apply `../../shared/references/u5-scoring-bands.md` for:
 4. Need for auditability/compliance
 5. Cost of onboarding new maintainers
 
-## Recommendation Rules (U5)
+## Recommendation Rules (five-point score)
 
 Compute:
 
 - `governance_need_score = average(criteria 1-5)` (range `1.0-5.0`)
-- `governance_need_label` from applied U5 bands above
+- `governance_need_label` from applied five-point score bands above
 
 Then map to option:
 
@@ -89,3 +89,4 @@ Change log entry template:
 - Impact:
 - Validation:
 - Rollback plan:
+

@@ -5,6 +5,14 @@ Keep `## Active Task` only when exactly one task is `in_progress`; move complete
 
 ## Task History
 
+### 2026-02-14T10:45:36Z
+
+- Status: completed
+- Goal: Find 5 low-risk wines for steak from `elcatador.pl` in `50-150 PLN` with multi-source evidence and scoring.
+- Owner: agent
+- ExecPlan: `tasks/plans/2026-02-14T10-45-36Z-research-safe-steak-wines-elcatador.md`
+- Outcome: Completed. Delivered exactly 5 in-budget and in-stock El Catador steak wines with source triad per item (store + Vivino + independent), scoring/confidence labels, risk notes, and final safety/value ranking.
+
 ### 2026-02-12T22:45:28Z
 
 - Status: completed

@@ -44,7 +44,7 @@ N/A - this is a documentation/policy integration task, not a research decomposit
 
 ## Plan of Work
 
-Create a new shared reference file with a compact procedure: define evaluated principle, score implementation effectiveness on U5, identify gaps/root causes, and output corrective actions with priority/owner/checkpoint. Then add explicit end-stage usage instructions in each active skill and include the new reference in their Progressive Disclosure lists. Finally, run regex validation for `Apply <path> for:` formatting and record outcomes in `tasks/todo.md` and this plan.
+Create a new shared reference file with a compact procedure: define evaluated principle, score implementation effectiveness on a five-point score scale, identify gaps/root causes, and output corrective actions with priority/owner/checkpoint. Then add explicit end-stage usage instructions in each active skill and include the new reference in their Progressive Disclosure lists. Finally, run regex validation for `Apply <path> for:` formatting and record outcomes in `tasks/todo.md` and this plan.
 
 ## Concrete Steps
 

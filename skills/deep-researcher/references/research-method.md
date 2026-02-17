@@ -1,4 +1,4 @@
-# Research Method
+﻿# Research Method
 
 When to load: Use when structuring the research protocol, evidence table, and final brief.
 
@@ -117,7 +117,7 @@ Evidence Score guidance:
 - `2`: secondary/mixed source with material gaps
 - `1`: weak or unverifiable evidence
 
-Apply `../../shared/references/u5-scoring-bands.md` for:
+Apply `../../shared/references/five-point-scoring-bands.md` for:
 
 - `Derived Label Thresholds`.
 
@@ -142,3 +142,4 @@ Use these as starting points when relevant:
 - OpenAI codex changelog (contains dated entries): `https://developers.openai.com/codex/changelog`
 - OWASP LLM prompt injection reference (date not published; verified 2026-02-10): `https://genai.owasp.org/llmrisk/llm01-prompt-injection/`
 - NIST AI RMF GenAI profile (2024-07-26): `https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence`
+

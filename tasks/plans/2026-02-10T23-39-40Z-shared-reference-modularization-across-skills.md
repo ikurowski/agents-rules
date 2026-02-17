@@ -1,4 +1,4 @@
-# Modularize Shared Skill References for Atomic Reuse
+﻿# Modularize Shared Skill References for Atomic Reuse
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -7,7 +7,7 @@ If a required section is not applicable, keep the section and write `N/A` with a
 
 ## Purpose / Big Picture
 
-Skill reference guidance currently duplicates the same rules in multiple files (U5 scoring, source priority, conflict handling, and risk confirmation gates). After this change, both `skills/deep-researcher` and `skills/skill-creator` will load shared atomic references from one location, while keeping only skill-specific content inside each skill. Observable outcome: each skill `SKILL.md` points to shared references, duplicated sections are removed from per-skill files, and both skills remain understandable and valid.
+Skill reference guidance currently duplicates the same rules in multiple files (five-point scoring, source priority, conflict handling, and risk confirmation gates). After this change, both `skills/deep-researcher` and `skills/skill-creator` will load shared atomic references from one location, while keeping only skill-specific content inside each skill. Observable outcome: each skill `SKILL.md` points to shared references, duplicated sections are removed from per-skill files, and both skills remain understandable and valid.
 
 ## Progress
 
@@ -18,7 +18,7 @@ Skill reference guidance currently duplicates the same rules in multiple files (
 
 ## Surprises & Discoveries
 
-Current discovery: duplicated logic appears across at least four files: `skills/deep-researcher/references/evidence-quality-rubric.md`, `skills/deep-researcher/references/research-method.md`, `skills/skill-creator/references/research-evidence.md`, and `skills/skill-creator/references/maintenance-security.md`. Duplication includes U5 bands and source-priority ordering.
+Current discovery: duplicated logic appears across at least four files: `skills/deep-researcher/references/evidence-quality-rubric.md`, `skills/deep-researcher/references/research-method.md`, `skills/skill-creator/references/research-evidence.md`, and `skills/skill-creator/references/maintenance-security.md`. Duplication includes five-point score bands and source-priority ordering.
 
 Additional discovery: threshold strings still appear in `skills/deep-researcher/references/evidence-quality-rubric.md`, but only for rubric-specific interpretation bands (`insufficient`, `weak`, `acceptable`, `high-quality`), which is domain-specific and not the shared `low|medium|high` labeling policy.
 
@@ -46,13 +46,13 @@ Timestamp/Author: 2026-02-10T23:41:40Z / agent
 
 ## Outcomes & Retrospective
 
-Completed. Added reusable atomic shared reference modules and wired both skills to consume them. Removed duplicated policy text in local reference files for U5 thresholds, source/evidence policy, and confirm-required gate, while preserving skill-specific procedures and examples. Remaining numeric thresholds in one rubric file are intentional, because they represent rubric-category cutoffs rather than shared label mapping.
+Completed. Added reusable atomic shared reference modules and wired both skills to consume them. Removed duplicated policy text in local reference files for five-point score thresholds, source/evidence policy, and confirm-required gate, while preserving skill-specific procedures and examples. Remaining numeric thresholds in one rubric file are intentional, because they represent rubric-category cutoffs rather than shared label mapping.
 
 ## Context and Orientation
 
 Relevant files:
 
-- `skills/REFERENCE-STANDARD.md`: current cross-skill standard for terminology and U5 scoring.
+- `skills/REFERENCE-STANDARD.md`: current cross-skill standard for terminology and five-point scoring.
 - `skills/deep-researcher/SKILL.md`: workflow contract and progressive-disclosure list.
 - `skills/deep-researcher/references/*.md`: deep-research protocol references.
 - `skills/skill-creator/SKILL.md`: skill design workflow and progressive-disclosure list.
@@ -63,7 +63,7 @@ These files are documentation-only and do not require runtime code changes.
 
 ## Plan of Work
 
-First, create shared atomic reference files for duplicated policies: U5 scoring labels, evidence/source policy, and risk-confirmation gates. Second, update both skills to point to shared files in progressive-disclosure sections. Third, remove duplicated text from local references where it overlaps with shared files and replace with concise links or narrow skill-specific deltas. Finally, validate by searching for stale duplicated fragments and checking that all referenced file paths exist.
+First, create shared atomic reference files for duplicated policies: five-point scoring labels, evidence/source policy, and risk-confirmation gates. Second, update both skills to point to shared files in progressive-disclosure sections. Third, remove duplicated text from local references where it overlaps with shared files and replace with concise links or narrow skill-specific deltas. Finally, validate by searching for stale duplicated fragments and checking that all referenced file paths exist.
 
 ## Concrete Steps
 
@@ -84,7 +84,7 @@ Expected result: targeted duplicates reduced and every listed shared path resolv
 Acceptance checks:
 
 - Both skills reference shared modules in `Progressive Disclosure` sections.
-- Shared files exist and include reusable rules for U5/source policy/risk-confirmation.
+- Shared files exist and include reusable rules for five-point-score/source policy/risk-confirmation.
 - Local reference files still contain skill-specific content and no longer duplicate full shared sections.
 - `tasks/todo.md` updated to `completed` with short outcome.
 
@@ -105,7 +105,7 @@ Validation evidence summary:
 - `Get-ChildItem -Recurse -File skills/shared/references` returned:
   - `confirm-required-gate.md`
   - `source-evidence-policy.md`
-  - `u5-scoring-bands.md`
+  - `five-point-scoring-bands.md`
 - `Select-String -Path skills/*/SKILL.md -Pattern "shared/references"` confirmed both skills now reference shared modules.
 - `Select-String -Path skills/deep-researcher/references/*.md,skills/skill-creator/references/*.md -Pattern "../../shared/references"` confirmed local references now import shared policy modules.
 - Threshold grep shows only rubric-specific cutoffs left outside shared policy.
@@ -116,3 +116,4 @@ N/A - docs-only structural refactor of skill guidance files; no runtime interfac
 
 Change note: 2026-02-10T23:40:40Z - Created initial plan with assumptions, duplication findings, and stepwise validation.
 Change note: 2026-02-10T23:42:29Z - Executed shared-module refactor, validated references, and documented completion evidence.
+

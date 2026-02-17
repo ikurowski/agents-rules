@@ -1,4 +1,4 @@
-# Confirm-Required Risk Gate
+﻿# Confirm-Required Risk Gate
 
 When to load: Use before proposing or executing high-impact actions.
 
@@ -11,7 +11,7 @@ When to load: Use before proposing or executing high-impact actions.
 
 ## Risk Scoring Scale
 
-Use the canonical U5 scale and label thresholds from `./u5-scoring-bands.md`:
+Use the canonical five-point score scale and label thresholds from `./five-point-scoring-bands.md`:
 
 - `risk_score`: numeric score on `1-5`
 - `risk_label`: derived `low|medium|high`
@@ -39,3 +39,4 @@ If confirmation is not provided for high-risk actions:
 1. do not execute the high-risk path,
 2. provide a reduced-risk alternative,
 3. ask one clear confirmation question.
+

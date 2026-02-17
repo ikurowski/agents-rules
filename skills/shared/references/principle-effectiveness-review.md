@@ -1,4 +1,4 @@
-# Principle Effectiveness Review
+﻿# Principle Effectiveness Review
 
 When to load: Use at the end of a skill run to evaluate how effectively the selected principle was implemented and to define corrective actions.
 
@@ -21,7 +21,7 @@ Capture:
 
 ## Scoring Rules
 
-Apply `./u5-scoring-bands.md` for:
+Apply `./five-point-scoring-bands.md` for:
 
 - `Scale Definition`,
 - `Derived Label Thresholds`,
@@ -37,7 +37,7 @@ Score each dimension on `1-5`:
 Compute:
 
 - `principle_effectiveness_score = average(dimensions)` (clamp to `1.0-5.0`),
-- `principle_effectiveness_label` from U5 bands.
+- `principle_effectiveness_label` from five-point score bands.
 
 ## Corrective Action Design
 
@@ -69,3 +69,4 @@ If `principle_effectiveness_label == low`:
 3. flag implementation risk explicitly.
 
 If label is `medium` for two consecutive reviews, recommend a broader process adjustment instead of local patching.
+

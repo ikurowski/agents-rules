@@ -1,4 +1,4 @@
-# U5 Scoring Bands
+﻿# Five-Point Scoring Bands
 
 When to load: Use when converting numeric scores to consistent `low|medium|high` labels across skills.
 
@@ -50,3 +50,4 @@ For multi-criterion scoring:
 - `confidence_label: high`
 - `risk_score: 2.9/5`
 - `risk_label: medium`
+

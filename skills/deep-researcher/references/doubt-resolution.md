@@ -1,4 +1,4 @@
-# Doubt Resolution Protocol
+﻿# Doubt Resolution Protocol
 
 When to load: Use after research phase is complete, when the user asks follow-up questions or challenges conclusions.
 
@@ -6,7 +6,7 @@ When to load: Use after research phase is complete, when the user asks follow-up
 
 1. Doubt intake
 2. Answer structure
-3. Confidence rules (U5)
+3. Confidence rules (five-point score)
 4. Escalation rules
 
 ## Doubt Intake
@@ -30,9 +30,9 @@ Use this mini-template:
 - `Confidence`: <confidence_score: X/5; confidence_label: low|medium|high>
 - `What would change my mind`: <new evidence needed>
 
-## Confidence Rules (U5)
+## Confidence Rules (five-point score)
 
-Apply `../../shared/references/u5-scoring-bands.md` for:
+Apply `../../shared/references/five-point-scoring-bands.md` for:
 
 - `Derived Label Thresholds`,
 - `Reporting Format`.
@@ -51,3 +51,4 @@ If doubt cannot be resolved with current evidence:
 1. mark it explicitly unresolved,
 2. propose the fastest additional research step,
 3. avoid premature binary recommendation.
+

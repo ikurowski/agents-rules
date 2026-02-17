@@ -1,18 +1,18 @@
-# Evidence Quality Rubric
+﻿# Evidence Quality Rubric
 
 When to load: Use when scoring source quality and mapping scores to confidence.
 
 ## Table of Contents
 
-1. Shared U5 scoring reference
+1. Shared five-point scoring reference
 2. Scoring dimensions
 3. Aggregate score interpretation
 4. Confidence mapping
 5. Conflict handling
 
-## Shared U5 Scoring Reference
+## Shared Five-Point Scoring Reference
 
-Apply `../../shared/references/u5-scoring-bands.md` for:
+Apply `../../shared/references/five-point-scoring-bands.md` for:
 
 - `Scale Definition`,
 - `Derived Label Thresholds`,
@@ -31,7 +31,7 @@ Score each dimension from 1 to 5:
 Compute:
 
 - `evidence_score = average(all dimension scores)` (range `1.0-5.0`)
-- `evidence_label` from U5 bands above
+- `evidence_label` from five-point score bands above
 
 ## Aggregate Score Interpretation
 
@@ -54,7 +54,7 @@ Recommended mapping rule:
 - subtract `0.5` if critical evidence is indirect for core claims,
 - clamp to `1.0-5.0`.
 
-Then map to label using U5 bands.
+Then map to label using five-point score bands.
 
 ## Conflict Handling
 
@@ -64,3 +64,4 @@ When evidence conflicts:
 2. compare source authority and applicability,
 3. prefer the source with better domain fit and recency,
 4. state residual uncertainty explicitly.
+

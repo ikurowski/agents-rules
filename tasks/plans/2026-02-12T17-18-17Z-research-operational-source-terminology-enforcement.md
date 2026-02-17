@@ -1,4 +1,4 @@
-# Deep Research: Operational Source for Terminology Enforcement (MD-only vs TS-objects vs Hybrid)
+﻿# Deep Research: Operational Source for Terminology Enforcement (MD-only vs TS-objects vs Hybrid)
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` are updated as work progresses.
 
@@ -60,11 +60,11 @@ Repository context:
 
 `Primary Question`:
 
-- Czy dla pracy agentów AI nad analizą i egzekwowaniem terminologii lepszym źródłem operacyjnym jest MD-only, TS-objects schema-first, czy model hybrydowy?
+- Czy dla pracy agentĂłw AI nad analizÄ… i egzekwowaniem terminologii lepszym ĹşrĂłdĹ‚em operacyjnym jest MD-only, TS-objects schema-first, czy model hybrydowy?
 
 `Sub-question Register`:
 
-| ID | Type | Parent | Status | Priority (U5) | Blocking | Decision |
+| ID | Type | Parent | Status | Priority (five-point score) | Blocking | Decision |
 |---|---|---|---|---|---|---|
 | Sub-question-1 | initial | Primary Question | resolved | 5.0 | yes | answered |
 | Sub-question-2 | initial | Primary Question | resolved | 4.8 | yes | answered |
@@ -135,10 +135,10 @@ If a source changes materially, mark the related claim as uncertain and rerun co
 
 ## Artifacts and Notes
 
-## Executive summary (krótko)
+## Executive summary (krĂłtko)
 
-Werdykt: **`Hybrid` (schema as source of truth + generated `.md`)** jest najlepszym modelem operacyjnym dla agentów AI pracujących nad terminologią.  
-Powód: łączy wysoką deterministyczność i walidowalność schematu z niskim kosztem konsumpcji dla ludzi (czytelny markdown), minimalizując drift semantyczny dzięki jednemu kanonicznemu źródłu.
+Werdykt: **`Hybrid` (schema as source of truth + generated `.md`)** jest najlepszym modelem operacyjnym dla agentĂłw AI pracujÄ…cych nad terminologiÄ….  
+PowĂłd: Ĺ‚Ä…czy wysokÄ… deterministycznoĹ›Ä‡ i walidowalnoĹ›Ä‡ schematu z niskim kosztem konsumpcji dla ludzi (czytelny markdown), minimalizujÄ…c drift semantyczny dziÄ™ki jednemu kanonicznemu ĹşrĂłdĹ‚u.
 
 Confidence:
 
@@ -149,53 +149,53 @@ Confidence:
 
 | Sub-question ID | Teza | Evidence (primary source anchors) |
 |---|---|---|
-| Sub-question-1 | MD-only jest podatny na różnice interpretacji parserów/flavorów. | CommonMark 0.31.2 definiuje bazowy standard (`published 2024-01-28`), a GFM jawnie dodaje rozszerzenia (np. tabele/strikethrough/autolink/tasklist) względem CommonMark (`published 2017-03-14`) -> wielość flavorów wpływa na deterministyczność parsowania. Linki: https://spec.commonmark.org/0.31.2/, https://github.github.io/gfm/ |
-| Sub-question-2 | TS type annotations nie zapewniają runtime enforcement bez dodatkowej walidacji. | TypeScript Handbook: typy są usuwane podczas kompilacji (`Erased Types`; data niepublikowana, verified 2026-02-12). TSConfig `erasableSyntaxOnly` pokazuje granicę składni usuwalnej, ale nie wprowadza runtime validation. Linki: https://microsoft.github.io/TypeScript-New-Handbook/everything/, https://www.typescriptlang.org/tsconfig/erasableSyntaxOnly.html |
-| Sub-question-2 | Schema-first daje deterministyczne kontrakty maszynowe. | JSON Schema to deklaratywny standard walidacji struktury/ograniczeń danych (`draft 2020-12`); OpenAI Structured Outputs/Anthropic `input_schema`/Gemini function schemas używają kontraktów schematowych do kontroli wejść/wyjść. Linki: https://json-schema.org/specification, https://json-schema.org/draft/2020-12, https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
-| Sub-question-3 | Schema-first/hybrid wspiera twardy gate CI. | JSON Schema + walidatory (np. ajv) dają binarny pass/fail na kontrakcie; OpenAI/Anthropic/Gemini wymagają schematów funkcji/narzędzi, co umożliwia testy kontraktowe w pipeline. Linki: https://json-schema.org/specification, https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
-| Sub-question-4 | MD-only ma niższy próg wejścia i onboardingowy. | Markdown to prosty format tekstowy; GitHub Docs i Jekyll operują przez frontmatter + plain markdown authoring, co obniża barierę dla contributorów nietechnicznych (dates not published; verified 2026-02-12). Linki: https://docs.github.com/en/enterprise-cloud@latest/contributing/writing-for-github-docs/using-yaml-frontmatter, https://jekyllrb.com/docs/front-matter/ |
-| Sub-question-5 | Hybrid ogranicza drift terminologii vs MD-only i TS-only. | Zod jest `TypeScript-first schema validation`; posiada konwersję `z.toJSONSchema`, co umożliwia jeden schemat i projekcje artefaktów. OpenAI wskazuje ryzyko, że typy i schema muszą być utrzymywane spójnie, co wzmacnia potrzebę jednego canonical source. Linki: https://zod.dev/, https://zod.dev/json-schema, https://openai.com/index/introducing-structured-outputs-in-the-api/ |
-| Sub-question-6 | Ekosystem agentów preferuje contracts schema-first. | OpenAI Structured Outputs, Anthropic tool use i Gemini function calling są projektowane wokół jawnych parametrów/schem. Linki: https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
-| Sub-question-7 | Migracja opłaca się po przekroczeniu progów automatyzacji/driftu. | Inference z całej macierzy: korzyści schema/hybrid rosną wraz z liczbą automatyzacji, gate’ów CI i wymagań interoperacyjnych; przy małej skali MD-only może nadal wygrywać kosztem. |
+| Sub-question-1 | MD-only jest podatny na rĂłĹĽnice interpretacji parserĂłw/flavorĂłw. | CommonMark 0.31.2 definiuje bazowy standard (`published 2024-01-28`), a GFM jawnie dodaje rozszerzenia (np. tabele/strikethrough/autolink/tasklist) wzglÄ™dem CommonMark (`published 2017-03-14`) -> wieloĹ›Ä‡ flavorĂłw wpĹ‚ywa na deterministycznoĹ›Ä‡ parsowania. Linki: https://spec.commonmark.org/0.31.2/, https://github.github.io/gfm/ |
+| Sub-question-2 | TS type annotations nie zapewniajÄ… runtime enforcement bez dodatkowej walidacji. | TypeScript Handbook: typy sÄ… usuwane podczas kompilacji (`Erased Types`; data niepublikowana, verified 2026-02-12). TSConfig `erasableSyntaxOnly` pokazuje granicÄ™ skĹ‚adni usuwalnej, ale nie wprowadza runtime validation. Linki: https://microsoft.github.io/TypeScript-New-Handbook/everything/, https://www.typescriptlang.org/tsconfig/erasableSyntaxOnly.html |
+| Sub-question-2 | Schema-first daje deterministyczne kontrakty maszynowe. | JSON Schema to deklaratywny standard walidacji struktury/ograniczeĹ„ danych (`draft 2020-12`); OpenAI Structured Outputs/Anthropic `input_schema`/Gemini function schemas uĹĽywajÄ… kontraktĂłw schematowych do kontroli wejĹ›Ä‡/wyjĹ›Ä‡. Linki: https://json-schema.org/specification, https://json-schema.org/draft/2020-12, https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
+| Sub-question-3 | Schema-first/hybrid wspiera twardy gate CI. | JSON Schema + walidatory (np. ajv) dajÄ… binarny pass/fail na kontrakcie; OpenAI/Anthropic/Gemini wymagajÄ… schematĂłw funkcji/narzÄ™dzi, co umoĹĽliwia testy kontraktowe w pipeline. Linki: https://json-schema.org/specification, https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
+| Sub-question-4 | MD-only ma niĹĽszy prĂłg wejĹ›cia i onboardingowy. | Markdown to prosty format tekstowy; GitHub Docs i Jekyll operujÄ… przez frontmatter + plain markdown authoring, co obniĹĽa barierÄ™ dla contributorĂłw nietechnicznych (dates not published; verified 2026-02-12). Linki: https://docs.github.com/en/enterprise-cloud@latest/contributing/writing-for-github-docs/using-yaml-frontmatter, https://jekyllrb.com/docs/front-matter/ |
+| Sub-question-5 | Hybrid ogranicza drift terminologii vs MD-only i TS-only. | Zod jest `TypeScript-first schema validation`; posiada konwersjÄ™ `z.toJSONSchema`, co umoĹĽliwia jeden schemat i projekcje artefaktĂłw. OpenAI wskazuje ryzyko, ĹĽe typy i schema muszÄ… byÄ‡ utrzymywane spĂłjnie, co wzmacnia potrzebÄ™ jednego canonical source. Linki: https://zod.dev/, https://zod.dev/json-schema, https://openai.com/index/introducing-structured-outputs-in-the-api/ |
+| Sub-question-6 | Ekosystem agentĂłw preferuje contracts schema-first. | OpenAI Structured Outputs, Anthropic tool use i Gemini function calling sÄ… projektowane wokĂłĹ‚ jawnych parametrĂłw/schem. Linki: https://developers.openai.com/api/docs/guides/structured-outputs, https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use, https://ai.google.dev/gemini-api/docs/function-calling |
+| Sub-question-7 | Migracja opĹ‚aca siÄ™ po przekroczeniu progĂłw automatyzacji/driftu. | Inference z caĹ‚ej macierzy: korzyĹ›ci schema/hybrid rosnÄ… wraz z liczbÄ… automatyzacji, gateâ€™Ăłw CI i wymagaĹ„ interoperacyjnych; przy maĹ‚ej skali MD-only moĹĽe nadal wygrywaÄ‡ kosztem. |
 
-## Porównanie opcji (tabela)
+## PorĂłwnanie opcji (tabela)
 
-Skala: `1.0-5.0`, wyżej = lepiej. Wagi równe.
+Skala: `1.0-5.0`, wyĹĽej = lepiej. Wagi rĂłwne.
 
 | Kryterium | MD-only | TS-objects (schema-first w kodzie) | Hybrid (schema SoT + generated .md) |
 |---|---:|---:|---:|
-| 1. Niezawodność interpretacji agenta | 2.5 | 4.1 | 4.6 |
-| 2. Deterministyczność/parsowalność | 2.2 | 4.3 | 4.7 |
+| 1. NiezawodnoĹ›Ä‡ interpretacji agenta | 2.5 | 4.1 | 4.6 |
+| 2. DeterministycznoĹ›Ä‡/parsowalnoĹ›Ä‡ | 2.2 | 4.3 | 4.7 |
 | 3. Walidacja i lintowanie | 2.3 | 4.4 | 4.8 |
 | 4. Koszt utrzymania i onboarding | 4.8 | 3.1 | 3.6 |
-| 5. Podatność na drift terminologii | 2.4 | 3.7 | 4.7 |
+| 5. PodatnoĹ›Ä‡ na drift terminologii | 2.4 | 3.7 | 4.7 |
 | 6. Integracja CI/artefakty/migracje | 2.5 | 4.1 | 4.8 |
 | **Weighted score (avg)** | **2.8** | **3.95** | **4.53** |
 
-Wynik reguły werdyktu:
+Wynik reguĹ‚y werdyktu:
 
-1. Najwyższy weighted score: `Hybrid`.
-2. Różnica do drugiego miejsca (`TS-objects`) > 0.3, więc tie-breaker nie jest potrzebny.
-3. Dowody dla kryteriów 1 i 2 mają high confidence -> werdykt bez warunkowania.
+1. NajwyĹĽszy weighted score: `Hybrid`.
+2. RĂłĹĽnica do drugiego miejsca (`TS-objects`) > 0.3, wiÄ™c tie-breaker nie jest potrzebny.
+3. Dowody dla kryteriĂłw 1 i 2 majÄ… high confidence -> werdykt bez warunkowania.
 
-## Rekomendacja końcowa
+## Rekomendacja koĹ„cowa
 
 Wybierz **`Hybrid` jako docelowy model operacyjny**:
 
-1. `Schema` (JSON Schema/Zod-derived) jako jedyne źródło prawdy.
+1. `Schema` (JSON Schema/Zod-derived) jako jedyne ĹşrĂłdĹ‚o prawdy.
 2. `Markdown` generowany jednostronnie z tego schematu (`schema -> generated .md`).
 3. CI egzekwuje:
-   - walidację schematu,
-   - zgodność generatora,
-   - brak ręcznych zmian w generowanych sekcjach.
+   - walidacjÄ™ schematu,
+   - zgodnoĹ›Ä‡ generatora,
+   - brak rÄ™cznych zmian w generowanych sekcjach.
 
 Uzasadnienie:
 
-1. Najlepsza kompatybilność z ekosystemem narzędzi agentowych opartych o schematy.
-2. Deterministyczna walidacja i twarde gate’y jakości.
-3. Niższe ryzyko driftu terminologii przy zachowaniu czytelnego artefaktu dla ludzi.
+1. Najlepsza kompatybilnoĹ›Ä‡ z ekosystemem narzÄ™dzi agentowych opartych o schematy.
+2. Deterministyczna walidacja i twarde gateâ€™y jakoĹ›ci.
+3. NiĹĽsze ryzyko driftu terminologii przy zachowaniu czytelnego artefaktu dla ludzi.
 
-## Plan wdrożenia 30/60/90 dni
+## Plan wdroĹĽenia 30/60/90 dni
 
 30 dni:
 
@@ -209,38 +209,38 @@ Uzasadnienie:
 60 dni:
 
 1. Rozszerzenie kontraktu na wszystkie artefakty terminologiczne.
-2. Generator `.md` + test spójności projekcji (`schema -> md`) + snapshot tests.
+2. Generator `.md` + test spĂłjnoĹ›ci projekcji (`schema -> md`) + snapshot tests.
 3. Metryki:
-   - drift incidents / miesiąc,
+   - drift incidents / miesiÄ…c,
    - false positives CI,
    - median onboarding time.
 
 90 dni:
 
 1. Stabilizacja governance i rollback playbook.
-2. Migracja legacy dokumentów wg priorytetu ryzyka.
+2. Migracja legacy dokumentĂłw wg priorytetu ryzyka.
 3. Metryki:
-   - MTTR błędów terminologii,
+   - MTTR bĹ‚Ä™dĂłw terminologii,
    - odsetek zmian automatycznie walidowanych,
    - koszt utrzymania (czas/tooling).
 
 ## Ryzyka i mitigacje
 
-| Impediment | Wpływ | Prawdopodobieństwo | Mitigacja | Owner | Trigger |
+| Impediment | WpĹ‚yw | PrawdopodobieĹ„stwo | Mitigacja | Owner | Trigger |
 |---|---|---|---|---|---|
-| Dual-source drift (TS types vs JSON Schema vs `.md`) | wysoki | średnie | ustanowić 1 SoT (schema), auto-gen `.md`, CI diff check | maintainer workflow | różnica między wygenerowanym a committed `.md` |
-| Ograniczenia subsetów schematów u vendorów modeli | średni/wysoki | średnie | profilować “lowest common subset”, contract tests per vendor | AI platform owner | niezgodność request/response schema w testach |
-| Opór onboardingowy zespołu wobec schema tooling | średni | średnie | szablony, generator CLI, krótkie playbooki i pairing | tech lead | wzrost czasu review/onboardingu > 20% |
-| Koszt migracji historycznych dokumentów | średni | wysokie | migracja etapowa wg ryzyka + freeze na krytyczne ścieżki | repo owner | backlog migracyjny > plan 60 dni |
-| Błędy generatora markdown projection | wysoki | niskie/średnie | golden tests, snapshot diff, wersjonowanie generatora | tooling owner | regresja w wygenerowanych sekcjach |
+| Dual-source drift (TS types vs JSON Schema vs `.md`) | wysoki | Ĺ›rednie | ustanowiÄ‡ 1 SoT (schema), auto-gen `.md`, CI diff check | maintainer workflow | rĂłĹĽnica miÄ™dzy wygenerowanym a committed `.md` |
+| Ograniczenia subsetĂłw schematĂłw u vendorĂłw modeli | Ĺ›redni/wysoki | Ĺ›rednie | profilowaÄ‡ â€ślowest common subsetâ€ť, contract tests per vendor | AI platform owner | niezgodnoĹ›Ä‡ request/response schema w testach |
+| OpĂłr onboardingowy zespoĹ‚u wobec schema tooling | Ĺ›redni | Ĺ›rednie | szablony, generator CLI, krĂłtkie playbooki i pairing | tech lead | wzrost czasu review/onboardingu > 20% |
+| Koszt migracji historycznych dokumentĂłw | Ĺ›redni | wysokie | migracja etapowa wg ryzyka + freeze na krytyczne Ĺ›cieĹĽki | repo owner | backlog migracyjny > plan 60 dni |
+| BĹ‚Ä™dy generatora markdown projection | wysoki | niskie/Ĺ›rednie | golden tests, snapshot diff, wersjonowanie generatora | tooling owner | regresja w wygenerowanych sekcjach |
 
-`Entry Criteria` dla migracji do schema-first/hybrid (rekomenduj migrację przy >=3/5):
+`Entry Criteria` dla migracji do schema-first/hybrid (rekomenduj migracjÄ™ przy >=3/5):
 
-1. Minimum 2 niezależne automatyzacje wymagają parsowania terminologii.
-2. Minimum 1 CI gate ma być blocking na niespójność terminologii.
-3. Występuje powtarzalny drift semantyczny (>=2 incydenty/kwartał).
-4. Wymagana interoperacyjność ze schema constraints modeli/tool APIs.
-5. Koszt ręcznej synchronizacji MD przekracza koszt generatora/projekcji.
+1. Minimum 2 niezaleĹĽne automatyzacje wymagajÄ… parsowania terminologii.
+2. Minimum 1 CI gate ma byÄ‡ blocking na niespĂłjnoĹ›Ä‡ terminologii.
+3. WystÄ™puje powtarzalny drift semantyczny (>=2 incydenty/kwartaĹ‚).
+4. Wymagana interoperacyjnoĹ›Ä‡ ze schema constraints modeli/tool APIs.
+5. Koszt rÄ™cznej synchronizacji MD przekracza koszt generatora/projekcji.
 
 ## Interfaces and Dependencies
 
@@ -248,3 +248,4 @@ N/A - task is research/policy decision support, not implementation. Candidate in
 
 Change note: 2026-02-12T17:18:17Z - Created ExecPlan for deep research and recommendation memo on operational source model for terminology enforcement.  
 Change note: 2026-02-12T17:41:00Z - Completed research, produced evidence-backed verdict (`Hybrid`), and added migration/impediment guidance.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: deep-researcher
 description: Conduct deep, evidence-backed research before answering user doubts or decision questions. Use when users need source-backed findings, trade-off analysis, confidence levels, and explicit uncertainty handling. Supports technical, product, process, and governance topics, including whether to add lessons or logs to a skill. Do not use for quick factual lookups or straightforward implementation tasks that do not require structured research.
 ---
@@ -252,7 +252,7 @@ Load only what is needed:
 
 - Apply `../REFERENCE-STANDARD.md` for:
   - `Shared Rule Consumption Pattern`,
-  - `Unified Scoring Convention (U5)`.
+  - `Unified Five-Point Scoring Convention`.
 - Apply `../shared/references/source-evidence-policy.md` for:
   - `Source Priority`,
   - `Citation Block Format`,
@@ -265,7 +265,7 @@ Load only what is needed:
   - `Entry Criteria for Emergent Sub-questions`,
   - `Depth Cap`,
   - `Completion Definition`.
-- Apply `../shared/references/u5-scoring-bands.md` for:
+- Apply `../shared/references/five-point-scoring-bands.md` for:
   - `Scale Definition`,
   - `Derived Label Thresholds`,
   - `Reporting Format`.
@@ -288,5 +288,6 @@ Load only what is needed:
   - `Escalation Rules`.
 - Apply `references/usecase-skill-lessons-logs.md` for:
   - `Decision Criteria`,
-  - `Recommendation Rules (U5)`,
+  - `Recommendation Rules (five-point score)`,
   - `Templates`.
+

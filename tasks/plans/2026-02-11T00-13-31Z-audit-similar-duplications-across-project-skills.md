@@ -1,4 +1,4 @@
-# Audit project for similar duplication patterns across skills
+﻿# Audit project for similar duplication patterns across skills
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -22,7 +22,7 @@ After updating `confirm-required-gate` to label-driven logic, several skill-loca
 
 ## Decision Log
 
-Decision: Interpret "podobnych duplikacji" as primarily policy duplication around shared skill references (`u5-scoring-bands`, `source-evidence-policy`, `confirm-required-gate`), then broaden to adjacent skill docs.
+Decision: Interpret "podobnych duplikacji" as primarily policy duplication around shared skill references (`five-point-scoring-bands`, `source-evidence-policy`, `confirm-required-gate`), then broaden to adjacent skill docs.
 Rationale: User asked this directly after reviewing `confirm-required-gate`, so this is the highest-signal interpretation with lowest risk of overreach.
 Timestamp/Author: 2026-02-11T00:13:31Z / Codex
 
@@ -30,7 +30,7 @@ Decision: Treat historical plans in `tasks/plans/` as archival and exclude them 
 Rationale: Historical documents intentionally preserve prior state and naturally contain repeated patterns.
 Timestamp/Author: 2026-02-11T00:13:31Z / Codex
 
-Decision: Keep `skills/REFERENCE-STANDARD.md` U5 section unchanged in this pass.
+Decision: Keep `skills/REFERENCE-STANDARD.md` five-point score section unchanged in this pass.
 Rationale: It acts as governance-level standard text; this audit focused on removing drift-prone duplication in executable skill guidance.
 Timestamp/Author: 2026-02-11T00:15:50Z / Codex
 
@@ -45,7 +45,7 @@ Completed. Harmful duplication patterns were found and remediated in four files:
 Key result: threshold-based policy copies were replaced with canonical shared-reference usage, and high-risk gating now consistently uses `risk_label == high` with `confirm-required-gate` as source of truth.
 
 Residual accepted duplication:
-- `skills/REFERENCE-STANDARD.md` still contains U5 threshold definitions as governance baseline.
+- `skills/REFERENCE-STANDARD.md` still contains five-point score threshold definitions as governance baseline.
 - `skills/deep-researcher/references/evidence-quality-rubric.md` contains domain-specific interpretation bands (not a copy of shared policy mechanics).
 
 ## Context and Orientation
@@ -59,7 +59,7 @@ Skill definitions are in `skills/*/SKILL.md` and topic references in `skills/*/r
 - Sub-question: Which repeated content is intentional (examples, local adaptation) versus harmful duplication?
 - Sub-question: What minimal edits remove harmful duplication without reducing clarity?
 - Question-to-Evidence Matrix: Candidate matches from `rg` pattern scans, validated by manual file inspection.
-- Entry Criteria: Add a new Sub-question only if initial scans reveal a distinct duplication pattern not covered by U5/source/confirm policy families.
+- Entry Criteria: Add a new Sub-question only if initial scans reveal a distinct duplication pattern not covered by five-point-score/source/confirm policy families.
 - Impediment: None currently.
 
 ## Plan of Work
@@ -69,7 +69,7 @@ Scan skill and policy markdown for text patterns associated with canonical share
 ## Concrete Steps
 
 1. Candidate collection:
-Run `rg -n` across `skills/` for threshold literals and policy phrases (U5 bands, risk confirmation thresholds, source-priority/tie-breaker wording).
+Run `rg -n` across `skills/` for threshold literals and policy phrases (five-point score bands, risk confirmation thresholds, source-priority/tie-breaker wording).
 Expected result: finite list of candidate lines.
 
 2. Manual classification:
@@ -94,7 +94,7 @@ Acceptance criteria:
 
 Verification commands:
 - `rg -n "1\\.0-2\\.4|2\\.5-3\\.7|3\\.8-5\\.0|risk_score|risk_label|source priority|conflict tie-breakers" skills`
-- `rg -n "shared/references/u5-scoring-bands|shared/references/source-evidence-policy|shared/references/confirm-required-gate" skills`
+- `rg -n "shared/references/five-point-scoring-bands|shared/references/source-evidence-policy|shared/references/confirm-required-gate" skills`
 - `git diff -- skills`
 
 ## Idempotence and Recovery
@@ -112,7 +112,7 @@ Evidence snapshots:
 - Post-fix scan results:
   - No remaining `risk_score >= 3.8` matches in active skill docs.
   - Shared policy references are consistently present where needed.
-  - Remaining threshold literals are in `skills/shared/references/u5-scoring-bands.md`, `skills/REFERENCE-STANDARD.md`, and domain-specific interpretation sections.
+  - Remaining threshold literals are in `skills/shared/references/five-point-scoring-bands.md`, `skills/REFERENCE-STANDARD.md`, and domain-specific interpretation sections.
 - Verification diff confirms only targeted files changed:
   - `skills/skill-creator/SKILL.md`
   - `skills/skill-creator/references/quality-gates.md`
@@ -125,3 +125,4 @@ N/A - this is a docs/skill-content audit and cleanup task only; no runtime inter
 
 Change note: 2026-02-11T00:13:31Z - Created ExecPlan for duplication-pattern audit across skills and shared policy modules.
 Change note: 2026-02-11T00:16:00Z - Recorded findings classification, applied focused deduplication edits, and captured post-fix verification evidence.
+

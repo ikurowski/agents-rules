@@ -1,4 +1,4 @@
-# Research Campaign Model
+﻿# Research Campaign Model
 
 When to load: Load at invocation time for every research/decision task. For non-research/decision tasks, mark campaign decomposition as `N/A` with one-sentence rationale.
 
@@ -40,7 +40,7 @@ ID format:
 
 Register template:
 
-| ID | Type | Parent | Status | Priority (U5) | Blocking | Decision |
+| ID | Type | Parent | Status | Priority (five-point score) | Blocking | Decision |
 |---|---|---|---|---|---|---|
 | Sub-question-1 | initial | Primary Question | resolved | 4.2 | yes | answered |
 | Sub-question-2 | emergent | Primary Question | in_progress | 3.9 | yes | include-now |
@@ -76,7 +76,7 @@ Map each `Sub-question-*` to closure outcome:
 Admit emergent `Sub-question-*` into current scope only if:
 
 - `Blocking = yes`, or
-- `Priority (U5) >= 3.8`.
+- `Priority (five-point score) >= 3.8`.
 
 Otherwise set:
 
@@ -97,3 +97,4 @@ Mark task `completed` only when:
 1. every `Sub-question-*` is `resolved` or explicitly `deferred` with rationale,
 2. every `Sub-question-*` has a decision (`answered`, `include-now`, `next-task`, or `drop`),
 3. `Question-to-Evidence Matrix` has no unresolved gaps.
+

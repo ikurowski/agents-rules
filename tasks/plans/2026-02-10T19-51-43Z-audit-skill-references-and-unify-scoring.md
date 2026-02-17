@@ -1,4 +1,4 @@
-# Audit Skill References and Unify Scoring
+﻿# Audit Skill References and Unify Scoring
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -38,7 +38,7 @@ Decision: Keep `skills/deep-researcher/references/usecase-skill-lessons-logs.md`
 Rationale: The file contains unique governance option mapping and reusable templates; retaining it as optional module avoids bloating core research references while preserving coverage.
 Timestamp/Author: 2026-02-10T19:57:55Z / Codex
 
-Decision: Adopt a single U5 (`1-5`) numeric scale with deterministic label mapping (`low|medium|high`) as the repository-wide scoring convention for skill references.
+Decision: Adopt a single five-point score (`1-5`) numeric scale with deterministic label mapping (`low|medium|high`) as the repository-wide scoring convention for skill references.
 Rationale: It resolves numeric-vs-categorical inconsistency while preserving readability and enabling deterministic thresholds.
 Timestamp/Author: 2026-02-10T19:58:00Z / Codex
 
@@ -51,8 +51,8 @@ Timestamp/Author: 2026-02-10T19:58:15Z / Codex
 Completed. The repository now has:
 
 - a cross-skill reference standard (`skills/REFERENCE-STANDARD.md`),
-- normalized U5 scoring in `deep-researcher` evidence/confidence/governance references,
-- normalized U5 risk scoring in `skill-creator` security references and policy text,
+- normalized five-point scoring in `deep-researcher` evidence/confidence/governance references,
+- normalized five-point score risk scoring in `skill-creator` security references and policy text,
 - validated skill structure after removing BOM from `skills/skill-creator/SKILL.md`.
 
 `usecase-skill-lessons-logs.md` was assessed as needed and retained, but converted to the same scoring convention as the rest of the system.
@@ -165,3 +165,4 @@ N/A - This is documentation/policy harmonization within skill markdown files and
 
 Change note: 2026-02-10T19:51:43Z - Created initial ExecPlan for cross-skill reference audit and scoring unification work.
 Change note: 2026-02-10T19:59:20Z - Recorded completed audit, research findings, implementation decisions, and validation evidence.
+

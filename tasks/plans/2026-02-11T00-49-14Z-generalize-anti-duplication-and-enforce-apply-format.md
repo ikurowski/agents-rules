@@ -1,4 +1,4 @@
-# Generalize anti-duplication policy and enforce `Apply ... for:` in Progressive Disclosure
+﻿# Generalize anti-duplication policy and enforce `Apply ... for:` in Progressive Disclosure
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
@@ -83,7 +83,7 @@ Edits are documentation-only and idempotent. If wording creates ambiguity, rever
 
 Verification evidence:
 - `rg -n "Single Source of Truth|canonical source|context-specific deltas" AGENTS.md` matched the new generalized anti-duplication section.
-- `rg -n "Progressive Disclosure|Apply <relative-path> for:|canonical source for scale definition" skills/REFERENCE-STANDARD.md` matched the new enforcement line and canonical U5 pointer.
+- `rg -n "Progressive Disclosure|Apply <relative-path> for:|canonical source for scale definition" skills/REFERENCE-STANDARD.md` matched the new enforcement line and canonical five-point score pointer.
 - Manual line checks confirmed all entries under `## Progressive Disclosure` in:
   - `skills/deep-researcher/SKILL.md`
   - `skills/skill-creator/SKILL.md`
@@ -97,3 +97,4 @@ N/A - docs/policy-only changes; no runtime interface or dependency changes.
 
 Change note: 2026-02-11T00:49:14Z - Created ExecPlan for generalized anti-duplication policy and Progressive Disclosure formatting enforcement.
 Change note: 2026-02-11T00:50:48Z - Completed policy/doc edits, validated Progressive Disclosure formatting enforcement, and recorded evidence.
+

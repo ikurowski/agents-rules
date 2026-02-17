@@ -1,4 +1,4 @@
-# Lessons Learned
+﻿# Lessons Learned
 
 Record significant user corrections and how they were fixed. Add entries only when the correction creates a reusable prevention rule.
 Operational threshold: treat a correction as significant only when it adds or changes a prevention rule likely reusable in future tasks; skip one-off style preferences.
@@ -60,7 +60,7 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Context: _I added section-specific enforcement wording in `skills/REFERENCE-STANDARD.md` and mixed directive style in a canonical pointer._
 - Mistake: _I introduced an unnecessary section exception (`Progressive Disclosure`) and used `Use ...` where the active pattern should be `Apply ... for:`._
 - Root cause: _I optimized for immediate fix locality instead of preserving one precise, global consumption rule style._
-- Fix: _I replaced the exception with one general module-consumption rule and rewrote the U5 canonical pointer to `Apply ... for:` with scoped bullets._
+- Fix: _I replaced the exception with one general module-consumption rule and rewrote the five-point score canonical pointer to `Apply ... for:` with scoped bullets._
 - Prevention rule: _When defining a standard rule, prefer one globally applicable formulation and keep directive syntax consistent with the chosen canonical pattern._
 
 - Timestamp: 2026-02-11T01:34:30Z
@@ -104,3 +104,11 @@ Operational threshold: treat a correction as significant only when it adds or ch
 - Root cause: _I optimized for preserving a runnable harness instead of prioritizing clean handoff for a fresh session._
 - Fix: _I removed additional temporary runtime artifacts, kept only baseline tooling, and produced a dedicated large prompt that enforces explicit single-SoT mapping to AGENTS/PLANS/skills shared references._
 - Prevention rule: _When user requests a fresh-session handoff, prefer a clean baseline and a precise execution prompt over retaining transitional runtime artifacts._
+
+- Timestamp: 2026-02-13T00:34:43Z
+- Context: _I started implementing the approved JSDoc-policy plan while an already-approved `Delta Plan v2` workflow plan was still pending._
+- Mistake: _I did not explicitly synchronize and execute both approved plans together before the user had to ask about the missing one._
+- Root cause: _I treated the latest explicit implementation request as exclusive scope instead of maintaining an explicit ledger of all approved-but-unfinished plan commitments._
+- Fix: _I merged both scopes into one implementation run, delivered policy + runtime together, and updated tracker/ExecPlan evidence for the combined outcome._
+- Prevention rule: _When multiple plans are approved in the same session, maintain an explicit execution ledger in tracker/plan docs and verify each approved plan is either completed, merged, or explicitly deferred before reporting completion._
+

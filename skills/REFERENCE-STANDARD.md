@@ -1,4 +1,4 @@
-# Skill Reference Standard
+﻿# Skill Reference Standard
 
 This file defines a shared structure and scoring convention for all skill reference documents under `skills/*/references/`.
 
@@ -12,7 +12,7 @@ Use shared reference modules for policies that repeat across multiple skills:
 
 - `skills/shared/references/canonical-terminology.md`
 - `skills/shared/references/research-campaign-model.md`
-- `skills/shared/references/u5-scoring-bands.md`
+- `skills/shared/references/five-point-scoring-bands.md`
 - `skills/shared/references/source-evidence-policy.md`
 - `skills/shared/references/confirm-required-gate.md`
 - `skills/shared/references/principle-effectiveness-review.md`
@@ -84,9 +84,9 @@ Each `references/*.md` file should include:
 
 If a section is not relevant, write `N/A` and one sentence why.
 
-## Unified Scoring Convention (U5)
+## Unified Five-Point Scoring Convention
 
-Apply `shared/references/u5-scoring-bands.md` for:
+Apply `shared/references/five-point-scoring-bands.md` for:
 
 - `Scale Definition`,
 - `Derived Label Thresholds`.
@@ -112,3 +112,4 @@ Examples:
 - `confidence_label: high`
 - `risk_score: 2.8/5`
 - `risk_label: medium`
+

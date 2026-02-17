@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workflow Evaluator"
+  short_description: "Evaluate workflow behavior and produce ease scorecards"
+  default_prompt: "Use $workflow-evaluator to run workflow discovery, scenario tests, quality gates, and generate an ease scorecard report."
