@@ -16,12 +16,6 @@ export default [
     ignores: [
       'node_modules/**',
       'dist/**',
-      'artifacts/**',
-      'generated/**',
-      'contracts/**',
-      'tasks/**',
-      '.github/**',
-      '*.md',
       'eslint.config.mjs',
       'src/**/*.d.ts',
     ],

@@ -2,6 +2,17 @@
 
 This repository uses execution plans ("ExecPlans") for non-trivial tasks. An ExecPlan must be self-contained: a new contributor should be able to complete the work with only the current working tree and that single plan file.
 
+## When to Use an ExecPlan
+
+Create and maintain an ExecPlan when the task is non-trivial, including cases such as:
+
+1. three or more concrete execution steps,
+2. architecture or repository-structure changes,
+3. research or decision work that needs explicit evidence and closure,
+4. fixes that require multiple validation steps or careful recovery notes.
+
+Trivial one-step tasks do not need an ExecPlan unless the user explicitly asks for one.
+
 ## Scope and Ownership
 
 - Store plans in `tasks/plans/`.
@@ -62,6 +73,7 @@ Each ExecPlan must include these sections:
 - Update `Progress` at every stop point, including partial completion notes.
 - Capture important evidence snippets in `Artifacts and Notes`.
 - On completion, add an `Outcomes & Retrospective` summary of results, gaps, and lessons.
+- Keep `tasks/todo.md` aligned with the current plan state, but do not move plan detail into the tracker.
 
 ## Historical Plans
 

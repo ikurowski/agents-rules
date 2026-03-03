@@ -1,6 +1,6 @@
-﻿# Principle Effectiveness Review
+# Principle Effectiveness Review
 
-When to load: Use at the end of a skill run to evaluate how effectively the selected principle was implemented and to define corrective actions.
+When to load: Use at the end of a deep-researcher run to evaluate how effectively the selected principle was implemented and to define corrective actions.
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ Capture:
 
 ## Scoring Rules
 
-Apply `./five-point-scoring-bands.md` for:
+Apply `../../shared/references/five-point-scoring-bands.md` for:
 
 - `Scale Definition`,
 - `Derived Label Thresholds`,
@@ -69,4 +69,3 @@ If `principle_effectiveness_label == low`:
 3. flag implementation risk explicitly.
 
 If label is `medium` for two consecutive reviews, recommend a broader process adjustment instead of local patching.
-

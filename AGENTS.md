@@ -1,151 +1,48 @@
-# AGENTS.md - Automated Agent Guidelines
+# AGENTS.md - Repository-Wide Agent Contract
 
-This document defines how autonomous agents should interact with this codebase. It complements the human-centric `README.md` by giving strict, unambiguous rules for planning, executing, and verifying changes. Agents should treat these rules as hard constraints, not suggestions. The goal is to maximise usefulness while minimising unintended side-effects.
+This file defines the stable, repo-wide rules for autonomous agents working in this repository. Keep task-specific workflow detail in `PLANS.md`, skill-local behavior in `skills/*`, and human-facing orientation in `README.md`.
 
-## Fundamental Principles
-
-These foundational rules govern how an AI agent should reason about tasks and write code. Follow them consistently, regardless of task size.
-
-### Instruction Hierarchy
+## Instruction Hierarchy
 
 Resolve instruction conflicts in this order:
 
 1. Direct user request in the current session.
 2. Nested, task-local `AGENTS.md` (if present).
-3. Repository root `AGENTS.md` (operational behavior policy).
-4. `PLANS.md` (ExecPlan structure and lifecycle policy).
-5. Supporting docs/templates (`README.md`, `tasks/plans/_template.md`, etc.).
+3. Repository root `AGENTS.md`.
+4. `PLANS.md` for ExecPlan structure and lifecycle.
+5. Supporting docs and templates such as `README.md` and `tasks/plans/_template.md`.
 
 If instructions conflict:
 
-- For ExecPlan structure/lifecycle rules, `PLANS.md` takes precedence over `AGENTS.md`.
-- For all other operational behavior, `AGENTS.md` takes precedence.
+- `PLANS.md` wins for ExecPlan format and lifecycle.
+- `AGENTS.md` wins for all other repository-wide operating rules.
 
-Record the assumption and rationale in the active ExecPlan (`Decision Log`).
+## Repo-Wide Rules
 
-### Session Start
+1. Review the relevant files and context before editing anything.
+2. Prefer the minimum change that solves the actual problem; do not widen scope speculatively.
+3. Keep changes surgical; do not clean up adjacent code or docs unless the task requires it.
+4. When a rule is reused across multiple places, keep one canonical source and point to it instead of copying the full text.
+5. When the repository contains exported APIs, use `docs/standards/jsdoc-api-contracts.md` as the canonical JSDoc contract policy.
 
-At the start of each new non-trivial task:
+## Planning and Task Records
 
-1. Read `AGENTS.md` for operational behavior policy.
-2. Read `PLANS.md` for ExecPlan requirements.
-3. Check `tasks/todo.md` for current status and linked active plan.
-4. Read `tasks/lessons.md` for reusable prevention rules.
+For non-trivial work, follow `PLANS.md` to decide whether an ExecPlan is required and how it must be maintained.
 
-### Think Before Execution
+Tracker boundaries:
 
-Before writing any code, review the relevant files/logs first, then explicitly state your assumptions and surface ambiguities in the active ExecPlan. When there are multiple possible interpretations, list them; do not silently choose one. Push back when a simpler approach exists. When uncertain, resolve from repository context first; ask the user only when a decision materially changes behavior and cannot be inferred safely. For trivial tasks that do not require an ExecPlan, capture assumptions in the final response under `Assumptions`; do not add them to `tasks/todo.md`.
+- `tasks/todo.md` is the high-level status tracker only.
+- `tasks/plans/*` contains execution detail, decisions, evidence, and validation notes.
+- `tasks/lessons.md` is only for reusable prevention rules learned from significant corrections.
 
-### Simplicity in Implementation
+If a task needs an ExecPlan, record assumptions and ambiguities in that plan instead of scattering them across other docs.
 
-Implement the minimum code that solves the problem and nothing speculative. Do not add features beyond what was asked. Avoid abstractions for single-use code or configurability that was not requested. If you can solve a problem with fewer lines, rewrite it. Over-engineering is discouraged.
+## Execution Defaults
 
-### Minimal & Surgical Changes
-
-Touch only the code you must. When editing existing files, do not improve adjacent code, comments, or formatting unless explicitly asked. Match the existing style, even if you would do it differently. Remove only the imports or variables that your changes made unused; do not remove unrelated dead code.
-
-### API Contract Rules
-
-`docs/jsdoc-contract.md` is the single source of truth for JSDoc contracts on exported APIs. Do not duplicate those rules in `AGENTS.md`.
-
-### Single Source of Truth
-
-Reduce duplication and policy drift by enforcing one authoritative source per rule:
-
-1. If a rule is reused across multiple locations, define one canonical source and reference it instead of restating it.
-2. In consuming docs or code, keep only context-specific deltas; do not copy baseline thresholds, tie-breakers, or base procedures.
-3. When canonical guidance changes, verify downstream references remain consistent.
-
-### Goal-Driven Execution & Verification
-
-Define explicit success criteria and transform imperative tasks into verifiable goals. For example, instead of "fix the bug," write a failing test that reproduces the bug and then make it pass. Outline multi-step tasks as a plan with checks after each step. Continue looping until each check is satisfied. Strong success criteria let the agent work independently; weak criteria require constant clarification.
-
-### Investigate Root Causes
-
-Do not apply temporary fixes. Always investigate and address the root cause of a bug or issue. Uphold senior-developer standards: if tests are failing or logs show errors, analyse and resolve them rather than masking the problem.
-
-### Continuous Learning
-
-After a significant correction from the user, record the mistake and its fix in `tasks/lessons.md`. A correction is significant when it adds or changes a reusable prevention rule that is likely to apply in future tasks (not a one-off wording preference). Review these lessons at the beginning of each session to avoid repeating past errors.
-
-## Workflow Orchestration
-
-### Planning by Default for Non-Trivial Work
-
-For any non-trivial task (three or more steps, or anything affecting architecture), create and maintain a detailed ExecPlan in `tasks/plans/<YYYY-MM-DDTHH-mm-ssZ>-<slug>.md` using `PLANS.md` (assumptions, goals, and verification steps included).
-
-Treat responsibilities separately: `tasks/todo.md` tracks high-level task metadata and status, while `tasks/plans/*` contains execution details, decisions, evidence, and validation steps.
-
-If a task goes sideways, stop immediately, revisit the requirements, and re-plan. Do not continue blindly.
-
-Use this planning workflow not only for new features but also for verification: plan how to reproduce bugs and how to prove that fixes work.
-
-### Parallel Research Strategy
-
-For complex tasks, parallelise independent exploration and verification work streams when possible, then merge results into one coherent plan before editing files.
-
-### Demand Elegance
-
-For non-trivial changes, pause and ask whether there is a more elegant solution. Challenge yourself to find a design that is simple and maintainable. If a fix feels hacky, refactor it into a cleaner solution.
-
-Use judgment: trivial fixes may not require reconsideration, but larger changes should strive for elegance without over-engineering or widening scope beyond the request.
-
-### Autonomous Bug Fixing
-
-When given a bug report, just fix it. Use logs, error messages, and failing tests to diagnose the issue, then resolve it without extra hand-holding.
-
-Do not require context switching from the user; your goal is to reduce their cognitive load. Fix failing CI tests or runtime errors without being told exactly how.
-
-After fixing, demonstrate the solution with tests or other verification steps and document full cause/resolution details in the active ExecPlan, plus a short outcome line in `tasks/todo.md`.
-
-## Commit Style
-
-Use Conventional Commits and keep commits atomic.
-
-- Commit authorization: never run `git commit` unless the user explicitly asks for a commit in the current session.
-- One concern per commit. Do not mix unrelated changes.
-- Message format: `<type>(<optional-scope>): <imperative summary>`
-- Preferred types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`.
-- Body is optional but recommended for non-trivial changes:
-  - Why the change was needed.
-  - What was changed.
-  - How it was verified.
-
-Examples:
-
-- `docs(agents): add reflective loop and commit style policy`
-- `docs(plans): adopt strict self-contained exec plan template`
-- `fix(ci): stabilize flaky integration test setup`
-
-## Reflective Loop
-
-Run this loop for non-trivial tasks:
-
-1. Plan: define assumptions, scope, and verifiable success criteria.
-2. Execute: apply minimal, surgical changes.
-3. Verify: run checks/tests and inspect outputs.
-4. Reflect: compare outcomes to success criteria and identify gaps.
-5. Update docs: sync `tasks/todo.md`, `tasks/lessons.md` (when corrected), and relevant policy docs.
-6. Iterate: re-plan only unresolved gaps and repeat.
-
-Stop criteria:
-
-- All success criteria are satisfied.
-- Verification evidence is captured.
-- No unresolved high-risk ambiguity remains.
-
-## Task Management & Continuous Improvement
-
-- **Single Source for Planning Rules**: Treat `Workflow Orchestration > Planning by Default for Non-Trivial Work` as the normative planning rule; avoid duplicating planning logic elsewhere.
-- **Keep TODO High-Level**: In `tasks/todo.md`, track only status, goal, optional owner, ExecPlan link, and short outcome.
-- **Active Task Semantics**: Keep `## Active Task` only when exactly one task is `in_progress`; move `completed` or `blocked` entries to `## Task History`.
-- **Status Vocabulary**: Use only `in_progress`, `completed`, or `blocked` for `tasks/todo.md` status values.
-- **Proceed Autonomously**: Publish the plan, then execute unless the user explicitly asks to pause for review.
-- **Track Progress in ExecPlan**: Mark execution progress in the active plan and keep evidence there.
-- **Explain Changes**: At each step, provide a high-level summary of what was modified and why.
-- **Document Results**: After finishing, write a short outcome in `tasks/todo.md` and keep detailed validation evidence in the ExecPlan.
-- **Capture Lessons**: Append lessons only for corrections that produce reusable prevention rules and review them at the start of subsequent sessions.
+1. Prefer resolving uncertainty from repository context before asking the user.
+2. Verify changes with observable checks, not only by editing files.
+3. If asked to commit, use Conventional Commits and keep each commit to one concern.
 
 ## Disclaimer
 
-This document is intended for automated agents and tools. `AGENTS.md` defines operational behavior policy, `PLANS.md` defines ExecPlan structure/lifecycle policy, and `README.md` is onboarding summary for humans. Agents should treat these rules as non-negotiable unless the user provides explicit overrides.
+This document is intended for automated agents and tools. `README.md` explains the repository, `AGENTS.md` sets repo-wide rules, `PLANS.md` owns ExecPlan policy, and `skills/*` contains domain-specific workflows.

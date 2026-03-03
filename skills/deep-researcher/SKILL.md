@@ -217,7 +217,7 @@ Require a review cadence for non-trivial decisions.
 
 ## End-of-Run Principle Effectiveness Review
 
-Before final response, apply `../shared/references/principle-effectiveness-review.md` for:
+Before final response, apply `references/principle-effectiveness-review.md` for:
 
 - `Scoring Rules`,
 - `Corrective Action Design`,
@@ -235,9 +235,6 @@ Before final response, apply `../shared/references/principle-effectiveness-revie
 
 Load only what is needed:
 
-- Apply `../REFERENCE-STANDARD.md` for:
-  - `Shared Rule Consumption Pattern`,
-  - `Unified Five-Point Scoring Convention`.
 - Apply `../shared/references/source-evidence-policy.md` for:
   - `Source Priority`,
   - `Citation Block Format`,
@@ -254,7 +251,7 @@ Load only what is needed:
   - `Scale Definition`,
   - `Derived Label Thresholds`,
   - `Reporting Format`.
-- Apply `../shared/references/principle-effectiveness-review.md` for:
+- Apply `references/principle-effectiveness-review.md` for:
   - `Scoring Rules`,
   - `Corrective Action Design`,
   - `Output Template`,

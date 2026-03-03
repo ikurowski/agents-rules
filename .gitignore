@@ -12,9 +12,5 @@ Thumbs.db
 .env
 .env.*
 
-# Node / build artifacts
+# Reserved for local generated artifacts when users temporarily add tooling
 node_modules/
-dist/
-artifacts/
-generated/
-.eslintcache
