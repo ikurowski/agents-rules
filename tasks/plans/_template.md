@@ -1,91 +1,37 @@
 # <Short, action-oriented description>
 
-This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
+This ExecPlan is a living document. Keep it only as detailed as the task requires.
 
-This plan follows `PLANS.md`. Keep the document self-contained so a novice can execute it from this file alone.
-If a required section is not applicable, keep the section and write `N/A` with a one-sentence rationale.
+## Purpose
 
-## Purpose / Big Picture
-
-Explain what user-visible behavior will exist after this change, why it matters, and how someone can observe it working.
+Explain what will change, why it matters, and how someone can tell the task is done.
 
 ## Progress
 
-- [ ] (YYYY-MM-DDTHH:MM:SSZ) Initial task entry.
-- [ ] (YYYY-MM-DDTHH:MM:SSZ) Incomplete step.
-- [ ] (YYYY-MM-DDTHH:MM:SSZ) Partial step (completed: X; remaining: Y).
-
-## Surprises & Discoveries
-
-Document unexpected behaviors, bugs, constraints, or tradeoffs discovered during implementation. Include short evidence snippets in plain text.
+- [ ] (YYYY-MM-DDTHH:MM:SSZ) Started.
+- [ ] (YYYY-MM-DDTHH:MM:SSZ) Key work completed.
+- [ ] (YYYY-MM-DDTHH:MM:SSZ) Validation and close-out completed.
 
 ## Decision Log
-
-Record each implementation decision with rationale and timestamp.
 
 Decision: <what was decided>  
 Rationale: <why this path was chosen>  
 Timestamp/Author: YYYY-MM-DDTHH:MM:SSZ / <name>
 
-## Outcomes & Retrospective
+## Validation
 
-Summarize what was achieved, what remains, and what should be done differently next time.
+List the observable checks for this task and the expected result for each.
 
-## Context and Orientation
+## Outcome
 
-Describe repository context for a novice reader. Name exact repo-relative paths and explain how the touched files/modules fit together.
+Summarize what changed, what remains, and whether follow-up is needed.
 
-## Terminology and Decomposition
+## Optional Sections
 
-For research/decision tasks, define and use canonical terms:
-
-- `Primary Question`
-- `Sub-question`
-- `Question-to-Evidence Matrix`
-- `Entry Criteria`
-- `Impediment`
-
-If the task is not research/decision-oriented, write `N/A` and one sentence why.
-
-For research/decision tasks, apply `skills/shared/references/research-campaign-model.md` for:
-
-- `Canonical Terms`,
-- `Primary Question Frame`,
-- `Sub-question Register`,
-- `Question-to-Evidence Matrix`,
-- `Entry Criteria for Emergent Sub-questions`,
-- `Depth Cap`,
-- `Completion Definition`.
-
-Then include in the plan at minimum:
-
-1. one populated `Primary Question` line,
-2. one populated `Sub-question Register` table with `Sub-question-*` IDs,
-3. one populated `Question-to-Evidence Matrix` with no missing `Sub-question-*` rows.
-
-## Plan of Work
-
-Describe, in prose, the sequence of edits and additions. Name exact files and locations (function/module/section) and what will change.
-
-## Concrete Steps
-
-List exact commands with working directory and expected outputs in short prose. Keep examples concise and directly verifiable.
-
-## Validation and Acceptance
-
-Describe the acceptance checks as observable behavior. Include exact test/run commands and what success or failure looks like.
-
-## Idempotence and Recovery
-
-Explain how to safely re-run steps and how to recover from partial failure or mistaken edits.
-
-## Artifacts and Notes
-
-Include concise transcripts, logs, or diff excerpts that prove the change works.
-
-## Interfaces and Dependencies
-
-For interface/dependency changes, list required interfaces, modules, libraries, and integration points that must exist after implementation.
-For docs-only or policy-only work, write `N/A` with one-sentence rationale and do not add placeholder interfaces or example signatures.
+- `Context`
+- `Concrete Steps`
+- `Idempotence and Recovery`
+- `Artifacts`
+- `Interfaces and Dependencies`
 
 Change note: <YYYY-MM-DDTHH:MM:SSZ> - <what changed in this plan and why>.

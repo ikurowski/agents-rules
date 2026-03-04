@@ -1,13 +1,6 @@
-﻿# Doubt Resolution Protocol
+# Doubt Resolution Protocol
 
-When to load: Use after research phase is complete, when the user asks follow-up questions or challenges conclusions.
-
-## Table of Contents
-
-1. Doubt intake
-2. Answer structure
-3. Confidence rules (five-point score)
-4. Escalation rules
+When to load: Use after phase 1 when the user raises follow-up doubts or challenges the conclusion.
 
 ## Doubt Intake
 
@@ -22,27 +15,23 @@ For each doubt:
 
 ## Answer Structure
 
-Use this mini-template:
-
 - `Doubt`: <restated doubt>
 - `Answer`: <direct answer>
 - `Evidence`: <source-backed basis from phase 1>
-- `Confidence`: <confidence_score: X/5; confidence_label: low|medium|high>
-- `What would change my mind`: <new evidence needed>
+- `Confidence`: <use shared label + why>
+- `Risk If Wrong`: <use shared label + why> when decision downside matters
+- `What Would Change My Mind`: <new evidence needed>
 
-## Confidence Rules (five-point score)
+## Confidence Rules
 
-Apply `../../shared/references/five-point-scoring-bands.md` for:
+Use labels from `../../shared/references/assessment-profile.md`.
 
-- `Derived Label Thresholds`,
-- `Reporting Format`.
+Default application guidance:
 
-Default scoring guidance:
-
-- start from evidence quality score in phase 1,
-- subtract `0.5` for unresolved contradiction,
-- subtract `0.5` for key indirect evidence,
-- cap at `3.7` when core evidence is indirect.
+- start from the shared `Confidence` definitions,
+- lower confidence when unresolved contradiction or key indirectness leaves the answer fragile,
+- keep the answer explicitly revisable when meaningful new evidence could still change it,
+- add `Risk If Wrong` only when decision downside materially matters.
 
 ## Escalation Rules
 
@@ -51,4 +40,3 @@ If doubt cannot be resolved with current evidence:
 1. mark it explicitly unresolved,
 2. propose the fastest additional research step,
 3. avoid premature binary recommendation.
-

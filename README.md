@@ -1,34 +1,26 @@
 # Agent Rules Repository
 
-Repository for managing agent operating rules, reusable skills, and work history.
+Markdown-first repository for agent operating rules, reusable skills, and selected task history.
 
-This workspace is markdown-first at the moment, with room to grow into a broader runtime/tooling setup later if the repository needs it.
+## Current Shape
 
-## What is in this repository
+- `AGENTS.md` - repo-wide agent contract.
+- `PLANS.md` - when ExecPlans are required and how light or heavy they should be.
+- `skills/*` - reusable skills plus skill-local references.
+- `tasks/todo.md` - high-level tracker.
+- `tasks/plans/*` - retained plans for research, architecture changes, and other work worth preserving.
+- `tasks/lessons.md` - reusable prevention rules from significant corrections.
 
-- `AGENTS.md` - hard rules for agents.
-- `PLANS.md` - strict self-contained ExecPlan standard for non-trivial tasks.
-- `skills/*` - skill definitions, references, and workflow specs.
-- `tasks/todo.md` - high-level task tracker (status/goal/plan link/outcome).
-- `tasks/plans/*` - executable plans for complex tasks.
-- `tasks/lessons.md` - lessons captured for significant corrections with reusable prevention rules.
+## Operating Model
 
-## How the pieces fit together
+- Root docs stay short and stable.
+- Skills own domain workflow and detailed reference material.
+- Plans are used only for work that benefits from durable execution memory.
+- The repository is markdown-first today.
+- Dormant Node/TypeScript tooling is intentionally parked for future code, but it is not part of the current operating model.
 
-- `README.md` is the human-facing map of the repository.
-- `AGENTS.md` is the short repo-wide contract for autonomous agents.
-- `PLANS.md` is the only source of truth for when ExecPlans are required and how they are structured.
-- `skills/*` contains domain-specific workflows and references that should not live in repo-wide policy.
-- `docs/standards/*` contains durable cross-cutting standards that are worth keeping separate from task or skill docs.
-- `tasks/todo.md` tracks current status, while `tasks/plans/*` keeps detailed execution history and evidence.
+## Intentionally Absent
 
-## Lean self-validation
-
-Run these checks after cleanup or when repo policy changes materially:
-
-1. Confirm tracker shape: `Get-Content -Raw tasks/todo.md`
-   Expected result: at most one `## Active Task` section with one `in_progress` item.
-2. Check shared-reference reuse: `$files = Get-ChildItem skills/shared/references -File; foreach ($f in $files) { $name = [System.IO.Path]::GetFileNameWithoutExtension($f.Name); $count = (rg -l $name skills | Measure-Object).Count; "$count`t$($f.Name)" }`
-   Expected result: each shared reference has at least two live consumers; otherwise demote it back to a skill-local reference or remove it.
-3. Review shared-reference imports: `rg -n "Apply \\.\\./shared/references/|Apply \\.\\./\\.\\./shared/references/" skills`
-   Expected result: imports should appear only in skills or skill-local references that actually need shared policy.
+- No active runtime layer or maintained source tree beyond future-facing placeholders.
+- No shared skill-policy layer until more than one real skill needs it.
+- No separate standards layer until live code or multi-skill reuse justifies it.

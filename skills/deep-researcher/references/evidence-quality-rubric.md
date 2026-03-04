@@ -1,67 +1,57 @@
-﻿# Evidence Quality Rubric
+# Evidence Quality Rubric
 
-When to load: Use when scoring source quality and mapping scores to confidence.
+When to load: Use when assessing source quality and setting `Evidence Quality` and `Confidence`.
 
-## Table of Contents
+Use reporting dimensions and labels from `../../shared/references/assessment-profile.md`.
 
-1. Shared five-point scoring reference
-2. Scoring dimensions
-3. Aggregate score interpretation
-4. Confidence mapping
-5. Conflict handling
+## Source Quality Checks
 
-## Shared Five-Point Scoring Reference
-
-Apply `../../shared/references/five-point-scoring-bands.md` for:
-
-- `Scale Definition`,
-- `Derived Label Thresholds`,
-- `Reporting Format`.
-
-## Scoring Dimensions
-
-Score each dimension from 1 to 5:
+Review these checks before assigning an `Evidence Quality` label:
 
 1. Authority: Is the source authoritative for this domain?
 2. Recency: Is it current enough for the decision?
 3. Applicability: Does it match the exact use case?
 4. Verifiability: Can the claim be traced and checked?
-5. Risk sensitivity: Does it handle failure/security implications?
+5. Risk sensitivity: Does it handle failure or security implications?
 
-Compute:
+## Evidence Quality
 
-- `evidence_score = average(all dimension scores)` (range `1.0-5.0`)
-- `evidence_label` from five-point score bands above
+Use the `Evidence Quality` labels defined in `../../shared/references/assessment-profile.md`.
 
-## Aggregate Score Interpretation
+Apply them with this local decision rule:
 
-- `4.2-5.0`: high-quality evidence
-- `3.4-4.1`: acceptable evidence
-- `2.5-3.3`: weak evidence
-- `1.0-2.4`: insufficient evidence
+- use `strong` only when most checks are clearly satisfied and no major unresolved conflict remains,
+- use `limited` when one or more core checks materially fail or unresolved conflict still dominates the claim,
+- otherwise default to `adequate`.
 
-## Confidence Mapping
+Do not average the source-quality checks into a numeric total.
 
-Report both:
+## Confidence
 
-- `confidence_score` (`1.0-5.0`)
-- `confidence_label` (`low|medium|high`)
+Use the `Confidence` labels defined in `../../shared/references/assessment-profile.md`.
 
-Recommended mapping rule:
+Set `Confidence` separately from `Evidence Quality`:
 
-- start from `evidence_score`,
-- subtract `0.5` if major source contradiction remains unresolved,
-- subtract `0.5` if critical evidence is indirect for core claims,
-- clamp to `1.0-5.0`.
+- start from the shared `Confidence` definitions,
+- lower confidence when core claims remain materially contested, indirect, or fragile,
+- do not raise confidence just because source quality checks look strong.
 
-Then map to label using five-point score bands.
+Strong `Evidence Quality` does not automatically require high `Confidence`, and limited `Evidence Quality` does not automatically forbid a conditional recommendation.
+
+## Reporting
+
+Use the shared reporting template from `../../shared/references/assessment-profile.md`.
+
+At minimum for this rubric-driven output report:
+
+- `Evidence Quality`
+- `Confidence`
 
 ## Conflict Handling
 
 When evidence conflicts:
 
 1. identify the exact conflicting claims,
-2. compare source authority and applicability,
-3. prefer the source with better domain fit and recency,
+2. compare source authority, recency, and applicability,
+3. prefer the source with better fit to the question,
 4. state residual uncertainty explicitly.
-

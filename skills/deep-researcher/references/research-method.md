@@ -1,125 +1,82 @@
-﻿# Research Method
+# Research Method
 
-When to load: Use when structuring the research protocol, evidence table, and final brief.
+When to load: Use when structuring intake, decomposition, source collection, evidence tables, and the final brief.
 
-## Table of Contents
-
-1. Protocol setup
-2. Intake readiness checklist and loop
-3. Question decomposition and scope control
-4. Campaign thread register and closure gate
-5. Source collection checklist
-6. Evidence table template
-7. Decision brief template
-8. Seed primary sources
-
-## Protocol Setup
+## Intake Setup
 
 Before collecting sources, define:
 
-- decision question,
-- decision deadline,
-- decision owner,
-- constraints (time, budget, risk appetite),
-- evaluation criteria.
+- `Primary Question`
+- in-scope and out-of-scope boundary
+- key constraints (time, cost, risk, compliance)
+- output format
+- evaluation criteria
 
-Write exclusions explicitly to prevent scope creep.
+Optional but useful:
 
-## Intake Readiness Checklist and Loop
+- decision owner and deadline
+- options already being considered
+- explicit doubts to resolve after phase 1
 
-Before starting evidence collection, confirm required readiness fields:
+## Readiness Loop
 
-- research/decision question is explicit,
-- in-scope and out-of-scope boundaries are explicit,
-- constraints/priorities are explicit,
-- output format and target audience are explicit.
+1. List only the missing required fields.
+2. Ask up to 3 targeted questions.
+3. Wait for the user's reply.
+4. Re-check readiness.
+5. If the user cannot add more detail, proceed with explicit assumptions and lower confidence.
 
-Optional but useful fields:
+## Question Model
 
-- decision owner and deadline,
-- options already considered,
-- specific doubts to resolve after research.
+Use these canonical terms:
 
-Loop protocol:
+- `Primary Question`
+- `Sub-Question`
+- `Question-to-Evidence Matrix`
+- `Impediment`
 
-1. List missing required fields.
-2. Ask up to 3 targeted questions for highest-impact gaps.
-3. Wait for user response.
-4. Re-check readiness fields.
-5. Repeat until all required fields are present.
+Rules:
 
-If user cannot provide more detail, proceed with explicit assumptions and lower confidence.
+1. Keep one `Primary Question`.
+2. Add a `Sub-Question` only when it materially affects recommendation quality.
+3. Allow only one decomposition layer: `Primary Question -> Sub-Question`.
+4. Admit an emergent `Sub-Question` into the current run only if it is blocking or clearly high-priority.
+5. Resolve or explicitly defer every tracked `Sub-Question`.
+6. Record blockers as `Impediment` with next action.
 
-## Question Decomposition and Scope Control
+## Source Collection
 
-Use canonical terms:
+Use this source order:
 
-- `Primary Question`: top-level question that the brief must resolve.
-- `Sub-question`: follow-up question created during decomposition.
-- `Entry Criteria`: rule for whether a new sub-question enters current scope.
-- `Impediment`: blocker that prevents progress on a question.
+1. Current-year primary sources where available.
+2. Older but still authoritative primary sources.
+3. Secondary sources only as gap fillers.
 
-Minimum operating rules:
+For each material claim record:
 
-1. Keep one explicit `Primary Question`.
-2. Add a `Sub-question` only when it materially affects recommendation quality.
-3. Record each admitted sub-question in the `Question-to-Evidence Matrix`.
-4. Mark unresolved blockers as `Impediment` with owner and next action.
+- `Link`
+- `Date`
+- `Why` it matters to the question
+- limitations or contradiction notes
 
-## Campaign Thread Register and Closure Gate
+If a date is unavailable, write `date not published; verified on YYYY-MM-DD`.
 
-Apply `../../shared/references/research-campaign-model.md` for:
+When sources conflict:
 
-- `Canonical Terms`,
-- `Primary Question Frame`,
-- `Sub-question Register`,
-- `Question-to-Evidence Matrix`,
-- `Entry Criteria for Emergent Sub-questions`,
-- `Depth Cap`,
-- `Completion Definition`.
-
-Operational notes:
-
-1. Use `Sub-question-*` IDs in all campaign tables.
-2. Keep one `Primary Question` per campaign.
-3. Mark blockers as `Impediment` and reflect them in closure status.
-
-## Source Collection Checklist
-
-Apply `../../shared/references/source-evidence-policy.md` for:
-
-- `Source Priority`,
-- `Citation Block Format`,
-- `Date Handling`,
-- `Conflict Resolution and Tie-Breakers`.
-
-For each key claim:
-
-1. Find at least one primary source.
-2. Record publication date.
-3. Record relevance rationale.
-4. Record limitations.
-5. Add confidence note.
+1. State the conflicting claims briefly.
+2. Compare authority, recency, and applicability.
+3. Prefer the source with better fit to the exact question.
+4. State residual uncertainty explicitly when the conflict remains.
 
 ## Evidence Table Template
 
 Use this `Question-to-Evidence Matrix` table:
 
-| Primary Question | Sub-question | Claim | Source | Date | Relevance | Evidence Score (1-5) | Notes |
+| Primary Question | Sub-Question | Claim | Source | Date | Why | Evidence Quality | Notes |
 |---|---|---|---|---|---|---|---|
 | ... | ... | ... | ... | ... | ... | ... | ... |
 
-Evidence Score guidance:
-
-- `5`: primary source + direct applicability + low contradiction
-- `4`: primary source + mostly direct applicability
-- `3`: primary source but indirect applicability or moderate contradiction
-- `2`: secondary/mixed source with material gaps
-- `1`: weak or unverifiable evidence
-
-Apply `../../shared/references/five-point-scoring-bands.md` for:
-
-- `Derived Label Thresholds`.
+Use `Evidence Quality` labels from `../../shared/references/assessment-profile.md`.
 
 ## Decision Brief Template
 
@@ -128,18 +85,31 @@ Apply `../../shared/references/five-point-scoring-bands.md` for:
 3. Key evidence summary
 4. Option comparison
 5. Recommendation
-6. Confidence and open risks
-7. Validation plan and review date
+6. Assessment profile (`Confidence` required; add other fields when relevant) and open risks
+7. Next validation step
 
-## Seed Primary Sources
+## Source Discovery Heuristics
 
-Use these as starting points when relevant:
+Prefer a search method over a fixed source list.
 
-- OpenAI Agent Skills docs (date not published; verified 2026-02-10): `https://developers.openai.com/codex/skills`
-- OpenAI evaluation best practices (date not published; verified 2026-02-10): `https://developers.openai.com/api/docs/guides/evaluation-best-practices`
-- OpenAI agent safety guide (date not published; verified 2026-02-10): `https://developers.openai.com/api/docs/guides/agent-builder-safety`
-- OpenAI eval-skills article (2026-01-22): `https://developers.openai.com/blog/eval-skills`
-- OpenAI codex changelog (contains dated entries): `https://developers.openai.com/codex/changelog`
-- OWASP LLM prompt injection reference (date not published; verified 2026-02-10): `https://genai.owasp.org/llmrisk/llm01-prompt-injection/`
-- NIST AI RMF GenAI profile (2024-07-26): `https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence`
+Start with the source type that is closest to the claim:
 
+1. official product docs, standards, specs, release notes, changelogs, or maintainers' primary materials,
+2. peer-reviewed papers, strong empirical studies, or high-quality technical reports when the question is scientific or measurement-heavy,
+3. professional engineering or domain blog posts only when they add direct operational detail, case evidence, or implementation insight,
+4. secondary summaries only as gap fillers or triangulation aids.
+
+Search prompts should target:
+
+- the exact product, standard, method, or system named in the question,
+- date-sensitive terms such as version, release, changelog, policy, benchmark, incident, or RFC,
+- evidence-bearing formats such as documentation, paper, report, postmortem, or maintainer write-up.
+
+For each candidate source ask:
+
+- Is this close enough to the original claim?
+- Is it current enough for the decision?
+- Does it actually match the use case instead of only the general topic?
+- Does it contain observable evidence, or only opinion?
+
+If no strong primary source exists, say so explicitly and downgrade confidence instead of inventing a stable source set.
