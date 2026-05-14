@@ -47,6 +47,26 @@ At minimum for this rubric-driven output report:
 - `Evidence Quality`
 - `Confidence`
 
+## Integrity Mini-Gate
+
+Run this gate before final synthesis on substantial research tasks:
+
+| Check | PASS | REVISE | DISCLOSE |
+|---|---|---|---|
+| Source existence | Material sources can be opened or otherwise verified | A key source is missing, broken, or only recalled from memory | Source cannot be verified, but claim is non-critical |
+| Claim support | Key claims map to cited evidence | A key claim is unsupported, overstated, or source-mismatched | Support is partial and clearly labeled |
+| Conflict handling | Major conflicts are identified and weighed | Conflicting evidence is ignored or flattened | Conflict remains unresolved after reasonable checking |
+| Recency fit | Sources are current enough for the decision | Time-sensitive claims rely on stale material | Current source is unavailable; confidence is lowered |
+| Scope discipline | Evidence matches the user's exact question | Evidence answers a broader or different question | Applicability limits are explicit |
+
+Gate outcome:
+
+- `PASS`: proceed to reviewer pass.
+- `REVISE`: do one targeted retry or source correction before finalizing.
+- `DISCLOSE`: proceed only if the limitation is clearly stated and confidence is lowered.
+
+Retry limits are owned by `references/pipeline.md`.
+
 ## Conflict Handling
 
 When evidence conflicts:

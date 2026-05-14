@@ -13,9 +13,10 @@ When the user invokes `$deep-researcher` or clearly asks for deep research:
 
 1. Confirm the `Primary Question`, scope boundaries, key constraints, and output format.
 2. If required context is missing, ask only the highest-impact missing questions.
-3. Run phase 1 research.
-4. Run phase 2 doubt resolution when the user raised doubts or challenges.
-5. Return a final brief with recommendation, assessment profile, open risks, and next checks.
+3. Choose the execution mode: single-agent by default; parallel subagents only when the user explicitly asks for delegated or parallel agent work.
+4. Run the compact pipeline for substantial research, including integrity and review gates before finalizing.
+5. Run phase 2 doubt resolution when the user raised doubts or challenges.
+6. Return a final brief with recommendation, assessment profile, open risks, and next checks.
 
 ## Research Readiness Gate
 
@@ -27,6 +28,27 @@ Do not start evidence collection until these are clear:
 - output format.
 
 If optional context is missing, proceed with explicit assumptions and lower confidence.
+
+## Execution Mode Router
+
+Use `single-agent` by default.
+
+Use `parallel-subagent` only when all of these are true:
+
+- the user explicitly asked for subagents, delegation, or parallel agent work,
+- the work has at least two independent `Sub-Question`s or review angles,
+- each delegated task can return a short evidence-backed result,
+- extra token cost is justified by speed, independent review, or source verification.
+
+Good delegated roles are:
+
+- `source_mapper`: find and summarize sources for one bounded sub-question,
+- `evidence_reviewer`: assess source quality and conflicts,
+- `devils_advocate`: test the provisional conclusion against counterevidence,
+- `docs_verifier`: verify current product, API, policy, or repository behavior.
+
+The parent agent always owns synthesis, recommendation, confidence, and final wording.
+Do not create or invoke subagents automatically from this skill.
 
 ## Canonical Terms
 
@@ -44,9 +66,12 @@ Keep one `Primary Question`. Add a `Sub-Question` only when it materially change
 1. Frame the decision.
 2. Define evaluation criteria.
 3. Collect and rank evidence.
-4. Compare at least two viable options.
-5. Draft a provisional conclusion with confidence and open uncertainty.
-6. Define follow-up validation or monitoring when the recommendation implies action.
+4. Run the integrity mini-gate from `references/evidence-quality-rubric.md`.
+5. Compare viable options when they exist; otherwise compare evidence-supported interpretations or state why option comparison does not apply.
+6. Run a reviewer pass: strongest counterargument, missing evidence, and risk if wrong.
+7. Follow the retry rules in `references/pipeline.md` when a gate fails or disclose unresolved issues.
+8. Draft a provisional conclusion with confidence and open uncertainty.
+9. Define follow-up validation or monitoring when the recommendation implies action.
 
 ## Phase 2: Resolve Doubts
 
@@ -60,6 +85,7 @@ Keep one `Primary Question`. Add a `Sub-Question` only when it materially change
 
 - Prefer primary sources when they exist.
 - Record links and dates for material claims.
+- Keep pipeline gates lightweight; disclose unresolved risk instead of building a heavy audit system.
 - For repository architecture or agent-profile decisions, record material evidence in the answer or a retained ExecPlan.
 - Flag unverifiable or conflicting evidence explicitly.
 - Do not present weak evidence as certainty.
@@ -72,7 +98,7 @@ Final output should include:
 1. question and scope,
 2. criteria,
 3. key evidence summary with links and dates,
-4. option comparison,
+4. option comparison or evidence-interpretation comparison,
 5. recommendation,
 6. assessment profile (`Confidence` required; add other dimensions when relevant) and open risks,
 7. next validation step when uncertainty remains.
@@ -80,6 +106,7 @@ Final output should include:
 ## Load References When Needed
 
 - `references/research-method.md` for intake, decomposition, source collection, evidence tables, and decision-brief structure.
+- `references/pipeline.md` for the compact pipeline, gates, retry rules, and optional subagent handoff pattern.
 - `references/assessment-profile.md` for assessment dimensions and reporting labels.
 - `references/evidence-quality-rubric.md` for evidence scoring, confidence mapping, and conflict handling.
 - `references/doubt-resolution.md` for doubt intake and answer structure.

@@ -78,6 +78,43 @@ Use this `Question-to-Evidence Matrix` table:
 
 Use `Evidence Quality` labels from `references/assessment-profile.md`.
 
+## Lightweight Artifacts
+
+Use only the artifacts that help the current task:
+
+- `Research Plan`: question, boundaries, criteria, and planned evidence sources.
+- `Evidence Notes`: material claims with links, dates, source quality, and caveats.
+- `Integrity Notes`: gate failures, weak evidence, contradictions, and retry outcome.
+- `Reviewer Notes`: strongest counterargument, missing evidence, and risk if wrong.
+- `Final Brief`: recommendation, assessment profile, open risks, and next validation.
+
+Do not maintain a permanent source catalog unless the user explicitly asks for one.
+
+## Subagent Result Contract
+
+When the user explicitly requests subagents, give each delegated task a bounded question and ask for this result shape:
+
+1. `Question handled`
+2. `Sources checked` with links, source dates or verified-on dates, and caveats
+3. `Key findings` mapped to the sources that support them
+4. `Evidence Quality`
+5. `Contradictions or gaps`
+6. `Recommendation impact`
+7. `Confidence`
+8. `What the parent agent should verify`
+
+Keep delegated outputs short. The parent agent must integrate, challenge, and cite them before finalizing.
+
+## Integration Gate
+
+Before using delegated results in a final brief:
+
+1. Identify agreement and disagreement across subagent results.
+2. Check whether any result relies on weak, indirect, stale, or unverifiable evidence.
+3. Resolve contradictions using authority, recency, and applicability.
+4. Downgrade confidence when conflicts remain unresolved.
+5. Keep the final recommendation owned by the parent agent.
+
 ## Decision Brief Template
 
 1. Question and scope
