@@ -2,7 +2,7 @@
 
 When to load: Use when assessing source quality and setting `Evidence Quality` and `Confidence`.
 
-Use reporting dimensions and labels from `../../shared/references/assessment-profile.md`.
+Use reporting dimensions and labels from `references/assessment-profile.md`.
 
 ## Source Quality Checks
 
@@ -16,7 +16,7 @@ Review these checks before assigning an `Evidence Quality` label:
 
 ## Evidence Quality
 
-Use the `Evidence Quality` labels defined in `../../shared/references/assessment-profile.md`.
+Use the `Evidence Quality` labels defined in `references/assessment-profile.md`.
 
 Apply them with this local decision rule:
 
@@ -28,11 +28,11 @@ Do not average the source-quality checks into a numeric total.
 
 ## Confidence
 
-Use the `Confidence` labels defined in `../../shared/references/assessment-profile.md`.
+Use the `Confidence` labels defined in `references/assessment-profile.md`.
 
 Set `Confidence` separately from `Evidence Quality`:
 
-- start from the shared `Confidence` definitions,
+- start from the `Confidence` definitions,
 - lower confidence when core claims remain materially contested, indirect, or fragile,
 - do not raise confidence just because source quality checks look strong.
 
@@ -40,7 +40,7 @@ Strong `Evidence Quality` does not automatically require high `Confidence`, and 
 
 ## Reporting
 
-Use the shared reporting template from `../../shared/references/assessment-profile.md`.
+Use the reporting template from `references/assessment-profile.md`.
 
 At minimum for this rubric-driven output report:
 

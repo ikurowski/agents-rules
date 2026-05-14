@@ -1,6 +1,6 @@
 # Assessment Profile
 
-When to load: Use when a repo output needs a shared assessment format.
+When to load: Use when a deep-researcher output needs assessment dimensions and reporting labels.
 
 ## Core Rule
 
@@ -8,7 +8,7 @@ When to load: Use when a repo output needs a shared assessment format.
 - do not average unlike dimensions or derive decimal scores,
 - use only the dimensions that are relevant to the task,
 - include a one-sentence rationale for every reported dimension,
-- keep task-specific decision logic local to the consuming skill.
+- keep task-specific decision logic local to the consuming output.
 
 ## Canonical Output Labels
 

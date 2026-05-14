@@ -18,17 +18,17 @@ For each doubt:
 - `Doubt`: <restated doubt>
 - `Answer`: <direct answer>
 - `Evidence`: <source-backed basis from phase 1>
-- `Confidence`: <use shared label + why>
-- `Risk If Wrong`: <use shared label + why> when decision downside matters
+- `Confidence`: <use assessment label + why>
+- `Risk If Wrong`: <use assessment label + why> when decision downside matters
 - `What Would Change My Mind`: <new evidence needed>
 
 ## Confidence Rules
 
-Use labels from `../../shared/references/assessment-profile.md`.
+Use labels from `references/assessment-profile.md`.
 
 Default application guidance:
 
-- start from the shared `Confidence` definitions,
+- start from the `Confidence` definitions,
 - lower confidence when unresolved contradiction or key indirectness leaves the answer fragile,
 - keep the answer explicitly revisable when meaningful new evidence could still change it,
 - add `Risk If Wrong` only when decision downside materially matters.

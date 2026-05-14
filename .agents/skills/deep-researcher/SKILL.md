@@ -1,29 +1,15 @@
 ---
 name: deep-researcher
-description: Conduct deep, evidence-backed research before answering user doubts or decision questions. Use when users need source-backed findings, trade-off analysis, confidence levels, and explicit uncertainty handling. Supports technical, product, process, and governance topics. Do not use for quick factual lookups or straightforward implementation tasks that do not require structured research.
+description: Conduct deep, evidence-backed research before answering user doubts or decision questions. Use when users need source-backed findings, trade-off analysis, confidence levels, and explicit uncertainty handling for technical, product, process, or governance topics. Use for audits, option comparisons, and decisions that need explicit uncertainty handling. Do not use for quick factual lookups, straightforward implementation tasks, or loose brainstorming with no need for evidence.
 ---
 
 # Deep Researcher
 
 Use this skill for decision-ready research that needs explicit evidence, trade-offs, confidence, and uncertainty handling.
 
-## When to Use
-
-Use it for:
-
-- technical, product, process, or governance questions where the answer should be evidence-backed,
-- option comparisons that need trade-off analysis,
-- audits or reviews that need explicit uncertainty handling.
-
-Do not use it for:
-
-- quick factual lookups,
-- straightforward implementation tasks,
-- loose brainstorming with no need for evidence.
-
 ## Required Flow
 
-When the user invokes `$deep-researcher` (or clearly asks for deep research):
+When the user invokes `$deep-researcher` or clearly asks for deep research:
 
 1. Confirm the `Primary Question`, scope boundaries, key constraints, and output format.
 2. If required context is missing, ask only the highest-impact missing questions.
@@ -67,13 +53,14 @@ Keep one `Primary Question`. Add a `Sub-Question` only when it materially change
 1. Restate each doubt precisely.
 2. Answer using evidence gathered in phase 1.
 3. Cite the evidence behind the answer.
-4. Report `Confidence` using the shared assessment profile and add other dimensions only when they materially help.
+4. Report `Confidence` using the assessment profile and add other dimensions only when they materially help.
 5. State what would change your mind.
 
 ## Guardrails
 
 - Prefer primary sources when they exist.
 - Record links and dates for material claims.
+- For repository architecture or agent-profile decisions, record material evidence in the answer or a retained ExecPlan.
 - Flag unverifiable or conflicting evidence explicitly.
 - Do not present weak evidence as certainty.
 - Prefer actionable recommendations over generic summary.
@@ -93,6 +80,6 @@ Final output should include:
 ## Load References When Needed
 
 - `references/research-method.md` for intake, decomposition, source collection, evidence tables, and decision-brief structure.
-- `../shared/references/assessment-profile.md` for the shared assessment dimensions and reporting labels.
+- `references/assessment-profile.md` for assessment dimensions and reporting labels.
 - `references/evidence-quality-rubric.md` for evidence scoring, confidence mapping, and conflict handling.
 - `references/doubt-resolution.md` for doubt intake and answer structure.

@@ -6,7 +6,9 @@
   "engines": {
     "node": ">=22"
   },
-  "scripts": {},
+  "scripts": {
+    "validate": "node scripts/validate-profile.mjs"
+  },
   "dependencies": {
     "yaml": "^2.8.1",
     "zod": "^3.25.76"

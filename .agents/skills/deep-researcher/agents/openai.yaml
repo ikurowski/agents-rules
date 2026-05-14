@@ -1,0 +1,3 @@
+display_name: Deep Researcher
+short_description: Evidence-backed research for decisions, audits, and trade-off analysis.
+default_prompt: Use $deep-researcher to research this decision with primary sources, explicit uncertainty, option comparison, and a concise recommendation.

@@ -76,7 +76,7 @@ Use this `Question-to-Evidence Matrix` table:
 |---|---|---|---|---|---|---|---|
 | ... | ... | ... | ... | ... | ... | ... | ... |
 
-Use `Evidence Quality` labels from `../../shared/references/assessment-profile.md`.
+Use `Evidence Quality` labels from `references/assessment-profile.md`.
 
 ## Decision Brief Template
 
