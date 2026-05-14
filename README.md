@@ -11,7 +11,7 @@ Markdown-first repository for agent operating rules, reusable skills, and select
 - `tasks/todo.md` - high-level tracker.
 - `tasks/plans/*` - retained plans for research, architecture changes, and other work worth preserving.
 - `tasks/lessons.md` - reusable prevention rules from significant corrections.
-- `scripts/validate-profile.mjs` - lightweight structural validation for this markdown-first profile.
+- `scripts/validate-profile.mjs` - structural validation for this markdown-first profile.
 
 ## Operating Model
 

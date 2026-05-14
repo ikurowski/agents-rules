@@ -9,8 +9,8 @@ Follow the current `openai/skills` pattern:
 1. Each skill is a folder named after the skill.
 2. Each skill has `SKILL.md` with `name` and `description` frontmatter.
 3. Put trigger guidance in `description`; keep the body for workflow instructions.
-4. Add `agents/openai.yaml` for every repo skill.
-5. Keep detailed procedure in skill-local `references/*`.
+4. Add `agents/openai.yaml` for every repo skill, using the `interface.display_name`, `interface.short_description`, and `interface.default_prompt` fields.
+5. Move long or reusable procedure into skill-local `references/*`; keep short task checklists in `SKILL.md`.
 
 ## Reference Rules
 

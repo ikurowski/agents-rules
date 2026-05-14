@@ -25,6 +25,35 @@ function read(filePath) {
   return readFileSync(rel(filePath), "utf8");
 }
 
+function extractInterfaceMetadata(metadata) {
+  const values = {};
+  let inInterfaceBlock = false;
+
+  for (const line of metadata.split(/\r?\n/)) {
+    if (/^\s*(#.*)?$/.test(line)) {
+      continue;
+    }
+
+    if (/^interface:\s*$/.test(line)) {
+      inInterfaceBlock = true;
+      continue;
+    }
+
+    if (inInterfaceBlock && /^[^\s]/.test(line)) {
+      break;
+    }
+
+    if (inInterfaceBlock) {
+      const match = line.match(/^\s{2,}([A-Za-z_][\w-]*):\s*(.+?)\s*$/);
+      if (match) {
+        values[match[1]] = match[2].replace(/^"(.*)"$/, "$1").replace(/^'(.*)'$/, "$1");
+      }
+    }
+  }
+
+  return values;
+}
+
 [
   "README.md",
   "AGENTS.md",
@@ -49,7 +78,7 @@ const skillsRoot = rel(".agents", "skills");
 if (existsSync(skillsRoot)) {
   const skillDirs = readdirSync(skillsRoot)
     .map((entry) => path.join(skillsRoot, entry))
-    .filter((entry) => statSync(entry).isDirectory() && entry !== rel("skills", "shared"));
+    .filter((entry) => statSync(entry).isDirectory());
 
   for (const skillDir of skillDirs) {
     const skillName = path.basename(skillDir);
@@ -84,10 +113,17 @@ if (existsSync(skillsRoot)) {
     }
 
     const metadata = readFileSync(openaiYaml, "utf8");
+    const interfaceMetadata = extractInterfaceMetadata(metadata);
+
     for (const field of ["display_name", "short_description", "default_prompt"]) {
-      if (!new RegExp(`^${field}:\\s*\\S+`, "m").test(metadata)) {
-        failures.push(`Skill ${skillName} openai.yaml is missing ${field}`);
+      if (typeof interfaceMetadata[field] !== "string" || interfaceMetadata[field].trim().length === 0) {
+        failures.push(`Skill ${skillName} openai.yaml is missing interface.${field}`);
       }
+    }
+
+    const defaultPrompt = interfaceMetadata.default_prompt ?? "";
+    if (!defaultPrompt.includes(`$${skillName}`)) {
+      failures.push(`Skill ${skillName} interface.default_prompt must mention $${skillName}`);
     }
   }
 }

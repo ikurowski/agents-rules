@@ -78,7 +78,7 @@ Use this `Question-to-Evidence Matrix` table:
 
 Use `Evidence Quality` labels from `references/assessment-profile.md`.
 
-## Lightweight Artifacts
+## Task Artifacts
 
 Use only the artifacts that help the current task:
 

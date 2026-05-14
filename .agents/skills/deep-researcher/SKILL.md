@@ -13,7 +13,7 @@ When the user invokes `$deep-researcher` or clearly asks for deep research:
 
 1. Confirm the `Primary Question`, scope boundaries, key constraints, and output format.
 2. If required context is missing, ask only the highest-impact missing questions.
-3. Choose the execution mode: single-agent by default; parallel subagents only when the user explicitly asks for delegated or parallel agent work.
+3. Work in the parent agent by default. Use subagents only when the user explicitly asks for delegated or parallel agent work.
 4. Run the compact pipeline for substantial research, including integrity and review gates before finalizing.
 5. Run phase 2 doubt resolution when the user raised doubts or challenges.
 6. Return a final brief with recommendation, assessment profile, open risks, and next checks.
@@ -29,11 +29,11 @@ Do not start evidence collection until these are clear:
 
 If optional context is missing, proceed with explicit assumptions and lower confidence.
 
-## Execution Mode Router
+## Subagent Use
 
-Use `single-agent` by default.
+Work in the parent agent by default.
 
-Use `parallel-subagent` only when all of these are true:
+Use subagents only when all of these are true:
 
 - the user explicitly asked for subagents, delegation, or parallel agent work,
 - the work has at least two independent `Sub-Question`s or review angles,
@@ -85,7 +85,7 @@ Keep one `Primary Question`. Add a `Sub-Question` only when it materially change
 
 - Prefer primary sources when they exist.
 - Record links and dates for material claims.
-- Keep pipeline gates lightweight; disclose unresolved risk instead of building a heavy audit system.
+- Keep pipeline gates proportional to the task; disclose unresolved risk instead of adding extra process.
 - For repository architecture or agent-profile decisions, record material evidence in the answer or a retained ExecPlan.
 - Flag unverifiable or conflicting evidence explicitly.
 - Do not present weak evidence as certainty.

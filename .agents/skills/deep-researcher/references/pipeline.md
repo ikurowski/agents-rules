@@ -4,7 +4,7 @@ Purpose: Define the compact pipeline stages, gates, retry behavior, and optional
 
 Reference loading is owned by `SKILL.md`; do not use this file as trigger guidance.
 
-Keep this pipeline lightweight. It is a prompt workflow, not a multi-agent framework.
+Use only the stages and artifacts that improve the current answer. This is a prompt workflow, not a multi-agent framework.
 
 ## Compact Pipeline
 
@@ -63,7 +63,7 @@ Retry limit:
 
 ## Optional Subagent Handoff
 
-Routing is owned by `SKILL.md`. Use this handoff only after `SKILL.md` selects `parallel-subagent`.
+Use this handoff only when the user explicitly asks Codex to spawn subagents for delegated or parallel work.
 
 Parent agent responsibilities:
 

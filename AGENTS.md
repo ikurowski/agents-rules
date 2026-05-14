@@ -47,7 +47,8 @@ Skills under `.agents/skills/*` are task-scoped workflows. Use a skill when the 
 1. Prefer resolving uncertainty from repository context before asking the user.
 2. Keep changes surgical; do not clean up adjacent code or docs unless the task requires it.
 3. If work is non-trivial, follow `PLANS.md` instead of inventing local plan rules.
-4. If asked to commit, use Conventional Commits and keep each commit to one concern.
+4. Before attempting a commit, run the `review-repo-changes` skill on the intended commit contents.
+5. If asked to commit, use Conventional Commits and keep each commit to one concern.
 
 ## Source Discipline
 

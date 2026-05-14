@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Change Reviewer"
+  short_description: "Review current changes against this repo's agent rules."
+  default_prompt: "Use $review-repo-changes to review the current git changes against AGENTS.md, PLANS.md, skill authoring rules, and validation expectations."
